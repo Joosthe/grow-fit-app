@@ -19,3 +19,7 @@ const roles= [
 	'coach',
 	'sporter',
 ]
+
+const nicknames =[
+  
+]
