@@ -1,0 +1,93 @@
+.main-navigation-top{
+  border-bottom: 1px solid #D1D5DB;
+  background-color: #3B82F6;
+  color: white;
+  padding: 15px;
+}
+
+.logo{
+  font-size: 1.8rem;
+  letter-spacing: .04rem;
+}
+.log-menu-wrapper{
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.log-menu-wrapper a{
+  margin-right: 20px;
+}
+.main-navigation-top button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.menu-bar{
+  display: inline-block;
+  width: 40px;
+  height: 3px;
+  background-color: white;
+  margin-bottom: .5rem;
+}
+.menu-bar:last-child{
+  margin-bottom: 0px;
+}
+
+
+.menu--footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  background-color: #1F2937;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.menu--footer ul{
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: space-between;
+}
+
+.menu--footer ul li{
+  flex: 1 0 auto;
+}
+
+.menu--footer ul li a{
+  display: flex;
+  padding: 15px;
+  border-right: 1px solid white ;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.menu--footer ul li:last-child a{
+  border-right: 0px solid transparent;
+} 
+
+.new-entree-footer-wrapper{
+  position: relative;
+}
+
+.new-entree-footer{
+  position: absolute;
+  top: -35px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  border: 1px solid #D1D5DB;
+  background-color: #FFF;
+  color: #1F2937;
+  box-shadow: 1px 2px 6px rgba(209, 213, 219, .6);
+  width: 50%;
+  text-align: center;
+  border-radius: 50%;
+  max-width: 50px;
+  height: 50px;
+}
