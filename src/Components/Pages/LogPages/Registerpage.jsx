@@ -1,7 +1,6 @@
 import React from 'react'
 import {nicknames} from '../../../Data/nicknames.js' 
 function RegisterPage() {
-
   return (
     <div className="page--login">
       <section className="intro">
@@ -25,6 +24,7 @@ function RegisterPage() {
             <label htmlFor="username">Nickname</label>
             <div className="select-wrapper form-element">
               <select>
+                <option>Choose a nickname</option>
                 {nicknames.map((nickname, index)=>{
                   return(
                     <option  key={nickname}>{nickname}</option>

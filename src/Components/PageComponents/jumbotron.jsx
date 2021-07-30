@@ -9,7 +9,7 @@ function Jumbotron(props) {
           <h1 className="text-4xl font-semibold">
             {props.title}
           </h1>
-          <Link to="/login" className="btn btn-primary@">Log in now</Link>
+          <Link to="/login">Log in now &rarr;</Link>
         </div>
       </div>
       <div className="background-image">
