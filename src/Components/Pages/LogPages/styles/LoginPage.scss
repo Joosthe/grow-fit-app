@@ -1,0 +1,40 @@
+label{
+  color: #1D4ED8;
+  font-size: 1.2rem;
+}
+input, select{
+  display: block;
+  background: none;
+  background-color: #F3F4F6;
+  width: 100%;
+  padding: 7px 15px;
+  border-radius: 5px;
+  border: 1px solid #93C5FD;
+  margin-bottom: 1rem;
+  max-width: 500px;
+  &[type="submit"]{
+    display: inline-block;
+    width: auto;
+    background-color: #1D4ED8;
+    color: white;
+    border: 1px solid #1D4ED8;
+  }
+}
+
+input[type="checkbox"]{
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+}
+form{
+  padding: 15px;
+  
+}
+.form--register{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper-50{
+  width: 50%;
+}

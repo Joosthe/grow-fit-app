@@ -1,0 +1,38 @@
+.main-navigation-top{
+  border-bottom: 1px solid #D1D5DB;
+  background-color: #3B82F6;
+  color: white;
+  padding: 15px;
+  .logo{
+    font-size: 1.8rem;
+    letter-spacing: .04rem;
+  }
+}
+
+.log-menu-wrapper{
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  a{
+    margin-right: 20px;
+  }
+}
+
+.main-navigation-top button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.menu-bar{
+  display: inline-block;
+  width: 27px;
+  height: 3px;
+  background-color: white;
+  margin-bottom: .45rem;
+  border-radius: 3px;
+  &:last-child{
+    margin-bottom: 0px;
+  }  
+}

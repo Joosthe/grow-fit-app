@@ -1,9 +1,10 @@
 import React from 'react'
+import Jumbotron from '../PageComponents/jumbotron'
 function Home() {
 
   return (
     <div className="homepage">
-     <h1 className="text-4xl font-semibold">Home</h1> 
+      <Jumbotron title="Get in shape with the grow fit app" bgimage="/img/home-start.png"/>
     </div>
   )
 }

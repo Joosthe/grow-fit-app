@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import LogMenu from './LogMenu';
 import MainMenu from './MainMenu';
 import UserMenu from './UserMenu';
-
+import './styles/Mainnav.scss';
  
 function MainNav() {
   return (
