@@ -1,0 +1,75 @@
+.testimonals--section{
+  background-color: #082032;
+  color: white;
+  h2{
+    font-size: 2.5rem;
+    letter-spacing: .05rem;
+    display: block;
+    padding: 30px 15px 0;
+    margin-bottom: -50px;
+  }
+}
+.slick-slider {
+  max-width: 100%;
+  position: relative;
+  padding: 50px 0;
+  .slick-arrow{
+    position: absolute;
+    top: 0;
+    font-size: 1.5rem;
+    padding: 3px 15px;
+    background-color: var(--prim-color);
+    box-shadow: 4px 4px 0 var(--white-color);;
+    text-align: center;
+    color: var(--white-color);
+    &:first-child{
+      right: 85px;
+    }
+    &:last-child{
+      right: 20px;
+    }
+  }
+}
+.testi-item-wrapper{
+  .testi-item{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    blockquote{
+      margin-bottom: 10px;
+      border: 3px solid  var(--white-color);
+      background-color: var(--white-color);
+      color:  var(--prim-color);
+      padding: 5px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      font-weight: 300;
+      font-size: 1.3rem;
+      letter-spacing: .05rem;
+      position: relative;
+      &:after{
+        content:" ";
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+        background-image: url('../../../img/ballon-path.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        bottom: -20px;
+      }
+    }
+    cite{
+      text-align: right;
+      font-style: normal;
+      letter-spacing: .1rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+

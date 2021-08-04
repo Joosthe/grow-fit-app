@@ -16,7 +16,7 @@ function MainNav() {
       <div className="main-navigation-top flex flex-wrap">
         <div className="logo-wrapper">
           <Link to="/">
-            <p className="logo">Lesson's app</p>
+            <p className="logo">Grow App</p>
           </Link>
         </div>
         <div className="log-menu-wrapper justify-end">
