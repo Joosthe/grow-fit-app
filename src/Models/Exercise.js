@@ -3,6 +3,5 @@ const exercise =  {
   title : '',
   description:'', // html field
   repetition:'',
-  completion:false,
   sport:'',
 }

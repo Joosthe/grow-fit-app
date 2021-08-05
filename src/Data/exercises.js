@@ -1,3 +1,5 @@
+// this is mock-data actual data should come out of cms
+
 export const exercises = [
   {
     id:"1",
