@@ -10,7 +10,6 @@ const user = {
 	workouts_done: [], 
 	workout_current: [], 
 	workout_planned: [],
-  r 
 }
 
 const roles= [
