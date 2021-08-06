@@ -17,13 +17,13 @@ function UserMenu(props) {
       </p>
       <ul>
         <li>
-          <Link to="/">Profile</Link>
+          <Link to="/"  onClick={props.closeMenu}>Profile</Link>
         </li>
         <li>
-          <Link to="/">Manage profile</Link>
+          <Link to="/"  onClick={props.closeMenu}>Manage profile</Link>
         </li>
         <li>
-          <Link to="/">My goals</Link>
+          <Link to="/"  onClick={props.closeMenu}>My goals</Link>
         </li>
       </ul>
     </div>

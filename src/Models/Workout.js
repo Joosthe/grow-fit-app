@@ -6,6 +6,5 @@ const Workout = {
   exercises: [], // out of all exercises
   value :'', 
   length : '',
-  completion_picture: '',
   sport : '', //maybe later out of array sports
 };
