@@ -18,10 +18,10 @@
     top: 0;
     font-size: 1.5rem;
     padding: 3px 15px;
-    background-color: var(--prim-color);
-    box-shadow: 4px 4px 0 var(--white-color);;
+    background-color: var(--color-prim);
+    box-shadow: 4px 4px 0 var(--color-white);;
     text-align: center;
-    color: var(--white-color);
+    color: var(--color-white);
     &:first-child{
       right: 85px;
     }
@@ -43,9 +43,9 @@
     flex: 1 0 auto;
     blockquote{
       margin-bottom: 10px;
-      border: 3px solid  var(--white-color);
-      background-color: var(--white-color);
-      color:  var(--prim-color);
+      border: 3px solid  var(--color-white);
+      background-color: var(--color-white);
+      color:  var(--color-prim);
       padding: 5px;
       border-radius: 5px;
       display: flex;

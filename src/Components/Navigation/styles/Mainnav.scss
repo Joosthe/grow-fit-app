@@ -38,7 +38,7 @@
 
 #main-navigation-sidebar{
   background-color: #FFF;
-  color: var(--prim-color);
+  color: var(--color-prim);
   letter-spacing: -.025em;
   // text-shadow:1px 1px 7px #000;
   position: fixed;
@@ -64,7 +64,7 @@
   }
   .menu-profile-picture img{
     margin: auto;
-    border: 3px solid var(--prim-color);
+    border: 3px solid var(--color-prim);
     text-align: center;
     max-width: 120px;
     max-height: 12 d0px;

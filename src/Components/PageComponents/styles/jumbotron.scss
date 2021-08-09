@@ -14,13 +14,13 @@
     flex-direction: column;
     justify-content: center;
     .content-jumbotron{
-      background-color: var(--prim-color);
+      background-color: var(--color-prim);
       display: inline-block;
       width: 75%;
       max-width: 300px;
       padding: 20px;
       margin: 2rem;
-      color: var(--white-color);
+      color: var(--color-white);
       box-shadow: 15px 15px 0px rgba(#D1D5DB, .75);
       margin: 50px 15px;
       line-height: 2.6rem;
