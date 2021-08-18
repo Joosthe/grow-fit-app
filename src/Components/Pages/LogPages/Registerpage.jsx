@@ -1,6 +1,33 @@
-import React from 'react'
-import {nicknames} from '../../../Data/nicknames.js' 
+import React, { useRef, useState } from 'react'
+import { useAuth } from '../../../Contexts/authContext';
+import { Link } from 'react-router-dom';
+
 function RegisterPage() {
+  const registerEmailRef = useRef();
+  const registerPasswordRef =  useRef();
+  const registerConfPasswordRef =  useRef();
+  const { registerUser } =  useAuth();
+  const [ error, setError] = useState('');
+  const [loading, setLoading] =  useState(false)
+
+  async function handleSubmit(e){
+    e.preventDefault()
+    if(registerPasswordRef.current.value !== registerConfPasswordRef.current.value){
+      return setError('paswords do not match');
+    }
+    try{
+      setError('');
+      setLoading(true);
+      await registerUser(
+        registerEmailRef.current.value,
+        registerPasswordRef.current.value
+      )
+    }catch{
+       setError('failed to register a user')
+    }
+    setLoading(false);
+  }
+
   return (
     <div className="page--login">
       <section className="intro">
@@ -10,48 +37,25 @@ function RegisterPage() {
           <b>register</b> and find out now
         </p>
       </section>
-      <form action="post" className="form--register">
-        <div className="wrapper-50">
-          <div className="form-element">
-            <label htmlFor="username">First and Lastname</label>
-            <input type="text" name="logintext" id="usernameregister" />
-          </div>
-          <div className="form-element ">
-            <label htmlFor="username">E-mail</label>
-            <input type="text" name="logintext" id="email-register" />
-          </div>
-          <div className="form-element ">
-            <label htmlFor="username">Nickname</label>
-            <div className="select-wrapper form-element">
-              <select>
-                <option>Choose a nickname</option>
-                {nicknames.map((nickname, index)=>{
-                  return(
-                    <option  key={nickname}>{nickname}</option>
-                  )
-                })}
-              </select>
-            </div>
-          </div>
+      {error &&<h2>{error}</h2>}
+      <form onSubmit={handleSubmit} className="form--register">
+        <div className="form-group" id="registeremail">
+          <label>E-mail</label>
+          <input type="email" ref={registerEmailRef} required/>
         </div>
-        <div className="wrapper-50">
-          <div className="form-element ">
-            <label htmlFor="username">Username</label>
-            <input type="text" name="logintext" id="usernameregister" />
-          </div>
-          <div className="form-element ">
-            <label htmlFor="password">Password</label>
-            <input type="pasword" name="logintext" id="passwordregister" />
-          </div>
-          <div className="form-element ">
-            <label htmlFor="password">Password confirm</label>
-            <input type="pasword" name="logintext" id="passwordconfirm" />
-          </div>
-          <div className="form-element ">
-            <input type="submit" name="logintext" id="submitregister" />
-          </div>
+        <div className="form-group" id="registerpassword">
+          <label>Password</label>
+          <input type="password" ref={registerPasswordRef} required/>
         </div>
-        </form>
+        <div className="form-group" id="registerconfpassword">
+          <label>Confirm password</label>
+          <input type="password" ref={registerConfPasswordRef} required/>
+        </div>
+        <input type="submit" disabled={loading} name="registerform" id="submitregister" />
+      </form>
+      <div>
+        Already have an account ?<Link to="/login">Log in</Link>
+      </div>
     </div>
   )
 }

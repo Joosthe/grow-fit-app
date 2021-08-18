@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import LogMenu from './LogMenu';
 import MainMenu from './MainMenu';
 import UserMenu from './UserMenu';
+import { useAuth } from '../../Contexts/authContext';
 import './styles/Mainnav.scss';
  
 function openMenu(){
@@ -15,6 +16,7 @@ function closeMenu(){
 
 
 function MainNav() {
+  const { currentUser  } =  useAuth();
   return (
     <div className="main-navigation-wrappers">
       <div className="main-navigation-top flex flex-wrap">
@@ -33,7 +35,8 @@ function MainNav() {
         </button>
       </div>
       <div id="main-navigation-sidebar">
-        <UserMenu closeMenu={closeMenu}/>
+        {currentUser && <UserMenu closeMenu={closeMenu}/>}
+ 
         <MainMenu closeMenu={closeMenu}/>
       </div>
     </div>
