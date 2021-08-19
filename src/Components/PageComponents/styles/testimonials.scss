@@ -1,12 +1,14 @@
 .testimonals--section{
-  background-color:var(--color-prim-dark);
-  color: var(--color-white)
+  background-color:var(--color-grey-800);
+  color: var(--color-white);
   h2{
     font-size: 2.5rem;
-    letter-spacing: .05rem;
+    letter-spacing: .3rem;
     display: block;
     padding: 1.5rem .75rem 0;
     margin-bottom: -2.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 }
 .slick-slider {
@@ -23,7 +25,7 @@
     text-align: center;
     color: var(--color-white);
     &:first-child{
-      right: 2.25rem;
+      right: 4.75rem;
     }
     &:last-child{
       right: 1rem;
@@ -73,6 +75,7 @@
       font-style: normal;
       letter-spacing: .1rem;
       font-size: 1.2rem;
+      color: var(--color-white);
     }
   }
 }
