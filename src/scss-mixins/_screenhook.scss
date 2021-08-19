@@ -1,0 +1,79 @@
+// Place here the scss for your component
+
+/* SINGLE SCREEN SIZES */
+$xsmall-max-breakpoint: 575px;
+$small-min-breakpoint: 576px;
+$small-max-breakpoint: 767px;
+$medium-min-breakpoint: 768px;
+$medium-max-breakpoint: 991px;
+$large-min-breakpoint: 992px;
+$large-max-breakpoint: 1200px;
+
+@mixin xs-only{
+  @media (max-width:$xsmall-max-breakpoint){
+    @content;
+  }
+}
+
+@mixin sm-only{
+  @media (min-width:$small-min-breakpoint) and (max-width:$small-max-breakpoint){
+    @content;
+  }
+}
+
+@mixin md-only{
+  @media (min-width:$medium-min-breakpoint) and (max-width:$medium-max-breakpoint){
+    @content;
+  }
+}
+
+@mixin lg-only{
+  @media (min-width:$large-min-breakpoint){
+    @content;
+  }
+}
+
+/* ONLY VISIBLE ON SAID SCREEN OR LARGER */
+@mixin sm-and-above{
+  @media (min-width:$small-min-breakpoint){
+    @content;
+  }
+}
+
+@mixin md-and-above{
+  @media (min-width:$medium-min-breakpoint){
+    @content;
+  }
+}
+
+@mixin lg-and-above{
+  @include lg-only{
+    @content;
+  }
+}
+
+@mixin xl-and-above{
+  @media (min-width:$large-max-breakpoint){
+    @content;
+  }
+}
+
+/* ONLY VISIBLE ON SAID SCREEN AND BELOW */
+
+@mixin sm-and-below{
+  @media (max-width:$small-max-breakpoint){
+    @content;
+  }
+}
+
+@mixin md-and-below{
+  @media (max-width:$medium-min-breakpoint){
+    @content;
+  }
+}
+
+@mixin lg-and-below{
+  @media (max-width:$large-max-breakpoint){
+    @content;
+  }
+}

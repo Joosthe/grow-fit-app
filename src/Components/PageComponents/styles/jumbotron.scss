@@ -1,6 +1,6 @@
 .jumbotron{
   position: relative;
-  max-height: 300px;
+  max-height: 22.5rem;
   height: 100%;
   overflow: hidden;
   display: flex;
@@ -17,23 +17,23 @@
       background-color: var(--color-prim);
       display: inline-block;
       width: 75%;
-      max-width: 300px;
-      padding: 20px;
+      max-width: 20rem;
+      padding: 1rem;
       margin: 2rem;
       color: var(--color-white);
-      box-shadow: 15px 15px 0px rgba(#D1D5DB, .75);
-      margin: 50px 15px;
+      box-shadow: .75rem .75rem 0 rgba(#D1D5DB, .75);
+      margin: 2.5rem .75rem;
       line-height: 2.6rem;
       h1{
         margin: 0;
         text-align: left;
-        text-shadow: 2px 2px #000;
+        text-shadow: .01rem .01rem var(--color-black);
+        color: var(--color-white);
       }
     }
     
   }
   .background-image{
-    min-height: 300px;
     display: flex;
     flex-direction: column;
     picture,

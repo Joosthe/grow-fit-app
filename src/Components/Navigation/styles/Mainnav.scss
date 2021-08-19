@@ -1,8 +1,11 @@
+
+
+
 .main-navigation-top{
-  border-bottom: 1px solid #D1D5DB;
-  background-color: #3B82F6;
-  color: white;
-  padding: 15px;
+  border-bottom: .5rem solid var(--color-prim-dark);
+  background-color: var(--color-prim);
+  color: var(--color-white);
+  padding: .75rem;
   .logo{
     font-size: 1.8rem;
     letter-spacing: .04rem;
@@ -14,7 +17,11 @@
     justify-content: center;
     align-items: flex-end;
     a{
-      margin-right: 20px;
+      margin-right: 1rem;
+    }
+    button{
+      display: inline-block;
+      margin-right: 1rem;
     }
   }
   button{
@@ -23,13 +30,13 @@
     justify-content: center;
     .menu-bar{
       display: inline-block;
-      width: 27px;
-      height: 3px;
-      background-color: white;
+      width: 1.4rem;
+      height: .1rem;
+      background-color: var(--color-white);
       margin-bottom: .45rem;
-      border-radius: 3px;
+      border-radius: .15rem;
       &:last-child{
-        margin-bottom: 0px;
+        margin-bottom: 0;
       }  
     }
   }  
@@ -37,38 +44,36 @@
 
 
 #main-navigation-sidebar{
-  background-color: #FFF;
+  z-index: 5;
+  position: fixed;
+  top: 4.7rem;
+  left: -100%;
+  width: 100%;
+  max-width: 15rem;
+  height: calc(100vh - 4.5rem);
+  overflow-x: scroll;
+  border-right: .25rem solid var(--color-prim-dark) ;
+  background-color: var(--color-white);
   color: var(--color-prim);
   letter-spacing: -.025em;
-  // text-shadow:1px 1px 7px #000;
-  position: fixed;
-  left: -100%;
-  z-index: 3;
-  top: 74px;
-  width: 100%;
-  overflow-x: scroll;
-  transition: .4s all;
-  //height: calc(100vh - 130px);
-  height: calc(100vh - 35px);
-  z-index: 5;
+  transition: .6s all;
   &.open{
     left: 0;
   }
   a{
     display: block;
-    padding: 7px;
-    font-size: 1.5rem;
+    padding: .35rem;
+    font-size: 1.2rem;
   }
   .menu-username{
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .menu-profile-picture img{
-    margin: auto;
-    border: 3px solid var(--color-prim);
+    border: .15rem solid var(--color-prim);
     text-align: center;
-    max-width: 120px;
-    max-height: 12 d0px;
+    max-width: 6rem;
+    max-height: 6rem;
     border-radius: 50%;
-    margin: 30px auto;
+    margin: 1.5rem auto;
   }
 }

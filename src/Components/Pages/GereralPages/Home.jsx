@@ -1,6 +1,6 @@
 import React from 'react'
-import Jumbotron from '../PageComponents/Jumbotron'
-import Testimonals from '../PageComponents/Testimonials'
+import Jumbotron from '../../PageComponents/Jumbotron'
+import Testimonals from '../../PageComponents/Testimonials'
 function Home() {
 
   return (

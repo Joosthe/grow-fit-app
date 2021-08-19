@@ -6,20 +6,25 @@ function FooterMenu() {
     <div className="menu--footer">
       <ul>
         <li>
-          <Link to="/profile/id">
-            Profile
+          <Link to="/profile">
+            My profile
           </Link>
           </li>
+       
         <li>
-        <Link to="/entry/new"  className="new-entree-footer-wrapper">
-          <span className="new-entree-footer"> +</span> 
-          Make entry
-        </Link>
+          <Link to="/workouts">
+            My workouts
+          </Link>
         </li>
         <li>
         <Link to="/goals">
-          goals
+          My goals
         </Link>
+        </li>
+        <li className="new-entree-footer-wrapper">
+          <Link to="/entry/new" className="new-entree-footer">
+          <span className="new-entree-footer-icon"><i  >+</i> </span>
+          </Link>
         </li>
       </ul>
     </div>
