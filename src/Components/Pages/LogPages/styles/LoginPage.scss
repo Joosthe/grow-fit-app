@@ -1,5 +1,5 @@
 label{
-  color: #1D4ED8;
+  color: var(--color-prim);
   font-size: 1.2rem;
   margin:  .5rem 0;
   display: block;
@@ -14,7 +14,8 @@ input, select{
   width: 100%;
   padding: .35rem .75rem;
   border-radius: .25rem;
-  border: .05rem solid var(--color-prim);
+  border: .1rem solid var(--color-prim-dark);
+  background-color: var(--color-grey-200);
   margin-bottom: 1rem;
   &[type="submit"]{
     width: auto;
@@ -45,6 +46,6 @@ form{
 }
 .description{
   padding: 1rem;
-  color: var(--color-grey-600);
+  color: var(--color-grey-200);
   font-weight: 300;
 }

@@ -2,8 +2,8 @@
 
 
 .main-navigation-top{
-  border-bottom: .5rem solid var(--color-prim-dark);
-  background-color: var(--color-prim);
+  border-bottom: .5rem solid var(--color-prim);
+  background-color: var(--color-black);
   color: var(--color-white);
   padding: .75rem;
   .logo{
@@ -52,8 +52,8 @@
   max-width: 15rem;
   height: calc(100vh - 4.5rem);
   overflow-x: scroll;
-  border-right: .25rem solid var(--color-prim-dark) ;
-  background-color: var(--color-white);
+  border-right: .25rem solid var(--color-prim-dark);
+  background-color: var(--color-black);
   color: var(--color-prim);
   letter-spacing: -.025em;
   transition: .6s all;

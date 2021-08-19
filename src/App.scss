@@ -1,11 +1,11 @@
 :root{
   --color-prim-light: #93C5FD;
-  --color-prim: #0652DD;
-  --color-prim-dark: #1B1464;
+  --color-prim: #d4ff00;
+  --color-prim-dark: #7e9900;
   --color-sec: #EE5A24;
   --color-sec-dark: #EA2027;
   --color-white: #FFF;
-  --color-black: #1F2937;
+  --color-black: #101400;
   --color-grey-800:#333;
   --color-grey-600: #666;
   --color-grey-400: #999;
@@ -25,11 +25,14 @@ html,body,#root{
   flex: 1 0 auto;
   width: 100%;
   min-height: 100%;
+  background-color: var(--color-grey-800);
+  color: var(--color-white);
 }
-
 #main-content{
   flex: 1 0 auto;
-  // should not be margin bottom if not logt in 
+}
+// to make room for footer menu when loged in
+#main-content.loged-in{
   margin-bottom: 2.7rem;
 }
 
@@ -41,7 +44,7 @@ h1{
 }
 
 .intro-line{
-  margin-bottom: 25rem;
+  margin-bottom: 2.5rem;
   text-align: center;
   font-weight: 200;
 }

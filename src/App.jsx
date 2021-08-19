@@ -13,11 +13,11 @@ import { useAuth } from './Contexts/authContext';
 import MyGoals from './Components/Pages/Userpages/MyGoals';
 
 function App() {
-  const {currentUser} = useAuth();
+  const {currentUser} = useAuth(); 
   return (
     <>
     <MainNav/>
-    <div id="main-content">
+    <div id="main-content" className={currentUser ? "loged-in" : ""}>
       <Switch>
         <PrivateRoute path="/profile" exact component={ProfilePage} />
         <PrivateRoute path="/my-goals" exact component={MyGoals} />
@@ -32,7 +32,6 @@ function App() {
       <FooterNav/>
     }
     </>
-
   )
 }
 
