@@ -27,7 +27,8 @@
       font-weight: 300;
       transition: .4s all;
       &:hover{
-        background-color: var(--color-prim)
+        background-color: var(--color-prim);
+        color: var(--color-black);
       }
     }
   }

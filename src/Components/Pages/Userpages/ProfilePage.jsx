@@ -1,18 +1,19 @@
 import React, {useState} from 'react'
 
 import { useAuth } from '../../../Contexts/authContext';
-import LogoutButton from '../../Buttons/LogoutButton';
+import LogoutButton from '../../PageComponents/Buttons/LogoutButton';
+import Container from '../../Wrappers/Container';
 
  function ProfilePage(){
   const { currentUser } =  useAuth();
 
 
   return(
-    <div className="">
+    <Container>
       <h1 className="text-4xl font-semibold">Hello Rockshar</h1>
       <p>e-mail: {currentUser.email}</p>
       <LogoutButton/>
-    </div>
+    </Container>
   )
 }
 export default ProfilePage

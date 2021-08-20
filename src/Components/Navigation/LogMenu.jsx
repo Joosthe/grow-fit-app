@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../Contexts/authContext';
-import LogoutButton from '../Buttons/LogoutButton';
+import LogoutButton from '../PageComponents/Buttons/LogoutButton';
 function LogMenu(props) {
   const { currentUser  } =  useAuth();
   return (

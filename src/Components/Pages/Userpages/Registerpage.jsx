@@ -1,8 +1,13 @@
 import React, { useRef, useState } from 'react'
 import { useAuth } from '../../../Contexts/authContext';  
 import { useHistory } from 'react-router-dom';
-import Button from '../../Buttons/Button';
+import Button from '../../PageComponents/Buttons/Button';
 import Container from '../../Wrappers/Container';
+import PageTitle from '../../PageSections/PageTitle';
+import StaticContent from'../../../staticContent/content-En.js';
+import ReactHtmlParser from 'react-html-parser';
+const sc =  StaticContent.UserPages.RegisterPage;
+
 function RegisterPage() {
   const registerEmailRef = useRef();
   const registerPasswordRef =  useRef();
@@ -35,10 +40,9 @@ function RegisterPage() {
     <div className="page--login">
       <Container>
       <section className="intro">
-        <h1 className="text-4xl font-semibold">Welcome</h1>
+       <PageTitle>{sc.title}</PageTitle>
         <p className="intro-line">
-          So you think you are up for a challenge?<br/>
-          <b>register</b> and find out now
+        { ReactHtmlParser( sc.introLine)}
         </p>
       </section>
       {error &&<h2>{error}</h2>}
@@ -60,7 +64,7 @@ function RegisterPage() {
         </form>
       </section>
       <div className="description text-center">
-        <p>Already have an account ? <Button variant={'btn-sm btn-prim'} to="/login">Log in</Button><br/>
+        <p>{sc.formFooterText} <Button variant={'btn-sm btn-prim'} to="/login">Log in</Button><br/>
         </p>   
       </div>
       </Container>

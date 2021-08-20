@@ -13,7 +13,7 @@ function FooterMenu() {
        
         <li>
           <Link to="/workouts">
-            My workouts
+            Workouts
           </Link>
         </li>
         <li>
@@ -22,7 +22,7 @@ function FooterMenu() {
         </Link>
         </li>
         <li className="new-entree-footer-wrapper">
-          <Link to="/entry/new" className="new-entree-footer">
+          <Link to="/add-content" className="new-entree-footer">
           <span className="new-entree-footer-icon"><i  >+</i> </span>
           </Link>
         </li>

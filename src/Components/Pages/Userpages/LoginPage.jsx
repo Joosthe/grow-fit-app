@@ -3,8 +3,10 @@ import { useAuth } from '../../../Contexts/authContext';
 import { useHistory } from 'react-router-dom';
 import './styles/LoginPage.scss';
 import Container from '../../Wrappers/Container';
-import Button from '../../Buttons/Button';
-
+import Button from '../../PageComponents/Buttons/Button';
+import PageTitle from '../../PageSections/PageTitle';
+import StaticContent from'../../../staticContent/content-En.js';
+const sc =  StaticContent.UserPages.LoginPage;
 function LoginPage() {
   const emailLogin = useRef();
   const passwordLogin =  useRef();
@@ -31,8 +33,8 @@ function LoginPage() {
     <div className="page--login">
       <Container>
       <section className="intro">
-        <h1 className="text-4xl font-semibold">Welcome back</h1>
-        <p className="intro-line text-center">Please sign in to use our wonderfull app</p>
+        <PageTitle>Welcome back </PageTitle>
+        <p className="intro-line">Please sign in to use our wonderfull app</p>
       </section>
       {error &&<h2>{error}</h2>}
       <section className="form--login--wrapper">
@@ -50,7 +52,7 @@ function LoginPage() {
           </div>
         </form>
         <div className="description text-center">
-            <p>In need of an account ? <Button variant={'btn-sm btn-prim'} to="/register">Register here</Button><br/>
+            <p>{sc.formFooterText}  <Button variant={'btn-sm btn-prim'} to="/register">Register here</Button><br/>
             </p>
           </div>
         <div>
