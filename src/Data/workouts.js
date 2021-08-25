@@ -1,4 +1,4 @@
-const Workouts = [
+export const Workouts = [
   {
     id : 1,
     title : 'First begin',

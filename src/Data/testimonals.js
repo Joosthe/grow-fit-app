@@ -1,7 +1,7 @@
 export const testimonals = [
   {
-    src: 'ldzmlkf',
-    quote: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+    src: 'Joost H.',
+    quote: 'Theire are lots of differnt tools used to make a beautiful app'
   },
   {
     src: 'Maker',

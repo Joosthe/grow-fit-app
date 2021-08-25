@@ -1,23 +1,19 @@
 import React from 'react'
 import Container from '../../Wrappers/Container'
 import AddContentCard from '../../PageComponents/Cards/AddContentCard'
-import PageTitle from '../../PageSections/PageTitle'
-import StaticContent from'../../../staticContent/content-En.js'
 import ReactHtmlParser from 'react-html-parser';
 import { FaThumbsUp,FaMagic,FaTasks,FaPencilAlt } from "react-icons/fa";
-
+import Intro from '../../PageSections/intro'
+import StaticContent from'../../../staticContent/content-En.js'
 const sc =  StaticContent.WorkoutPages.AddContent;
 
-export default function addContent() {
+export default function AddContent() {
   return (
     <>
-    <section className="intro">
-      <PageTitle>{sc.title}</PageTitle>
-      <p className="intro-line">{sc.introLine}</p>
-    </section>
+    <Intro line={sc.introLine} title={sc.title}/>
     <Container>
-      <div class="flex flex-wrap -mx-2 overflow-hidden grid-add-content pb-4">
-        <div class="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">
+      <div className="flex flex-wrap -mx-2 overflow-hidden grid-add-content pb-4">
+        <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">
           <AddContentCard
             to="/new-entry"
             icon={<FaThumbsUp/>}
@@ -25,7 +21,7 @@ export default function addContent() {
             descr={ReactHtmlParser(sc.cards[0].descr)}
           />
         </div>
-        <div class="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">   
+        <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">   
         <AddContentCard
             to="/choose-workout"
             icon={<FaMagic/>}
@@ -33,7 +29,7 @@ export default function addContent() {
             descr={ReactHtmlParser(sc.cards[1].descr)}
           />
         </div>
-        <div class="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">
+        <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">
           <AddContentCard
             to="/create-workout"
             icon={<FaPencilAlt/>}
@@ -41,7 +37,7 @@ export default function addContent() {
             descr={ReactHtmlParser(sc.cards[2].descr)}
           />
         </div>
-        <div class="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">
+        <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">
           <AddContentCard
             to="/new-exercise"
             icon={<FaTasks/>}

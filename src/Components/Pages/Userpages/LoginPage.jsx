@@ -4,8 +4,9 @@ import { useHistory } from 'react-router-dom';
 import './styles/LoginPage.scss';
 import Container from '../../Wrappers/Container';
 import Button from '../../PageComponents/Buttons/Button';
-import PageTitle from '../../PageSections/PageTitle';
+import Intro from '../../PageSections/intro';
 import StaticContent from'../../../staticContent/content-En.js';
+import Form from '../../PageComponents/FormElements/Form';
 const sc =  StaticContent.UserPages.LoginPage;
 function LoginPage() {
   const emailLogin = useRef();
@@ -32,13 +33,10 @@ function LoginPage() {
   return (
     <div className="page--login">
       <Container>
-      <section className="intro">
-        <PageTitle>Welcome back </PageTitle>
-        <p className="intro-line">Please sign in to use our wonderfull app</p>
-      </section>
+      <Intro line={sc.introLine} title={sc.title}/>
       {error &&<h2>{error}</h2>}
       <section className="form--login--wrapper">
-        <form action="post" onSubmit={handleSubmit} className="form--login shadow-md">
+        <Form onSubmit={handleSubmit} className="form--login shadow-md">
           <div className="form-element ">
             <label htmlFor="username">E-mail</label>
             <input type="text" name="logintext" id="usernamelogin" ref={emailLogin} />
@@ -50,7 +48,7 @@ function LoginPage() {
           <div className="form-element ">
             <input type="submit" name="loginsubmit" id="submitlogin" disabled={loading} className="btn btn-prim" />
           </div>
-        </form>
+        </Form>
         <div className="description text-center">
             <p>{sc.formFooterText}  <Button variant={'btn-sm btn-prim'} to="/register">Register here</Button><br/>
             </p>

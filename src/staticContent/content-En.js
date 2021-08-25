@@ -1,12 +1,12 @@
 export default {
   UserPages:{
     LoginPage:{
-      title: "Welcome",
+      title: "Welcome back",
       introLine: "Please sign in to use our wonderfull app",
       formFooterText: "In need of an account ?"
     },
     RegisterPage:{
-      title: "Welcome Back",
+      title: "Welcome",
       introLine: "So you think you are up for a challenge?<br/><b>register</b> and find out now",
       formFooterText: "Already have an account ?"
     }
@@ -33,6 +33,10 @@ export default {
           descr: "Did you think of a new exercsise"
         }
       ]
+    },
+    NewEntry:{
+      title:"Enter your workout", 
+      introLine: "So how did it go today"
     }
   }
 }

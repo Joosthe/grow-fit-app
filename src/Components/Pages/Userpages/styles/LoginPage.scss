@@ -1,35 +1,3 @@
-label{
-  color: var(--color-prim);
-  font-size: 1.2rem;
-  margin:  .5rem 0;
-  display: block;
-}
-.form-element {
-  margin-bottom: 1rem;
-}
-input, select{
-  display: block;
-  background: none;
-  background-color: #F3F4F6;
-  width: 100%;
-  padding: .35rem .75rem;
-  border-radius: .25rem;
-  border: .1rem solid var(--color-prim-dark);
-  background-color: var(--color-grey-200);
-  margin-bottom: 1rem;
-  &[type="submit"]{
-    width: auto;
-  }
-}
-
-input[type="checkbox"]{
-  display: inline-block;
-  width: auto;
-  margin-right: 5rem;
-}
-form{
-  padding: .75rem;
-}
 
 .form--login--wrapper,
 .form--register--wrapper{

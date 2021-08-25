@@ -3,10 +3,12 @@ import { useAuth } from '../../../Contexts/authContext';
 import { useHistory } from 'react-router-dom';
 import Button from '../../PageComponents/Buttons/Button';
 import Container from '../../Wrappers/Container';
-import PageTitle from '../../PageSections/PageTitle';
 import StaticContent from'../../../staticContent/content-En.js';
-import ReactHtmlParser from 'react-html-parser';
+import Intro from '../../PageSections/intro';
 const sc =  StaticContent.UserPages.RegisterPage;
+import ReactHtmlParser from 'react-html-parser';
+import Form from '../../PageComponents/FormElements/Form';
+
 
 function RegisterPage() {
   const registerEmailRef = useRef();
@@ -39,15 +41,10 @@ function RegisterPage() {
   return (
     <div className="page--login">
       <Container>
-      <section className="intro">
-       <PageTitle>{sc.title}</PageTitle>
-        <p className="intro-line">
-        { ReactHtmlParser( sc.introLine)}
-        </p>
-      </section>
+      <Intro line={ReactHtmlParser(sc.introLine)} title={sc.title}/>
       {error &&<h2>{error}</h2>}
       <section className="form--register--wrapper">
-        <form onSubmit={handleSubmit} className="form--register">
+        <Form onSubmit={handleSubmit} className="form--register">
           <div className="form-group" id="registeremail">
             <label>E-mail</label>
             <input type="email" ref={registerEmailRef} required/>
@@ -61,7 +58,7 @@ function RegisterPage() {
             <input type="password" ref={registerConfPasswordRef} required/>
           </div>
           <input type="submit" disabled={loading} name="registerform" id="submitregister" className="btn btn-prim" />
-        </form>
+        </Form>
       </section>
       <div className="description text-center">
         <p>{sc.formFooterText} <Button variant={'btn-sm btn-prim'} to="/login">Log in</Button><br/>
