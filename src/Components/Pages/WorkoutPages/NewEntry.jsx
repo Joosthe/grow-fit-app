@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react'
-import Intro from '../../PageSections/intro';
+import React, { useState } from 'react'
+import IntroSection from '../../PageSections/IntroSection';
 import StaticContent from'../../../staticContent/content-En.js'
 import Container from '../../Wrappers/Container';
 import './styles/NewEntry.scss'
@@ -29,7 +29,7 @@ export default function NewEntry() {
     <Container>
     <div className="page--new-entry">
       <header>
-         <Intro line={sc.introLine} title={sc.title}/>
+         <IntroSection line={sc.introLine} title={sc.title}/>
       </header>
      
 

@@ -22,7 +22,7 @@ export default {
         },
         {
           title:"Choose a new workout",
-          descr: "Pick a new workout",
+          descr: "Set a date for your workouts",
         },
         {
           title:"create a new workout",
@@ -35,8 +35,12 @@ export default {
       ]
     },
     NewEntry:{
-      title:"Enter your workout", 
+      title:"Enter your work-out", 
       introLine: "So how did it go today"
+    },
+    ChooseWorkout:{
+      title:'Choose your work-out',
+      introLine: "test",
     }
   }
 }

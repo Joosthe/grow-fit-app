@@ -13,6 +13,7 @@ import { useAuth } from './Contexts/authContext';
 import MyGoals from './Components/Pages/Userpages/MyGoals';
 import AddContent from './Components/Pages/WorkoutPages/AddContent';
 import NewEntry from './Components/Pages/WorkoutPages/NewEntry';
+import ChooseWorkout from './Components/Pages/WorkoutPages/ChooseWorkout';
 
 function App() {
   const {currentUser} = useAuth(); 
@@ -22,6 +23,7 @@ function App() {
     <div id="main-content" className={currentUser ? "loged-in" : ""}>
       <Switch>
         <PrivateRoute path="/new-entry" extact component={NewEntry}/>
+        <PrivateRoute path="/choose-workout" exact component={ChooseWorkout}/>
         <PrivateRoute path="/add-content" extact component={AddContent}/>
         <PrivateRoute path="/profile" exact component={ProfilePage} />
         <PrivateRoute path="/my-goals" exact component={MyGoals} />

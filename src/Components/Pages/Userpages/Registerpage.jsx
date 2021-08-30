@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Button from '../../PageComponents/Buttons/Button';
 import Container from '../../Wrappers/Container';
 import StaticContent from'../../../staticContent/content-En.js';
-import Intro from '../../PageSections/intro';
+import IntroSection from '../../PageSections/IntroSection';
 const sc =  StaticContent.UserPages.RegisterPage;
 import ReactHtmlParser from 'react-html-parser';
 import Form from '../../PageComponents/FormElements/Form';
@@ -41,7 +41,7 @@ function RegisterPage() {
   return (
     <div className="page--login">
       <Container>
-      <Intro line={ReactHtmlParser(sc.introLine)} title={sc.title}/>
+      <IntroSection line={ReactHtmlParser(sc.introLine)} title={sc.title}/>
       {error &&<h2>{error}</h2>}
       <section className="form--register--wrapper">
         <Form onSubmit={handleSubmit} className="form--register">

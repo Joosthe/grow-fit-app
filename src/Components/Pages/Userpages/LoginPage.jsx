@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import './styles/LoginPage.scss';
 import Container from '../../Wrappers/Container';
 import Button from '../../PageComponents/Buttons/Button';
-import Intro from '../../PageSections/intro';
+import IntroSection from '../../PageSections/IntroSection';
 import StaticContent from'../../../staticContent/content-En.js';
 import Form from '../../PageComponents/FormElements/Form';
 const sc =  StaticContent.UserPages.LoginPage;
@@ -33,7 +33,7 @@ function LoginPage() {
   return (
     <div className="page--login">
       <Container>
-      <Intro line={sc.introLine} title={sc.title}/>
+      <IntroSection line={sc.introLine} title={sc.title}/>
       {error &&<h2>{error}</h2>}
       <section className="form--login--wrapper">
         <Form onSubmit={handleSubmit} className="form--login shadow-md">

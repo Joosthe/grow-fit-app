@@ -2,16 +2,17 @@ import React from 'react'
 import Container from '../../Wrappers/Container'
 import AddContentCard from '../../PageComponents/Cards/AddContentCard'
 import ReactHtmlParser from 'react-html-parser';
-import { FaThumbsUp,FaMagic,FaTasks,FaPencilAlt } from "react-icons/fa";
-import Intro from '../../PageSections/intro'
+import { FaThumbsUp,FaCalendarAlt,FaTasks,FaPencilAlt } from "react-icons/fa";
+import IntroSection from '../../PageSections/IntroSection'
 import StaticContent from'../../../staticContent/content-En.js'
-const sc =  StaticContent.WorkoutPages.AddContent;
+
 
 export default function AddContent() {
+  const sc =  StaticContent.WorkoutPages.AddContent;
   return (
     <>
-    <Intro line={sc.introLine} title={sc.title}/>
     <Container>
+    <IntroSection line={sc.introLine} title={sc.title}/>
       <div className="flex flex-wrap -mx-2 overflow-hidden grid-add-content pb-4">
         <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">
           <AddContentCard
@@ -24,7 +25,7 @@ export default function AddContent() {
         <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">   
         <AddContentCard
             to="/choose-workout"
-            icon={<FaMagic/>}
+            icon={<FaCalendarAlt/>}
             title={sc.cards[1].title}
             descr={ReactHtmlParser(sc.cards[1].descr)}
           />
