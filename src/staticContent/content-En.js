@@ -1,3 +1,5 @@
+import CreateWorkout from "../Components/Pages/WorkoutPages/CreateWorkout";
+
 export default {
   UserPages:{
     LoginPage:{
@@ -40,7 +42,11 @@ export default {
     },
     ChooseWorkout:{
       title:'Choose your work-out',
-      introLine: "test",
+      introLine: "",
+    },
+    CreateWorkout:{
+      title:'Create a new work-out',
+      introLine: 'What will your new challenge be'
     }
   }
 }

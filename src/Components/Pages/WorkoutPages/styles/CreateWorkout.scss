@@ -1,0 +1,7 @@
+.form--create-workout{
+  display: flex;
+  margin-bottom: 1rem;
+  &>*{
+    flex: 1 0 auto;
+  }
+}

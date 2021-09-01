@@ -5,8 +5,7 @@ export const Workouts = [
     description:'easyest workout ever',
     illustration:'',
     exercises: [4],
-    value :'', 
-    length : '',
+    duration: '',
     sport : 'meditation', 
   },
   {
@@ -15,8 +14,7 @@ export const Workouts = [
     description:'First warm up and then a simple start',
     illustration:'',
     exercises: [2,3],
-    value :'', 
-    length : '',
+    duration: '',
     sport : 'rowing', 
   },
   {
@@ -25,8 +23,7 @@ export const Workouts = [
     description:'First warm up and then follow the instructions:',
     illustration:'',
     exercises: [2,1,4,1],
-    value :'', 
-    length : '',
+    duration: '',
     sport : 'rowing', 
   },
   {
@@ -35,8 +32,7 @@ export const Workouts = [
     description:'First warm up and then follow the instructions:', 
     illustration:'',
     exercises: [2,4,5],
-    value :'', 
-    length : '',
+    duration: '',
     sport : 'rowing', 
   },
   {
@@ -45,8 +41,7 @@ export const Workouts = [
     description:'First warm up and then follow the instructions:', 
     illustration:'',
     exercises: [2,4,5,4,5],
-    value :'', 
-    length : '',
+    duration: '',
     sport : 'rowing', 
   },
   {
@@ -55,8 +50,7 @@ export const Workouts = [
     description:'First warm up and then follow the instructions:', 
     illustration:'',
     exercises: [2,1,1,4,1,1],
-    value :'', 
-    length : '',
+    duration: '',
     sport : 'rowing', 
   },
   {
@@ -65,8 +59,7 @@ export const Workouts = [
     description:'For today you are just going to stretch and relax', 
     illustration:'',
     exercises: [4,2,4],
-    value :'', 
-    length : '',
+    duration: '',
     sport : 'rowing', 
   },
   {
@@ -75,8 +68,7 @@ export const Workouts = [
     description:'You can do it', 
     illustration:'',
     exercises: [4,6],
-    value :'', 
-    length : '',
+    duration: '',
     sport : 'rowing', 
   },
 ];

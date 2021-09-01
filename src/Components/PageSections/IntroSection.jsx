@@ -3,7 +3,7 @@ import GoBackButton from '../PageComponents/Buttons/GoBackButton'
 import PageTitle from './PageTitle'
 import './styles/intro.scss'
 
-export default function Intro(props) {
+export default function IntroSection(props) {
   return (
     <div className="intro">
       <GoBackButton/> 
