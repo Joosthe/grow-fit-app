@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import IntroSection from '../../PageSections/IntroSection';
-import StaticContent from'../../../staticContent/content-En.js'
+import StaticContent from'../../../StaticContent/content-En.js'
 import Container from '../../Wrappers/Container';
 import './styles/NewEntry.scss'
 import { Workouts } from '../../../Data/workouts';

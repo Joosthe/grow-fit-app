@@ -1,5 +1,4 @@
-import CreateExercise from "../Components/Pages/WorkoutPages/CreateExercise";
-import CreateWorkout from "../Components/Pages/WorkoutPages/CreateWorkout";
+
 
 export default {
   UserPages:{
@@ -12,6 +11,10 @@ export default {
       title: "Welcome",
       introLine: "So you think you are up for a challenge?<br/><b>register</b> and find out now",
       formFooterText: "Already have an account ?"
+    },
+    AdminUsers:{
+      title: "Users",
+      introLine: "Admin minster all the users in your app",
     }
   },
   WorkoutPages:{

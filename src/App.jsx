@@ -16,6 +16,7 @@ import NewEntry from './Components/Pages/WorkoutPages/NewEntry';
 import ChooseWorkout from './Components/Pages/WorkoutPages/ChooseWorkout';
 import CreateWorkout from './Components/Pages/WorkoutPages/CreateWorkout';
 import CreateExercise from './Components/Pages/WorkoutPages/CreateExercise';
+import AdminUsers from './Components/Pages/Userpages/AdminUsers';
 
 function App() {
   const {currentUser} = useAuth(); 
@@ -24,6 +25,7 @@ function App() {
     <MainNav/>
     <div id="main-content" className={currentUser ? "loged-in" : ""}>
       <Switch>
+        <PrivateRoute path="/admin/users" exact component={AdminUsers} />
         <PrivateRoute path="/create-exercise" extact component={CreateExercise}/>
         <PrivateRoute path="/create-workout" extact component={CreateWorkout}/>
         <PrivateRoute path="/new-entry" extact component={NewEntry}/>

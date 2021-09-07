@@ -4,7 +4,7 @@ import AddContentCard from '../../PageComponents/Cards/AddContentCard'
 import ReactHtmlParser from 'react-html-parser';
 import { FaThumbsUp,FaCalendarAlt,FaTasks,FaPencilAlt } from "react-icons/fa";
 import IntroSection from '../../PageSections/IntroSection'
-import StaticContent from'../../../staticContent/content-En.js'
+import StaticContent from'../../../StaticContent/content-En.js'
 
 
 export default function AddContent() {

@@ -1,9 +1,12 @@
-import React from 'react'
-import { useState, useEffect, Children } from "react";
+import React, {useContext} from 'react'
 import axios from "axios";
 import { configQuery } from "../Connections/graphcsm";
-export const CmsContext = React.createContext();
 
+const CmsContext = React.createContext();
+
+export function useCms(){
+  return useContext(CmsContext)
+}
 
 export function useCmsContext(){
   async function getData(query,variables){

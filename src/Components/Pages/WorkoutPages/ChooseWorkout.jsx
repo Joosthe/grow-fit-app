@@ -2,7 +2,7 @@ import React from 'react'
 import IntroSection from '../../PageSections/IntroSection'
 import Container from '../../Wrappers/Container';
 
-import StaticContent from'../../../staticContent/content-En.js'
+import StaticContent from'../../../StaticContent/content-En.js'
 const sc =  StaticContent.WorkoutPages.ChooseWorkout;
 export default function ChooseWorkout() {
   return (

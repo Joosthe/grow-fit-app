@@ -3,7 +3,7 @@ import { useAuth } from '../../../Contexts/authContext';
 import { useHistory } from 'react-router-dom';
 import Button from '../../PageComponents/Buttons/Button';
 import Container from '../../Wrappers/Container';
-import StaticContent from'../../../staticContent/content-En.js';
+import StaticContent from'../../../StaticContent/content-En.js';
 import IntroSection from '../../PageSections/IntroSection';
 const sc =  StaticContent.UserPages.RegisterPage;
 import ReactHtmlParser from 'react-html-parser';

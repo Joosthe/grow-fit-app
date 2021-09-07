@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 import IntroSection from '../../PageSections/IntroSection'
-import StaticContent from'../../../staticContent/content-En.js'
+import StaticContent from'../../../StaticContent/content-En.js'
 import Container from '../../Wrappers/Container';
 import Form from '../../PageComponents/FormElements/Form';
 

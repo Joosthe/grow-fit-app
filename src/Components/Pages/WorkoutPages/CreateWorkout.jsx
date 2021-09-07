@@ -1,7 +1,7 @@
 import React, {useRef} from 'react'
 import IntroSection from '../../PageSections/IntroSection'
 import Container from '../../Wrappers/Container'
-import StaticContent from'../../../staticContent/content-En.js'
+import StaticContent from'../../../StaticContent/content-En.js'
 import Form from '../../PageComponents/FormElements/Form'
 
 import './styles/CreateWorkout.scss'

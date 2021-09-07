@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 import { useAuth } from '../../../Contexts/authContext';
 import LogoutButton from '../../PageComponents/Buttons/LogoutButton';

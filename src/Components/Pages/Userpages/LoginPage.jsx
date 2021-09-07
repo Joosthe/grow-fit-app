@@ -5,7 +5,7 @@ import './styles/LoginPage.scss';
 import Container from '../../Wrappers/Container';
 import Button from '../../PageComponents/Buttons/Button';
 import IntroSection from '../../PageSections/IntroSection';
-import StaticContent from'../../../staticContent/content-En.js';
+import StaticContent from'../../../StaticContent/content-En.js';
 import Form from '../../PageComponents/FormElements/Form';
 const sc =  StaticContent.UserPages.LoginPage;
 function LoginPage() {
