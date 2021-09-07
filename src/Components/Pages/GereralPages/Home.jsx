@@ -5,7 +5,6 @@ import Testimonals from '../../PageSections/Testimonials'
 function Home() {
   return (
     <div className="homepage">
-      {console.log(users)}
       <Jumbotron 
       title="Get in shape with the grow fit app" 
       bgimage="/img/home-start.png"

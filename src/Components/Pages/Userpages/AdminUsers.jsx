@@ -21,7 +21,7 @@ export default function AdminUsers() {
   return (
     <Container>
       <IntroSection line={sc.introLine} title={sc.title}/>
-      <table class="table-auto w-full">
+      <table className="table-auto w-full">
         <thead className="text-left">
           <tr>
             <th >First name</th>

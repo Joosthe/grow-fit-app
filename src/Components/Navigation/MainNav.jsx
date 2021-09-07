@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import LogMenu from './LogMenu';
 import MainMenu from './MainMenu';
 import UserMenu from './UserMenu';
+import AdminMenu from './AdminMenu';
 import { useAuth } from '../../Contexts/authContext';
 import './styles/Mainnav.scss';
+
  
 function openMenu(){
   document.getElementById("main-navigation-sidebar").classList.toggle("open");
@@ -35,8 +37,10 @@ function MainNav() {
         </button>
       </div>
       <div id="main-navigation-sidebar">
-        {currentUser && <UserMenu closeMenu={closeMenu}/>}
- 
+        {currentUser && 
+          <UserMenu closeMenu={closeMenu}/>
+        }
+        <AdminMenu MenucloseMenu={closeMenu}/>
         <MainMenu closeMenu={closeMenu}/>
       </div>
     </div>
