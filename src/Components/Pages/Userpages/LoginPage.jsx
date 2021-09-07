@@ -36,7 +36,7 @@ function LoginPage() {
       <IntroSection line={sc.introLine} title={sc.title}/>
       {error &&<h2>{error}</h2>}
       <section className="form--login--wrapper">
-        <Form onSubmit={handleSubmit} className="form--login shadow-md">
+        <Form onSubmit={handleSubmit} className="form--login form--small shadow-md">
           <div className="form-element ">
             <label htmlFor="username">E-mail</label>
             <input type="text" name="logintext" id="usernamelogin" ref={emailLogin} />

@@ -4,14 +4,6 @@
   padding: 0 .75em;
 }
 
-.form--login,
-.form--register{
-  max-width: 25rem;
-  margin: auto;
-  border:  solid var(--color-prim);
-  border-radius: var(--border-r-sm);
-  box-shadow: 0 .5rem 1rem rgba(var(--color-black),0.19), 0 .3rem .3rem rgba(var(--color-black),0.23);
-}
 .description{
   padding: 1rem;
   color: var(--color-grey-200);

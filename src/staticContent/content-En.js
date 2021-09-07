@@ -1,3 +1,4 @@
+import CreateExercise from "../Components/Pages/WorkoutPages/CreateExercise";
 import CreateWorkout from "../Components/Pages/WorkoutPages/CreateWorkout";
 
 export default {
@@ -37,7 +38,7 @@ export default {
       ]
     },
     NewEntry:{
-      title:"Enter your work-out", 
+      title:"Log a new entry", 
       introLine: "So how did it go today"
     },
     ChooseWorkout:{
@@ -46,7 +47,11 @@ export default {
     },
     CreateWorkout:{
       title:'Create a new work-out',
-      introLine: 'What will your new challenge be'
+      introLine: 'What will your new challenge be ?'
+    },
+    CreateExercise:{
+      title:'Create a new exercise',
+      introLine: 'What are you going to make me do ?'
     }
   }
 }

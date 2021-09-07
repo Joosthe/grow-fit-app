@@ -40,7 +40,7 @@ export default function AddContent() {
         </div>
         <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">
           <AddContentCard
-            to="/new-exercise"
+            to="/create-exercise"
             icon={<FaTasks/>}
             title={sc.cards[3].title}
             descr={ReactHtmlParser(sc.cards[3].descr)}

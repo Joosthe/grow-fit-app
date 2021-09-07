@@ -44,7 +44,7 @@ function RegisterPage() {
       <IntroSection line={ReactHtmlParser(sc.introLine)} title={sc.title}/>
       {error &&<h2>{error}</h2>}
       <section className="form--register--wrapper">
-        <Form onSubmit={handleSubmit} className="form--register">
+        <Form onSubmit={handleSubmit} className="form--register form--small">
           <div className="form-group" id="registeremail">
             <label>E-mail</label>
             <input type="email" ref={registerEmailRef} required/>
