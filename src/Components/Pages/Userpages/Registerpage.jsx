@@ -8,6 +8,8 @@ import IntroSection from '../../PageSections/IntroSection';
 const sc =  StaticContent.UserPages.RegisterPage;
 import ReactHtmlParser from 'react-html-parser';
 import Form from '../../PageComponents/FormElements/Form';
+import { useCms } from '../../../Contexts/cmsContext';
+import { createUserQuery, publishCreatedUserQuery } from '../../../Queries/createUserQuery';
 
 
 function RegisterPage() {
@@ -18,6 +20,7 @@ function RegisterPage() {
   const [ error, setError] = useState('');
   const [loading, setLoading] =  useState(false)
   const history = useHistory();
+  const {getData} = useCms();
   async function handleSubmit(e){
     e.preventDefault()
     if(registerPasswordRef.current.value !== registerConfPasswordRef.current.value){
@@ -30,9 +33,15 @@ function RegisterPage() {
         registerEmailRef.current.value,
         registerPasswordRef.current.value
       )
-      history.push ('/login')
+      getData(createUserQuery(registerEmailRef.current.value)).then(
+        data => {
+          getData(publishCreatedUserQuery(data.createApp_User.id));
+        }
+      );
+     // history.push ('/login')
       setError('Please log in with your new account');
-    }catch{
+    }catch(err){
+      console.log(err);
        setError('failed to register a user')
     }
     setLoading(false);

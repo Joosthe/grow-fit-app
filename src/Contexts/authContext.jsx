@@ -11,8 +11,11 @@ export function AuthProvider({children}){
   const [currentUser, setCurrentUser]= useState('');
   const [loading, setLoading ] = useState(true);
 
-  function registerUser(email,password){
-    return auth.createUserWithEmailAndPassword(email,password);
+  async function registerUser(email,password){
+  try {
+    return await auth.createUserWithEmailAndPassword(email,password);
+  } catch (error) {
+  }
   }
 
   function loginUser(email,password){
@@ -32,14 +35,14 @@ export function AuthProvider({children}){
     return unsubscriber;
   },[])
 
-  const value = {
+  const useFuctions = {
     currentUser,
     registerUser,
     loginUser,
     logoutUser
   }
   return(
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={useFuctions}>
      { !loading && children }
     </AuthContext.Provider>
   )

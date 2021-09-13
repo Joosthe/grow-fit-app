@@ -1,7 +1,8 @@
-export function configQuery(query, variables){
+import axios from "axios";
+
+export function configQuery(query){
    const dataQuery = JSON.stringify({
     query,
-    variables
   });
   
   return {
@@ -13,4 +14,13 @@ export function configQuery(query, variables){
     },
     data : dataQuery
   };
+}
+
+
+export function useCmsContext(){
+  async function getData(query){
+    const response = await axios(configQuery(query))
+    return response.data.data;
+  }
+  return {getData};
 }
