@@ -5,15 +5,18 @@ import { AuthProvider } from './Contexts/authContext';
 import App from './App'
 import './App.scss'
 import { CmsContextProvider } from './Contexts/cmsContext';
+import { ErrorProvider } from './Contexts/ErrorContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-    <AuthProvider>
+      <ErrorProvider>
+      <AuthProvider>
       <CmsContextProvider>
-      <App />
+        <App />
       </CmsContextProvider>
-    </AuthProvider>
+      </AuthProvider>
+      </ErrorProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

@@ -10,6 +10,7 @@ import ReactHtmlParser from 'react-html-parser';
 import Form from '../../PageComponents/FormElements/Form';
 import { useCms } from '../../../Contexts/cmsContext';
 import { createUserQuery, publishCreatedUserQuery } from '../../../Queries/createUserQuery';
+import { useError } from '../../../Contexts/ErrorContext';
 
 
 function RegisterPage() {
@@ -21,28 +22,29 @@ function RegisterPage() {
   const [loading, setLoading] =  useState(false)
   const history = useHistory();
   const {getData} = useCms();
+  const {setSuccesMessage, setErrorMessage} = useError();
   async function handleSubmit(e){
     e.preventDefault()
     if(registerPasswordRef.current.value !== registerConfPasswordRef.current.value){
-      return setError('paswords do not match');
+      return setErrorMessage('Passwords do not match')
     }
     try{
       setError('');
       setLoading(true);
       await registerUser(
         registerEmailRef.current.value,
-        registerPasswordRef.current.value
+        registerPasswordRef.value
       )
       getData(createUserQuery(registerEmailRef.current.value)).then(
         data => {
           getData(publishCreatedUserQuery(data.createApp_User.id));
         }
+      ).then(history.push ('/profile')).then(
+        setSuccesMessage('you have created a new account')
       );
-     // history.push ('/login')
-      setError('Please log in with your new account');
     }catch(err){
       console.log(err);
-       setError('failed to register a user')
+       setErrorMessage('failed to register a user')
     }
     setLoading(false);
   }

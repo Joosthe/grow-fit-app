@@ -1,0 +1,18 @@
+.error{
+  display: flex;
+  margin: 1rem .75rem;
+  background-color: var(--color-prim);
+  color: var(--color-black);
+  padding: .2rem 1rem;
+  border-radius: .2rem;
+  p{
+    flex: 1 0 auto;
+    color: var(--color-black);
+  }
+}
+.error--error{
+  background-color: var(--color--error);
+  p{
+    color: var(--color-white);
+  }
+}
