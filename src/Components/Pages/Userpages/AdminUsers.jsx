@@ -3,12 +3,16 @@ import Container from '../../Wrappers/Container'
 import IntroSection from '../../PageSections/IntroSection';
 import StaticContent from'../../../StaticContent/content-En.js';
 import { usersQuery } from '../../../Queries/usersQuery';
-import { FaPencilAlt } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import useCmsData from '../../../hooks/useCsmData';
 const sc =  StaticContent.UserPages.AdminUsers;
 export default function AdminUsers() {
   const {cmsData ,loadingCsmData} = useCmsData(usersQuery);
-
+  function deleteUser(e){
+    e.preventDefault();
+    const removeId = e.target;
+    console.log(removeId);
+  }
   return (
     <Container>
       <IntroSection line={sc.introLine} title={sc.title}/>
@@ -34,7 +38,12 @@ export default function AdminUsers() {
               <td>{user.email}</td>
               <td>{user.userRoles}</td>
               <td> 
-                <button> <FaPencilAlt/></button> 
+                <button onClick={deleteUser} >
+                  <span data-remove={user.id}>
+                  <FaTrash/>
+                  </span>
+
+                </button> 
               </td>
             </tr>
           )
