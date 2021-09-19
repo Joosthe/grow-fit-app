@@ -1,13 +1,14 @@
 import React from 'react'
 import Container from '../../Wrappers/Container'
 import IntroSection from '../../PageSections/IntroSection';
-import StaticContent from'../../../StaticContent/content-En.js';
 import { usersQuery } from '../../../Queries/usersQuery';
 import { FaTrash } from "react-icons/fa";
 import useCmsData from '../../../hooks/useCsmData';
-const sc =  StaticContent.UserPages.AdminUsers;
+import useStaticContent from '../../../hooks/useStaticContent';
 export default function AdminUsers() {
   const {cmsData ,loadingCsmData} = useCmsData(usersQuery);
+  const sc = useStaticContent('UserPages.AdminUsers');
+
   function deleteUser(e){
     e.preventDefault();
     const removeId = e.target;
