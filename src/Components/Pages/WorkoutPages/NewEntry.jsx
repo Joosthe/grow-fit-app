@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 import IntroSection from '../../PageSections/IntroSection';
-import StaticContent from'../../../StaticContent/content-En.js'
 import Container from '../../Wrappers/Container';
 import './styles/NewEntry.scss'
 import { Workouts } from '../../../Data/workouts';
 import Form from '../../PageComponents/FormElements/Form';
+import useStaticContent from '../../../hooks/useStaticContent';
 import Select from 'react-select'
-const sc =  StaticContent.WorkoutPages.NewEntry;
-const today = new Date().toISOString(); 
+//const today = new Date().toISOString(); 
 
 {/* check if the user as a workout planned for today */}
-{/* if not let him choose the kaka */}
+{/* if not let him choose the */}
 const options = Workouts.map((item)=> {
   return{'value': item.id, 'label': item.title}});
 
 export default function NewEntry() {
+  const sc = useStaticContent('WorkoutPages.NewEntry');
   const [selectedWorkout, setSelectedWorkout] = useState('');
 
 

@@ -3,17 +3,16 @@ import { useAuth } from '../../../Contexts/authContext';
 import { useHistory } from 'react-router-dom';
 import Button from '../../PageComponents/Buttons/Button';
 import Container from '../../Wrappers/Container';
-import StaticContent from'../../../StaticContent/content-En.js';
 import IntroSection from '../../PageSections/IntroSection';
-const sc =  StaticContent.UserPages.RegisterPage;
 import ReactHtmlParser from 'react-html-parser';
 import Form from '../../PageComponents/FormElements/Form';
 import { useCms } from '../../../Contexts/cmsContext';
 import { createUserQuery, publishCreatedUserQuery } from '../../../Queries/createUserQuery';
 import { useError } from '../../../Contexts/ErrorContext';
-
+import useStaticContent from '../../../hooks/useStaticContent';
 
 function RegisterPage() {
+  const sc = useStaticContent('UserPages.RegisterPage');
   const registerEmailRef = useRef();
   const registerPasswordRef =  useRef();
   const registerConfPasswordRef =  useRef();

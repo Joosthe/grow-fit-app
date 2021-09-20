@@ -5,10 +5,11 @@ import './styles/LoginPage.scss';
 import Container from '../../Wrappers/Container';
 import Button from '../../PageComponents/Buttons/Button';
 import IntroSection from '../../PageSections/IntroSection';
-import StaticContent from'../../../StaticContent/content-En.js';
 import Form from '../../PageComponents/FormElements/Form';
-const sc =  StaticContent.UserPages.LoginPage;
+import useStaticContent from '../../../hooks/useStaticContent';
+
 function LoginPage() {
+  const sc = useStaticContent('UserPages.LoginPage');
   const emailLogin = useRef();
   const passwordLogin =  useRef();
   const { loginUser } =  useAuth();

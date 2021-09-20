@@ -1,10 +1,10 @@
 import React from 'react'
 import IntroSection from '../../PageSections/IntroSection'
 import Container from '../../Wrappers/Container';
+import useStaticContent from '../../../hooks/useStaticContent';
 
-import StaticContent from'../../../StaticContent/content-En.js'
-const sc =  StaticContent.WorkoutPages.ChooseWorkout;
 export default function ChooseWorkout() {
+  const sc = useStaticContent('WorkoutPages.ChooseWorkout');
   return (
     <Container>
       <div className="page--choose-workout">

@@ -1,13 +1,12 @@
 import React, {useRef} from 'react'
 import IntroSection from '../../PageSections/IntroSection'
 import Container from '../../Wrappers/Container'
-import StaticContent from'../../../StaticContent/content-En.js'
 import Form from '../../PageComponents/FormElements/Form'
-
+import useStaticContent from '../../../hooks/useStaticContent';
 import './styles/CreateWorkout.scss'
 
 export default function CreateWorkout() {
-  const sc =  StaticContent.WorkoutPages.CreateWorkout;
+  const sc = useStaticContent('WorkoutPages.CreateWorkout');
   const nameWorkout = useRef('');
   const descrWorkout = useRef('');
   const durationWorkout= useRef('');
