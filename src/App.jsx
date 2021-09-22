@@ -1,6 +1,5 @@
 import React from 'react'
 import { Switch, Route as PublicRoute } from "react-router-dom";
-import { useAuth } from './Contexts/authContext'; 
 import Error from './Components/PageComponents/Error/Error';
 import MainNav from './Components/Navigation/MainNav';
 import FooterNav from './Components/Navigation/FooterNav';
@@ -19,9 +18,10 @@ import CreateExercise from './Components/Pages/WorkoutPages/CreateExercise';
 import AdminUsers from './Components/Pages/Userpages/AdminUsers';
 import PrivateRoute from './Components/Routes/PrivateRoute';
 import { useError } from './Contexts/ErrorContext';
+import { useUser } from './Contexts/userContext';
 
 function App() {
-  const {currentUser} = useAuth();
+  const {currentUser} = useUser();
   const { error } = useError();
   return (
     <>

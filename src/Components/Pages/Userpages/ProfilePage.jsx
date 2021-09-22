@@ -1,17 +1,18 @@
 import React from 'react'
 
-import { useAuth } from '../../../Contexts/authContext';
+import { useUser } from '../../../Contexts/userContext';
 import LogoutButton from '../../PageComponents/Buttons/LogoutButton';
 import Container from '../../Wrappers/Container';
 
  function ProfilePage(){
-  const { currentUser } =  useAuth();
+  const { currentUser } =  useUser();
 
 
   return(
     <Container>
       <h1 className="text-4xl font-semibold">Hello Rockshar</h1>
       <p>e-mail: {currentUser.email}</p>
+      {console.log(currentUser)}
       <LogoutButton/>
     </Container>
   )

@@ -4,8 +4,9 @@ import LogMenu from './LogMenu';
 import MainMenu from './MainMenu';
 import UserMenu from './UserMenu';
 import AdminMenu from './AdminMenu';
-import { useAuth } from '../../Contexts/authContext';
+
 import './styles/Mainnav.scss';
+import { useUser } from '../../Contexts/userContext';
 
  
 function openMenu(){
@@ -18,7 +19,7 @@ function closeMenu(){
 
 
 function MainNav() {
-  const { currentUser  } =  useAuth();
+  const { currentUser  } =  useUser();
   return (
     <div className="main-navigation-wrappers">
       <div className="main-navigation-top flex flex-wrap">

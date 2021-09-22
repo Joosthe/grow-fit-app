@@ -1,21 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from "react-router-dom";
-import { AuthProvider } from './Contexts/authContext';
 import App from './App'
 import './App.scss'
 import { CmsContextProvider } from './Contexts/cmsContext';
 import { ErrorProvider } from './Contexts/ErrorContext';
-
+import { UserProvider } from './Contexts/userContext';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <ErrorProvider>
-      <AuthProvider>
       <CmsContextProvider>
+      <UserProvider>    
         <App />
+      </UserProvider>
       </CmsContextProvider>
-      </AuthProvider>
       </ErrorProvider>
     </Router>
   </React.StrictMode>,

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useAuth } from '../../Contexts/authContext';
+import { useUser } from '../../Contexts/userContext';
 import LogoutButton from '../PageComponents/Buttons/LogoutButton';
 function LogMenu(props) {
-  const { currentUser  } =  useAuth();
+  const { currentUser } =  useUser();
   return (
     <ul className="menu--log flex">
       { currentUser === null

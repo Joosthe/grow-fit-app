@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { useAuth } from '../../../Contexts/authContext';
+// import { useAuth } from '../../../Contexts/authContext';
 import { useHistory } from 'react-router-dom';
 import './styles/LoginPage.scss';
 import Container from '../../Wrappers/Container';
@@ -12,24 +12,24 @@ function LoginPage() {
   const sc = useStaticContent('UserPages.LoginPage');
   const emailLogin = useRef();
   const passwordLogin =  useRef();
-  const { loginUser } =  useAuth();
+  // const { loginUser } =  useAuth();
   const [ error, setError] = useState('');
   const [loading, setLoading] =  useState(false);
   const history = useHistory();
    async function handleSubmit(e){ 
     e.preventDefault()
-     try{
-       setError('');
-       setLoading(true);
-        await loginUser(
-          emailLogin.current.value,
-          passwordLogin.current.value
-        );
-        history.push('/profile');
-     }catch{
-        setError('failed to sign in')
-     }
-     setLoading(false);
+    //  try{
+    //    setError('');
+    //    setLoading(true);
+    //     await loginUser(
+    //       emailLogin.current.value,
+    //       passwordLogin.current.value
+    //     );
+    //     history.push('/profile');
+    //  }catch{
+    //     setError('failed to sign in')
+    //  }
+    //  setLoading(false);
    }
   return (
     <div className="page--login">

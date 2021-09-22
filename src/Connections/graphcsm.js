@@ -14,12 +14,12 @@ export function configQuery(query){
     data : dataQuery
   };
 }
-
+export async function getData(query){
+  const response = await axios(configQuery(query))
+  return response.data.data;
+}
 
 export function useCmsContext(){
-  async function getData(query){
-    const response = await axios(configQuery(query))
-    return response.data.data;
-  }
+ 
   return {getData};
 }
