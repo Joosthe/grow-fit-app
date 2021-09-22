@@ -2,6 +2,7 @@ import React,{ useContext, useState, useEffect } from 'react';
 import { auth } from '../Connections/firebase';
 import { createUserQuery, publishCreatedUserQuery } from '../Queries/createUserQuery';
 import { getData } from '../Connections/graphcsm';
+import { getUserQuery } from '../Queries/getUserQuery';
 
 export const UserContext = React.createContext();
 
@@ -31,6 +32,17 @@ export const UserProvider = ({children}) => {
     }
   }
 
+  function userLogin(email, password){
+    return auth.signInWithEmailAndPassword(email, password).then(
+      getData(getUserQuery(email)).then(
+        data => {
+          localStorage.setItem('currentUser', JSON.stringify(data.app_User));
+          setCurrentUser( data.app_User)
+        }
+      )
+    )
+  }
+  
   function userLogout(){
     localStorage.removeItem('currentUser');
     setCurrentUser(null);
@@ -40,6 +52,7 @@ export const UserProvider = ({children}) => {
     currentUser,
     userError, 
     userRegister,
+    userLogin,
     userLogout
   }
   return (
@@ -47,4 +60,4 @@ export const UserProvider = ({children}) => {
       {children}
     </UserContext.Provider>
   )
-}
+} 

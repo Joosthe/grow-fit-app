@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-// import { useAuth } from '../../../Contexts/authContext';
 import { useHistory } from 'react-router-dom';
 import './styles/LoginPage.scss';
 import Container from '../../Wrappers/Container';
@@ -7,35 +6,41 @@ import Button from '../../PageComponents/Buttons/Button';
 import IntroSection from '../../PageSections/IntroSection';
 import Form from '../../PageComponents/FormElements/Form';
 import useStaticContent from '../../../hooks/useStaticContent';
+import { useUser } from '../../../Contexts/userContext';
+import { useError } from '../../../Contexts/ErrorContext';
+
 
 function LoginPage() {
   const sc = useStaticContent('UserPages.LoginPage');
+  const {userLogin} = useUser();
+  const {setErrorMessage} = useError();
   const emailLogin = useRef();
   const passwordLogin =  useRef();
-  // const { loginUser } =  useAuth();
-  const [ error, setError] = useState('');
+
   const [loading, setLoading] =  useState(false);
   const history = useHistory();
    async function handleSubmit(e){ 
     e.preventDefault()
-    //  try{
-    //    setError('');
-    //    setLoading(true);
-    //     await loginUser(
-    //       emailLogin.current.value,
-    //       passwordLogin.current.value
-    //     );
-    //     history.push('/profile');
-    //  }catch{
-    //     setError('failed to sign in')
-    //  }
-    //  setLoading(false);
+      try{
+        setLoading(true);
+        await userLogin(
+           emailLogin.current.value,
+           passwordLogin.current.value
+         )
+         history.push('/profile');
+      }catch(err){
+        if(err.message){
+          setErrorMessage(err.message)
+        }else{
+          setErrorMessage('failed to sign in')
+        }
+      } 
+      setLoading(false);
    }
   return (
     <div className="page--login">
       <Container>
       <IntroSection line={sc.introLine} title={sc.title}/>
-      {error &&<h2>{error}</h2>}
       <section className="form--login--wrapper">
         <Form onSubmit={handleSubmit} className="form--login form--small shadow-md">
           <div className="form-element ">
