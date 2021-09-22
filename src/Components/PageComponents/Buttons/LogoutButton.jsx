@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom';
-import { useUser } from '../../../Contexts/userContext';
+import { useUser } from '../../../Contexts/UserContext';
 
 export default function LogoutButton() {
   const { userLogout } =  useUser();

@@ -5,50 +5,57 @@ import Container from '../../Wrappers/Container';
 import IntroSection from '../../PageSections/IntroSection';
 import ReactHtmlParser from 'react-html-parser';
 import Form from '../../PageComponents/FormElements/Form';
-import { useCms } from '../../../Contexts/cmsContext';
 import { useError } from '../../../Contexts/ErrorContext';
 import useStaticContent from '../../../hooks/useStaticContent';
 import {useUser} from '../../../Contexts/UserContext';
 
 function RegisterPage() {
   const sc = useStaticContent('UserPages.RegisterPage');
+
+  const history = useHistory();
+  const { userRegister} = useUser();
+  const [loading, setLoading] =  useState(false)
+  const {setSuccesMessage, setErrorMessage} = useError();
+  const [isDone, setIsDone] = useState(false);
+
   const registerEmailRef = useRef();
   const registerPasswordRef =  useRef();
   const registerConfPasswordRef =  useRef();
-  const [ error, setError] = useState('');
-  const [loading, setLoading] =  useState(false)
-  const history = useHistory();
-  const {getData} = useCms();
-  const { userRegister, userError} = useUser();
-  const {setSuccesMessage, setErrorMessage} = useError();
+
   async function handleSubmit(e){
     e.preventDefault()
-    if(registerPasswordRef.current.value !== registerConfPasswordRef.current.value){
+    const password = registerPasswordRef.current.value;
+    const passwordConfirm = registerConfPasswordRef.current.value;
+    
+    if(password !== passwordConfirm){
       return setErrorMessage('Passwords do not match')
+    } 
+    if(password.length <= 6 || passwordConfirm.length <= 6 ){
+      return setErrorMessage('password should be longer then 6 characters')
     }
     try{
-      setError('');
       setLoading(true);
-      userRegister(
+      await userRegister(
         registerEmailRef.current.value,
         registerPasswordRef.current.value
-      ).then(
-        history.push ('/profile')
-      ).then(
-        setSuccesMessage('you have created a new account')
-      );
+      )
     }catch(err){
-      console.log(err);
-       //setErrorMessage('failed to register a user')
+      if(err.message){
+        console.log('comptest', err)
+        return setErrorMessage(err.message)
+      }else{
+        return setErrorMessage('failed to sign in')
+      }
     }
-    setLoading(false);
-  }
 
+    setLoading(false);
+    setSuccesMessage('you have created a new user')
+    history.push('/profile');
+  }
   return (
     <div className="page--login">
       <Container>
       <IntroSection line={ReactHtmlParser(sc.introLine)} title={sc.title}/>
-      {error &&<h2>{error}</h2>}
       <section className="form--register--wrapper">
         <Form onSubmit={handleSubmit} className="form--register form--small">
           <div className="form-group" id="registeremail">

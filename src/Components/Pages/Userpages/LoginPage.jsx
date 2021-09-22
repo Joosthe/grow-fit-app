@@ -11,31 +11,34 @@ import { useError } from '../../../Contexts/ErrorContext';
 
 
 function LoginPage() {
-  const sc = useStaticContent('UserPages.LoginPage');
+  const sc = useStaticContent('UserPages.LoginPage')
+
+  const history = useHistory();
   const {userLogin} = useUser();
-  const {setErrorMessage} = useError();
+  const [loading, setLoading] =  useState(false);
+  const {setErrorMessage, setSuccesMessage} = useError();
+
   const emailLogin = useRef();
   const passwordLogin =  useRef();
 
-  const [loading, setLoading] =  useState(false);
-  const history = useHistory();
    async function handleSubmit(e){ 
     e.preventDefault()
-      try{
-        setLoading(true);
-        await userLogin(
-           emailLogin.current.value,
-           passwordLogin.current.value
-         )
-         history.push('/profile');
-      }catch(err){
-        if(err.message){
-          setErrorMessage(err.message)
-        }else{
-          setErrorMessage('failed to sign in')
-        }
-      } 
-      setLoading(false);
+    try{
+      setLoading(true);
+      await userLogin(
+         emailLogin.current.value,
+         passwordLogin.current.value
+      ); 
+    }catch(err){
+      if(err.message){
+        setErrorMessage(err.message)
+      }else{
+        setErrorMessage('failed to sign in')
+      }
+    }
+    setLoading(false);
+    setSuccesMessage('You are succesfully loged in')
+    history.push('/profile');
    }
   return (
     <div className="page--login">

@@ -12,7 +12,6 @@ import Container from '../../Wrappers/Container';
     <Container>
       <h1 className="text-4xl font-semibold">Hello Rockshar</h1>
       <p>e-mail: {currentUser.email}</p>
-      {console.log(currentUser)}
       <LogoutButton/>
     </Container>
   )

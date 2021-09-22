@@ -18,18 +18,19 @@ export const UserProvider = ({children}) => {
   function userRegister(email, password){
     try{
       auth.createUserWithEmailAndPassword(email,password);
-      return getData(createUserQuery(email)).then(
-        data => {
-          getData(publishCreatedUserQuery(data.createApp_User.id)).then(
-          data =>{
-            localStorage.setItem('currentUser', JSON.stringify(data.publishApp_User));
-            setCurrentUser( data.publishApp_User)
-          })
-        }
-      )
-    }catch(error){
-      setUserError(error)
+    }catch(err){
+      alert('help')
+      return console.log('contest',err);
     }
+    return getData(createUserQuery(email)).then(
+      data => {
+        getData(publishCreatedUserQuery(data.createApp_User.id)).then(
+        data =>{
+          localStorage.setItem('currentUser', JSON.stringify(data.publishApp_User));
+          setCurrentUser( data.publishApp_User)
+        })
+      }
+    )
   }
 
   function userLogin(email, password){
