@@ -6,10 +6,9 @@ import IntroSection from '../../PageSections/IntroSection';
 import ReactHtmlParser from 'react-html-parser';
 import Form from '../../PageComponents/FormElements/Form';
 import { useCms } from '../../../Contexts/cmsContext';
-import { createUserQuery, publishCreatedUserQuery } from '../../../Queries/createUserQuery';
 import { useError } from '../../../Contexts/ErrorContext';
 import useStaticContent from '../../../hooks/useStaticContent';
-import {useUser} from '../../../Contexts/userContext';
+import {useUser} from '../../../Contexts/UserContext';
 
 function RegisterPage() {
   const sc = useStaticContent('UserPages.RegisterPage');

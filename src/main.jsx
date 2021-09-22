@@ -5,7 +5,7 @@ import App from './App'
 import './App.scss'
 import { CmsContextProvider } from './Contexts/cmsContext';
 import { ErrorProvider } from './Contexts/ErrorContext';
-import { UserProvider } from './Contexts/userContext';
+import { UserProvider } from './Contexts/UserContext';
 ReactDOM.render(
   <React.StrictMode>
     <Router>

@@ -18,7 +18,7 @@ import CreateExercise from './Components/Pages/WorkoutPages/CreateExercise';
 import AdminUsers from './Components/Pages/Userpages/AdminUsers';
 import PrivateRoute from './Components/Routes/PrivateRoute';
 import { useError } from './Contexts/ErrorContext';
-import { useUser } from './Contexts/userContext';
+import { useUser } from './Contexts/UserContext';
 
 function App() {
   const {currentUser} = useUser();

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useUser } from '../../../Contexts/userContext';
+import { useUser } from '../../../Contexts/UserContext';
 import LogoutButton from '../../PageComponents/Buttons/LogoutButton';
 import Container from '../../Wrappers/Container';
 
