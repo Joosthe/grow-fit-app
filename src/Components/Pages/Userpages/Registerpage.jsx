@@ -16,28 +16,35 @@ function RegisterPage() {
   const { userRegister} = useUser();
   const [loading, setLoading] =  useState(false)
   const {setSuccesMessage, setErrorMessage} = useError();
-  const [isDone, setIsDone] = useState(false);
 
   const registerEmailRef = useRef();
   const registerPasswordRef =  useRef();
   const registerConfPasswordRef =  useRef();
+  const registeruserNameRef =  useRef();
 
   async function handleSubmit(e){
     e.preventDefault()
+    const email =  registerEmailRef.current.value
     const password = registerPasswordRef.current.value;
     const passwordConfirm = registerConfPasswordRef.current.value;
+    const username =  registeruserNameRef.current.value;
     
     if(password !== passwordConfirm){
       return setErrorMessage('Passwords do not match')
-    } 
+    }
+    if(username.length <= 0 ){
+      return setErrorMessage('username is not defined yet')
+    }
+
     if(password.length <= 6 || passwordConfirm.length <= 6 ){
       return setErrorMessage('password should be longer then 6 characters')
     }
     try{
       setLoading(true);
       await userRegister(
-        registerEmailRef.current.value,
-        registerPasswordRef.current.value
+        email,
+        password,
+        username
       )
     }catch(err){
       if(err.message){
@@ -47,7 +54,6 @@ function RegisterPage() {
         return setErrorMessage('failed to sign in')
       }
     }
-
     setLoading(false);
     setSuccesMessage('you have created a new user')
     history.push('/profile');
@@ -61,6 +67,10 @@ function RegisterPage() {
           <div className="form-group" id="registeremail">
             <label>E-mail</label>
             <input type="email" ref={registerEmailRef} required/>
+          </div>
+          <div className="form-group" id="registerusername">
+            <label>Username</label>
+            <input type="text" ref={registeruserNameRef} required/>
           </div>
           <div className="form-group" id="registerpassword">
             <label>Password</label>

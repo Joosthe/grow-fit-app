@@ -1,14 +1,12 @@
-export function createUserQuery(email){
+export function createUserQuery(email, username){
   return `mutation{
   createApp_User(data: {
     email: "${email}",
     nicknames: Newbie,
-    userRoles: sporter
+    userRoles: sporter,
+    userName: "${username}"
   }) {
-    id
-    email
-    nicknames
-    userRoles
+    id  
   }
 }`
 };
@@ -17,10 +15,16 @@ export function publishCreatedUserQuery(id){
   return `
   mutation {
     publishApp_User(where: { id: "${id}" }, to: PUBLISHED) {
-      id
-      email
-      nicknames
-      userRoles
+      id,
+      firstName,
+      lastName,
+      email,
+      userName,
+      userRoles,
+      nicknames,
+      userprofileimg{
+        url
+      }
     }
   }`
 }

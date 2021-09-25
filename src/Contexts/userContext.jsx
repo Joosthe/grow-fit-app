@@ -11,18 +11,17 @@ export function useUser(){
 }
 
 export const UserProvider = ({children}) => {
-  const [userError, setUserError] = useState('')
   const [currentUser, setCurrentUser] = useState( 
     JSON.parse(localStorage.getItem('currentUser'))
   );
-  function userRegister(email, password){
+  function userRegister(email, password, username){
+    console.log(username);
     try{
       auth.createUserWithEmailAndPassword(email,password);
     }catch(err){
-      alert('help')
       return console.log('contest',err);
     }
-    return getData(createUserQuery(email)).then(
+    return getData(createUserQuery(email, username)).then(
       data => {
         getData(publishCreatedUserQuery(data.createApp_User.id)).then(
         data =>{
@@ -51,7 +50,6 @@ export const UserProvider = ({children}) => {
 
   const exportedvalues =  {
     currentUser,
-    userError, 
     userRegister,
     userLogin,
     userLogout
