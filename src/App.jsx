@@ -17,8 +17,10 @@ import CreateWorkout from './Components/Pages/WorkoutPages/CreateWorkout';
 import CreateExercise from './Components/Pages/WorkoutPages/CreateExercise';
 import AdminUsers from './Components/Pages/Userpages/AdminUsers';
 import PrivateRoute from './Components/Routes/PrivateRoute';
+import AdminRoute from './Components/Routes/AdminRoute';
 import { useError } from './Contexts/ErrorContext';
 import { useUser } from './Contexts/UserContext';
+
 
 function App() {
   const {currentUser} = useUser();
@@ -32,7 +34,7 @@ function App() {
       } 
       
       <Switch>
-        <PrivateRoute path="/admin/users" exact component={AdminUsers} />
+        <AdminRoute path="/admin/users" exact component={AdminUsers} />
         <PrivateRoute path="/create-exercise" extact component={CreateExercise}/>
         <PrivateRoute path="/create-workout" extact component={CreateWorkout}/>
         <PrivateRoute path="/new-entry" extact component={NewEntry}/>

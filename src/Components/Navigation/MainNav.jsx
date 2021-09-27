@@ -41,7 +41,9 @@ function MainNav() {
         {currentUser && 
           <UserMenu closeMenu={closeMenu}/>
         }
-        <AdminMenu MenucloseMenu={closeMenu}/>
+        {currentUser?.userRoles ==="admin" && 
+            <AdminMenu MenucloseMenu={closeMenu}/>
+        }
         <MainMenu closeMenu={closeMenu}/>
       </div>
     </div>
