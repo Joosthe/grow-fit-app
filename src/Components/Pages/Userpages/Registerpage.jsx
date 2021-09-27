@@ -15,7 +15,7 @@ function RegisterPage() {
   const history = useHistory();
   const { userRegister} = useUser();
   const [loading, setLoading] =  useState(false)
-  const {setSuccesMessage, setErrorMessage} = useError();
+  const { setErrorMessage, setSuccesMessage} = useError();
 
   const registerEmailRef = useRef();
   const registerPasswordRef =  useRef();
@@ -23,8 +23,9 @@ function RegisterPage() {
   const registeruserNameRef =  useRef();
 
   async function handleSubmit(e){
-    e.preventDefault()
-    const email =  registerEmailRef.current.value
+    e.preventDefault();
+
+    const email =  registerEmailRef.current.value;
     const password = registerPasswordRef.current.value;
     const passwordConfirm = registerConfPasswordRef.current.value;
     const username =  registeruserNameRef.current.value;
@@ -45,18 +46,18 @@ function RegisterPage() {
         email,
         password,
         username
-      )
+      );
     }catch(err){
       if(err.message){
-        console.log('comptest', err)
-        return setErrorMessage(err.message)
+        return setErrorMessage(err.message);
       }else{
         return setErrorMessage('failed to sign in')
       }
     }
     setLoading(false);
-    setSuccesMessage('you have created a new user')
     history.push('/profile');
+    setSuccesMessage('you have created a new user');
+
   }
   return (
     <div className="page--login">

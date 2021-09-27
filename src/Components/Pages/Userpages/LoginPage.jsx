@@ -23,11 +23,16 @@ function LoginPage() {
 
    async function handleSubmit(e){ 
     e.preventDefault()
+    
+    const email = emailLogin.current.value;
+    const password =   passwordLogin.current.value
+    
+
     try{
       setLoading(true);
       await userLogin(
-         emailLogin.current.value,
-         passwordLogin.current.value
+        email,
+        password
       ); 
     }catch(err){
       if(err.message){
@@ -37,7 +42,7 @@ function LoginPage() {
       }
     }
     setLoading(false);
-    setSuccesMessage('You are succesfully loged in')
+    setSuccesMessage('You are succesfully loged in');
     history.push('/profile');
    }
   return (

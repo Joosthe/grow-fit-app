@@ -15,21 +15,16 @@ export const UserProvider = ({children}) => {
     JSON.parse(localStorage.getItem('currentUser'))
   );
   function userRegister(email, password, username){
-    console.log(username);
-    try{
-      auth.createUserWithEmailAndPassword(email,password);
-    }catch(err){
-      return console.log('contest',err);
-    }
-    return getData(createUserQuery(email, username)).then(
+    return auth.createUserWithEmailAndPassword(email,password).then(
+     getData(createUserQuery(email, username)).then(
       data => {
         getData(publishCreatedUserQuery(data.createApp_User.id)).then(
         data =>{
+          setCurrentUser( data.publishApp_User);
           localStorage.setItem('currentUser', JSON.stringify(data.publishApp_User));
-          setCurrentUser( data.publishApp_User)
         })
       }
-    )
+    ))
   }
 
   function userLogin(email, password){
