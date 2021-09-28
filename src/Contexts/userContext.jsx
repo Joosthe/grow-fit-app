@@ -43,7 +43,6 @@ export const UserProvider = ({children}) => {
   function userEdit(id, firstname, lastname, username){
     return getData(updateUserQuery(id, firstname, lastname, username)).then(
       data => {
-        console.log(data.user);
         localStorage.setItem('currentUser', JSON.stringify(data.user));
         setCurrentUser(data.user);
       }

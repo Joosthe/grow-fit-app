@@ -25,7 +25,7 @@ import './styles/ProfilePage.scss';
     const nickName =  editUserNicknames.current.value;
     //console.log({id, firstName, lastName, userName, nickName});
     userEdit(id,firstName, lastName, userName);
-    seteditstate(false)
+    seteditstate(false);
   }
 
   return(

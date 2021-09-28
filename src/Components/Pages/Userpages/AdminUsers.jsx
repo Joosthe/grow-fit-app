@@ -34,10 +34,8 @@ export default function AdminUsers() {
     e.preventDefault();
      setUserId(e.target.dataset.remove);
   }
-  console.log(cmsData);
   return (
     <Container>
-    {/* //  {console.log(cmsData)} */}
       <IntroSection line={sc.introLine} title={sc.title}/>
       <table className="table-auto w-full">
         <thead className="text-left">
