@@ -25,25 +25,23 @@ function LoginPage() {
     e.preventDefault()
     
     const email = emailLogin.current.value;
-    const password =   passwordLogin.current.value
-    
-
+    const password = passwordLogin.current.value
     try{
       setLoading(true);
-      await userLogin(
-        email,
-        password
-      ); 
-    }catch(err){
-      if(err.message){
-        setErrorMessage(err.message)
+      const success = await userLogin(email,password);
+      if (success){
+        setSuccesMessage('You are succesfully loged in');
+        history.push('/profile');
       }else{
         setErrorMessage('failed to sign in')
       }
+    }catch(err){
+      if(err.message){
+        setErrorMessage(err.message)
+      }
     }
     setLoading(false);
-    setSuccesMessage('You are succesfully loged in');
-    history.push('/profile');
+   
    }
   return (
     <div className="page--login">

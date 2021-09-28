@@ -4,7 +4,7 @@ import { useUser } from '../../Contexts/UserContext';
 
 export default function AdminRoute({ component: Component, ...rest}) {
   const { currentUser } =  useUser();
-  console.log(currentUser);
+ // console.log(currentUser);
   return (
     <Route 
     {...rest}

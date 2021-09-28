@@ -28,22 +28,24 @@ export const UserProvider = ({children}) => {
     ))
   }
 
-  function userLogin(email, password){
-    return auth.signInWithEmailAndPassword(email, password).then(
-      getData(getUserQuery(email)).then(
-        data => {
-          localStorage.setItem('currentUser', JSON.stringify(data.app_User));
-          setCurrentUser( data.app_User)
-        }
-      )
-    )
+ async function userLogin(email, password){
+   try{
+    await auth.signInWithEmailAndPassword(email, password);
+    const data = await getData(getUserQuery(email))
+    localStorage.setItem('currentUser', JSON.stringify(data.app_User));
+    setCurrentUser( data.app_User);
+    return true;
+   }catch(err){
+    return false;
+   }
   }
 
   function userEdit(id, firstname, lastname, username){
     return getData(updateUserQuery(id, firstname, lastname, username)).then(
       data => {
-        localStorage.setItem('currentUser', JSON.stringify(data.updateApp_User));
-        setCurrentUser( data.updateApp_User);
+        console.log(data.user);
+        localStorage.setItem('currentUser', JSON.stringify(data.user));
+        setCurrentUser(data.user);
       }
     );
   }

@@ -22,9 +22,6 @@ function UserMenu(props) {
           <Link to="/profile"  onClick={props.closeMenu}>Profile</Link>
         </li>
         <li>
-          <Link to="/"  onClick={props.closeMenu}>Manage profile</Link>
-        </li>
-        <li>
           <Link to="/my-goals"  onClick={props.closeMenu}>My goals</Link>
         </li>
       </ul>

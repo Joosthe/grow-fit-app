@@ -60,8 +60,7 @@ export default function NewEntry() {
         <div className='form-submit'>
         <input type="submit" name="entrysubmit" id="submitlogin"  className="btn btn-prim" />
         </div>
-        
-        </div>
+     </div>
     </Form>
     </div>
     </Container>

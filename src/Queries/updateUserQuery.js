@@ -1,5 +1,6 @@
 export function updateUserQuery(id, firstname, lastname, username){
-  return `mutation{
+  return `
+  mutation{
     updateApp_User(
       where:{ id:"${id}" }
       data: {
@@ -7,7 +8,10 @@ export function updateUserQuery(id, firstname, lastname, username){
         lastName: "${lastname}"
         userName:"${username}"
       }
-    ){
+    ) {
+      id
+    }
+    user: publishApp_User( where:{ id:"${id}" }){
         id,
         firstName,
         lastName,

@@ -23,7 +23,7 @@ import './styles/ProfilePage.scss';
     const lastName = editUserlastName.current.value;
     const userName = editUserUserName.current.value;
     const nickName =  editUserNicknames.current.value;
-    console.log({id, firstName, lastName, userName, nickName});
+    //console.log({id, firstName, lastName, userName, nickName});
     userEdit(id,firstName, lastName, userName);
     seteditstate(false)
   }

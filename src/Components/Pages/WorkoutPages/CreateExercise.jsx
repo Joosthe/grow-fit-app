@@ -13,8 +13,9 @@ export default function CreateExercise() {
 
   async function handleSubmit(e){ 
     e.preventDefault();
+    alert('exercise create')
   }
-
+  
   return (
     <Container>
       <IntroSection line={sc.introLine} title={sc.title}/>
@@ -25,12 +26,15 @@ export default function CreateExercise() {
             <input type="text" name="titleExercise" id="titleexercise" ref={titleExercise} />
           </div>
           <div className="form-element">
-          <label htmlFor="entry-extra-info">Extra info</label>
-          <textarea name="entry-extra-info" id=""></textarea>
-        </div>
-        <div className="form-element mx-auto">
-            <label htmlFor="repexercise">repetion exercise</label>
-            <input type="number" name="repexercise" id="repexercise" ref={repexercise} />
+            <label htmlFor="entry-extra-info">Extra info</label>
+            <textarea name="entry-extra-info" id=""></textarea>
+          </div>
+          <div className="form-element mx-auto">
+            <label htmlFor="repexercise">repetion exercise </label>
+            <input type="number" name="repexercise" ref={repexercise} defaultValue={0} />
+          </div>
+          <div className='form-submit'>
+            <input type="submit" name="entrysubmit" id="submitlogin"  className="btn btn-prim" />
           </div>
         </Form>
       </section>
