@@ -1,8 +1,9 @@
-import React,{ useContext, useState, useEffect } from 'react';
+import React,{ useContext, useState } from 'react';
 import { auth } from '../Connections/firebase';
 import { createUserQuery, publishCreatedUserQuery } from '../Queries/createUserQuery';
 import { getData } from '../Connections/graphcsm';
 import { getUserQuery } from '../Queries/getUserQuery';
+import { updateUserQuery } from '../Queries/updateUserQuery';
 
 export const UserContext = React.createContext();
 
@@ -37,6 +38,15 @@ export const UserProvider = ({children}) => {
       )
     )
   }
+
+  function userEdit(id, firstname, lastname, username){
+    return getData(updateUserQuery(id, firstname, lastname, username)).then(
+      data => {
+        localStorage.setItem('currentUser', JSON.stringify(data.updateApp_User));
+        setCurrentUser( data.updateApp_User);
+      }
+    );
+  }
   
   function userLogout(){
     localStorage.removeItem('currentUser');
@@ -47,6 +57,7 @@ export const UserProvider = ({children}) => {
     currentUser,
     userRegister,
     userLogin,
+    userEdit,
     userLogout
   }
   return (

@@ -1,0 +1,84 @@
+
+.profile__user__account{
+  display: flex;
+  padding-top: 1.75rem;
+}
+.section--label{
+  position: absolute;
+  display: inline-block;
+  padding: .2rem 1.75rem;
+  top: -1.25rem;
+  left: 1rem;
+  background-color: var(--color-prim);
+  color: var(--color-black);
+  transform: skew(-30deg);
+  span{
+    transform: skew(30deg);
+    display: inline-block;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.profile__user__account_img img{
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--color-prim);
+  max-height: 10rem;
+}
+
+.profile__user__account_info{
+  flex: 1 0 auto;
+  border: 2px solid var(--color-prim);
+  margin-left: .75rem;
+  position: relative;
+  padding: 1rem;
+  font-weight: 300;
+
+}
+
+.profile__user__account_info__wrapper{
+  display: flex;
+  flex-wrap: wrap;
+ 
+  .profile__user__account_info__inner{
+    width: 50%;
+    font-weight: 500;
+    span{
+      font-weight: 300;
+    }
+    & > *{
+      margin: .75rem 0;
+    }
+  }
+  input{
+    display: none;
+  }
+  .form-item span{
+    display: inline-block;
+  }
+  &.active-edit input{
+    display: block;
+    width: calc(100% - .75rem);
+    margin-top: .25rem;
+
+  }
+  &.active-edit .form-item span{
+    display: none;
+  }
+  &.active-edit .no-edit{
+    margin-bottom: 3.45rem;
+  }
+}
+
+
+.profile__user__account_actions{
+  margin-left: .75rem;
+  &>*{
+    margin-bottom: .75rem;
+  }
+}
+
+
+

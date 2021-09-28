@@ -1,26 +1,25 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import {setErrorMessage} from "../Contexts/ErrorContext";
-import { configQuery } from "../Connections/graphcsm";
+import { getData } from "../Connections/graphcsm";
 
 export default function useCmsData(query){
   const [cmsData, setCmsData ]= useState(null);
   const [loadingCsmData , setLoadingCsmData ]= useState(null);
-  // const { setErrorMessage } = useError(); 
 
   useEffect(()=>{
     const fetchData = async ()=> {
       setLoadingCsmData(true);
       try{
-        const response = await axios(configQuery(query));
+        const response = await getData(query);
         setCmsData(response);
+        
       }catch(err){
-        console(err)
+        console.log(err)
       }
       setLoadingCsmData(false);
     }
 
     fetchData() ;
-  }, [query])
+  } , [query])
   return {cmsData, loadingCsmData};
 }

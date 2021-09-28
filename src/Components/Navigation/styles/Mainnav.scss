@@ -23,6 +23,15 @@
       display: inline-block;
       margin-right: 1rem;
     }
+    button.button__logout{
+      display: flex;
+      flex-direction: row;
+      background-color: transparent;
+      border: 3px solid transparent;
+      span{
+        margin-right: .5rem;
+      }
+    }
   }
   button{
     display: flex;

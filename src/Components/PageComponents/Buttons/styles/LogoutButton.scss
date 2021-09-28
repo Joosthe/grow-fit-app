@@ -1,0 +1,12 @@
+.button__logout{
+  display: flex;
+  background-color: var(--color-extra-3);
+  padding: .2rem .75rem;
+  align-items: center;
+  border: 3px solid var(--color-extra-3);
+  width: 100%;
+  span{
+    display: inline-block;
+    margin-right: .2rem;
+  }
+}

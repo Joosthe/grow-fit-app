@@ -2,28 +2,24 @@
 import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom';
 import { useUser } from '../../../Contexts/UserContext';
-
+import {BiExit} from 'react-icons/bi';
+import './styles/LogoutButton.scss';
 export default function LogoutButton() {
   const { userLogout } =  useUser();
-  const [ error, setError] = useState('');
   const history = useHistory();
   async function logoutHandle(){
-    setError('');
     try{
       userLogout();
       history.push ('/')
     }catch(err){
-      console.log(err)
-       setError('failed to log uit')
+      console.log(err);
     }
   }
 
   return (
-    <div>
-      { error && console.log(error)}
-      <button onClick={logoutHandle}>
-        Log out
+      <button onClick={logoutHandle} className="button button__logout">
+        <span>Log out</span>
+        <BiExit/>
       </button>
-    </div>
   )
 }
