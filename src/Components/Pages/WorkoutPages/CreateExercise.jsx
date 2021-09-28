@@ -57,7 +57,7 @@ export default function CreateExercise() {
           </div>
           <div className="form-element mx-auto">
             <label htmlFor="repexercise">repetion exercise </label>
-            <input type="number" name="repexercise" ref={repexercise} defaultValue={0} />
+            <input type="number" name="repexercise" ref={repexercise} defaultValue={0} min={0} step={1} />
           </div>
           <div className='form-submit'>
             <input type="submit" name="entrysubmit" id="submitlogin"  className="btn btn-prim"/>
