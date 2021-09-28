@@ -1,9 +1,9 @@
 import React,{ useContext, useState } from 'react';
 import { auth } from '../Connections/firebase';
-import { createUserQuery, publishCreatedUserQuery } from '../Queries/createUserQuery';
+import { createUserQuery, publishCreatedUserQuery } from '../Queries/User/createUserQuery';
 import { getData } from '../Connections/graphcsm';
-import { getUserQuery } from '../Queries/getUserQuery';
-import { updateUserQuery } from '../Queries/updateUserQuery';
+import { getUserQuery } from '../Queries/User/getUserQuery';
+import { updateUserQuery } from '../Queries/User/updateUserQuery';
 
 export const UserContext = React.createContext();
 

@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Container from '../../Wrappers/Container'
 import IntroSection from '../../PageSections/IntroSection';
-import { usersQuery } from '../../../Queries/usersQuery';
-import {deleteUserQuery} from '../../../Queries/deleteUserQuery';
+import { usersQuery } from '../../../Queries/User/usersQuery';
+import {deleteUserQuery} from '../../../Queries/User/deleteUserQuery';
 import useStaticContent from '../../../hooks/useStaticContent';
 import { getData } from '../../../Connections/graphcsm';
 export default function AdminUsers() {
