@@ -6,8 +6,8 @@ import {deleteUserQuery} from '../../../Queries/User/deleteUserQuery';
 import useStaticContent from '../../../hooks/useStaticContent';
 import { getData } from '../../../Connections/graphcsm';
 export default function AdminUsers() {
-  const [userId, setUserId] = useState(null);
   const sc = useStaticContent('UserPages.AdminUsers');
+  const [userId, setUserId] = useState(null);
   const [cmsData, setCmsData ]= useState(null);
   const [loadingCsmData , setLoadingCsmData ]= useState(null);
   
@@ -32,7 +32,8 @@ export default function AdminUsers() {
 
   async function deleteUser(e){
     e.preventDefault();
-     setUserId(e.target.dataset.remove);
+    setUserId(e.target.dataset.remove);
+
   }
   return (
     <Container>

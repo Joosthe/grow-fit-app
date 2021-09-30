@@ -1,5 +1,6 @@
-import { activeElement } from 'dom-helpers';
 import React, {useState, useRef} from 'react';
+import { uploadAsset } from '../../../Connections/graphcsm';
+
 
 import { useUser } from '../../../Contexts/UserContext';
 import Button from '../../PageComponents/Buttons/Button';
@@ -11,6 +12,7 @@ import './styles/ProfilePage.scss';
 
   const { currentUser, userEdit } = useUser();
   const [editstate, seteditstate] = useState(false);
+  const [file, setFile] = React.useState("");
 
   const editUserFirstName = useRef();
   const editUserlastName = useRef();
@@ -28,6 +30,28 @@ import './styles/ProfilePage.scss';
     seteditstate(false);
   }
 
+
+  const handleUpload = async (e) => {
+    const fileUrl =  URL.createObjectURL(e.target.files[0]);
+    console.log(fileUrl);
+    uploadAsset(fileUrl);
+  };
+
+  // const convertBase64 = (file) => {
+  //   return new Promise((resolve, reject) => {
+  //     const fileReader = new FileReader();
+  //     fileReader.readAsDataURL(file);
+
+  //     fileReader.onload = () => {
+  //       resolve(fileReader.result);
+  //     };
+
+  //     fileReader.onerror = (error) => {
+  //       reject(error);
+  //     };
+  //   });
+  // };
+
   return(
     <Container>
       <section className="text-center py-4">
@@ -39,6 +63,10 @@ import './styles/ProfilePage.scss';
           ? currentUser?.userprofileimg?.url
           : 'https://via.placeholder.com/150'
         } alt={'profile picture '+currentUser.username} />
+          <div className="form-item">
+          <input type="file" onChange={handleUpload} />
+            <p>Filename: {file.name}</p>
+          </div>
         </div>
         <div className="profile__user__account_info">
           <h2 className="section--label">
