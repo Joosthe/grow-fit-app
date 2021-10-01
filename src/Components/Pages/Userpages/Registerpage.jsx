@@ -7,7 +7,7 @@ import ReactHtmlParser from 'react-html-parser';
 import Form from '../../PageComponents/FormElements/Form';
 import { useError } from '../../../Contexts/ErrorContext';
 import useStaticContent from '../../../hooks/useStaticContent';
-import {useUser} from '../../../Contexts/UserContext';
+import {useUser} from '../../../Contexts/userContext';
 
 function RegisterPage() {
   const sc = useStaticContent('UserPages.RegisterPage');

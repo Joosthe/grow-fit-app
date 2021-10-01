@@ -2,7 +2,7 @@ import React, {useState, useRef} from 'react';
 import { uploadAsset } from '../../../Connections/graphcsm';
 
 
-import { useUser } from '../../../Contexts/UserContext';
+import { useUser } from '../../../Contexts/userContext';
 import Button from '../../PageComponents/Buttons/Button';
 import LogoutButton from '../../PageComponents/Buttons/LogoutButton';
 import Container from '../../Wrappers/Container';

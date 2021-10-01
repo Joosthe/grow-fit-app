@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from './App'
 import './App.scss'
 import { ErrorProvider } from './Contexts/ErrorContext';
-import { UserProvider } from './Contexts/UserContext';
+import { UserProvider } from './Contexts/userContext';
 
 ReactDOM.render(
   <React.StrictMode>

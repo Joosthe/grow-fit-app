@@ -6,7 +6,7 @@ import Button from '../../PageComponents/Buttons/Button';
 import IntroSection from '../../PageSections/IntroSection';
 import Form from '../../PageComponents/FormElements/Form';
 import useStaticContent from '../../../hooks/useStaticContent';
-import { useUser } from '../../../Contexts/UserContext';
+import { useUser } from '../../../Contexts/userContext';
 import { useError } from '../../../Contexts/ErrorContext';
 
 

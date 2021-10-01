@@ -19,7 +19,7 @@ import AdminUsers from './Components/Pages/Userpages/AdminUsers';
 import PrivateRoute from './Components/Routes/PrivateRoute';
 import AdminRoute from './Components/Routes/AdminRoute';
 import { useError } from './Contexts/ErrorContext';
-import { useUser } from './Contexts/UserContext';
+import { useUser } from './Contexts/userContext';
 import Test from './Components/Pages/Userpages/Test';
 
 

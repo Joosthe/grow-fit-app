@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useUser } from '../../Contexts/UserContext';
+import { useUser } from '../../Contexts/userContext';
 function UserMenu(props) {
   const { currentUser } =  useUser();
   

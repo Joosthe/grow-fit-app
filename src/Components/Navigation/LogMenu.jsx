@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useUser } from '../../Contexts/UserContext';
+import { useUser } from '../../Contexts/userContext';
 import LogoutButton from '../PageComponents/Buttons/LogoutButton';
 function LogMenu(props) {
   const { currentUser } =  useUser();
