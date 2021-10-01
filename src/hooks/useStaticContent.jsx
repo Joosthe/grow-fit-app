@@ -1,4 +1,4 @@
-import StaticContent from '../StaticContent/content-En';
+import StaticContent from '../staticContent/content-En';
 // here can we later play with language
 
 
