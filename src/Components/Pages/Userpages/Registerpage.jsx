@@ -7,7 +7,7 @@ import IntroSection from '../../PageSections/IntroSection';
 import Form from '../../PageComponents/FormElements/Form';
 import { useError } from '../../../Contexts/ErrorContext';
 import useStaticContent from '../../../hooks/useStaticContent';
-import {useUser} from '../../../Contexts/userContext';
+import {useUser} from '../../../Contexts/UserinoContext';
 
 function RegisterPage() {
   const sc = useStaticContent('UserPages.RegisterPage');

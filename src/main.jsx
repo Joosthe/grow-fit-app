@@ -5,7 +5,7 @@ import App from './App'
 import './Tailwind.scss'
 import './App.scss'
 import { ErrorProvider } from './Contexts/ErrorContext';
-import { UserProvider } from './Contexts/userContext';
+import { UserProvider } from './Contexts/UserinoContext';
 
 ReactDOM.render(
   <React.StrictMode>
