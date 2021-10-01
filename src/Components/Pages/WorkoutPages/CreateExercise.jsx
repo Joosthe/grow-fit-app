@@ -2,7 +2,7 @@ import React, {useRef} from 'react'
 import IntroSection from '../../PageSections/IntroSection'
 import Container from '../../Wrappers/Container';
 import Form from '../../PageComponents/FormElements/Form';
-import useStaticContent from '../../../hooks/useStaticContent';
+import useStaticContent from '../../../HooksV/useStaticContent';
 import { getData } from '../../../Connections/graphcsm';
 import { createExerciseQuery, publishExeciseQuery } from '../../../Queries/exercice/createExercice';
 

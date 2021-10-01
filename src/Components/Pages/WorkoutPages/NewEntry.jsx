@@ -4,7 +4,7 @@ import Container from '../../Wrappers/Container';
 import './styles/NewEntry.scss'
 import { Workouts } from '../../../Data/workouts';
 import Form from '../../PageComponents/FormElements/Form';
-import useStaticContent from '../../../hooks/useStaticContent';
+import useStaticContent from '../../../HooksV/useStaticContent';
 import Select from 'react-select'
 //const today = new Date().toISOString(); 
 
