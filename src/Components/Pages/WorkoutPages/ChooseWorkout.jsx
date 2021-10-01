@@ -1,7 +1,7 @@
 import React from 'react'
 import IntroSection from '../../PageSections/IntroSection'
 import Container from '../../Wrappers/Container';
-import useStaticContent from '../../../HooksV/useStaticContent';
+import useStaticContent from '../../../Hooks/useStaticContent';
 
 export default function ChooseWorkout() {
   const sc = useStaticContent('WorkoutPages.ChooseWorkout');

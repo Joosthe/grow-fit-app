@@ -3,7 +3,7 @@ import Container from '../../Wrappers/Container'
 import IntroSection from '../../PageSections/IntroSection';
 import { usersQuery } from '../../../Queries/User/usersQuery';
 import {deleteUserQuery} from '../../../Queries/User/deleteUserQuery';
-import useStaticContent from '../../../HooksV/useStaticContent';
+import useStaticContent from '../../../Hooks/useStaticContent';
 import { getData } from '../../../Connections/graphcsm';
 export default function AdminUsers() {
   const sc = useStaticContent('UserPages.AdminUsers');

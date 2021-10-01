@@ -5,7 +5,7 @@ import Container from '../../Wrappers/Container';
 import Button from '../../PageComponents/Buttons/Button';
 import IntroSection from '../../PageSections/IntroSection';
 import Form from '../../PageComponents/FormElements/Form';
-import useStaticContent from '../../../HooksV/useStaticContent';
+import useStaticContent from '../../../Hooks/useStaticContent';
 import { useUser } from '../../../Contexts//UserContext';
 import { useError } from '../../../Contexts/ErrorContext';
 

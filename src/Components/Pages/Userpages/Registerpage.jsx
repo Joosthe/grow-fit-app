@@ -6,7 +6,7 @@ import IntroSection from '../../PageSections/IntroSection';
 //import ReactHtmlParser from 'react-html-parser';
 import Form from '../../PageComponents/FormElements/Form';
 import { useError } from '../../../Contexts/ErrorContext';
-import useStaticContent from '../../../HooksV/useStaticContent';
+import useStaticContent from '../../../Hooks/useStaticContent';
 import {useUser} from '../../../Contexts//UserContext';
 
 function RegisterPage() {

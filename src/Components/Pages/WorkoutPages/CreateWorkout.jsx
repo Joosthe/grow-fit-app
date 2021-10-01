@@ -2,7 +2,7 @@ import React, {useRef} from 'react'
 import IntroSection from '../../PageSections/IntroSection'
 import Container from '../../Wrappers/Container'
 import Form from '../../PageComponents/FormElements/Form'
-import useStaticContent from '../../../HooksV/useStaticContent';
+import useStaticContent from '../../../Hooks/useStaticContent';
 import './styles/CreateWorkout.scss'
 
 export default function CreateWorkout() {

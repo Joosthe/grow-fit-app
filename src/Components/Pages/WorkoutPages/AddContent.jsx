@@ -4,7 +4,7 @@ import AddContentCard from '../../PageComponents/Cards/AddContentCard'
 //import ReactHtmlParser from 'react-html-parser';
 import { FaThumbsUp,FaCalendarAlt,FaTasks,FaPencilAlt } from "react-icons/fa";
 import IntroSection from '../../PageSections/IntroSection'
-import useStaticContent from '../../../HooksV/useStaticContent';
+import useStaticContent from '../../../Hooks/useStaticContent';
 
 export default function AddContent() {
   const sc = useStaticContent('WorkoutPages.AddContent');
