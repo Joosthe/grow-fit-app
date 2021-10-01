@@ -17,7 +17,7 @@ function MainMenu(props) {
       </li>
       <li>
         <Link to="/" onClick={props.closeMenu}>
-          Achievements
+          Achievements test
         </Link>
         </li>
       <li>
