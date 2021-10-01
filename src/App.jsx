@@ -44,7 +44,7 @@ function App() {
         <PrivateRoute path="/profile" exact component={ProfilePage} />
         <PrivateRoute path="/my-goals" exact component={MyGoals} />
         <PublicRoute exact path="/register" exact component={RegisterPage} />
-        <PublicRoute exact path="/upload-test" exact component={Test} />
+        <PrivateRoute exact path="/upload-test" exact component={Test} />
         <PublicRoute exact path="/login"  component={LoginPage} />
         <PublicRoute exact path="/" component={Home} />
         <PublicRoute path="/:slug" component={BasicPage} />
