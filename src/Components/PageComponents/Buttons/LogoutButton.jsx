@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom';
-import { useUser } from '../../../Contexts/UserinoContext';
+import { useUser } from '../../../Contexts//UserContext';
 import {BiExit} from 'react-icons/bi';
 import './styles/LogoutButton.scss';
 export default function LogoutButton() {

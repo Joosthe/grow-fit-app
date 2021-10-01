@@ -6,7 +6,7 @@ import UserMenu from './UserMenu';
 import AdminMenu from './AdminMenu';
 
 import './styles/Mainnav.scss';
-import { useUser } from '../../Contexts/UserinoContext';
+import { useUser } from '../../Contexts//UserContext';
 
  
 function openMenu(){
