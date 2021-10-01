@@ -30,8 +30,8 @@ function LoginPage() {
       setLoading(true);
       const success = await userLogin(email,password);
       if (success){
-        setSuccesMessage('You are succesfully loged in');
         history.push('/profile');
+        setSuccesMessage('You are succesfully loged in');
       }else{
         setErrorMessage('failed to sign in')
       }

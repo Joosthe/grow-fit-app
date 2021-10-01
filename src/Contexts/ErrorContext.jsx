@@ -19,7 +19,7 @@ export const ErrorProvider = ({children}) => {
     setError({message, status:'succes'})
   }
   function setWarningMessage(message){
-    setError({message, status:'warinng'})
+    setError({message, status:'warning'})
   }
   function clearMessage(){
     setError({message: '', status:''})
