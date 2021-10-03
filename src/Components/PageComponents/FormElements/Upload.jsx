@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
-import { FaPencilAlt } from "react-icons/fa";
+import { FaPencilAlt, FaTimes } from "react-icons/fa";
 import { uploadAsset } from "../../../Connections/graphcsm";
 import styles from './styles/Upload.module.scss';
 
@@ -59,7 +59,10 @@ export default function Upload(props) {
       ):(
         <>
     {fileToUpload ? (
-      <aside>
+      <aside className={styles.upload__edit_wrapper}>
+         {(props.editMode && editState=== true) && 
+      <button onClick={() => setEditState(false)}   className={styles.upload__image__edit}><FaTimes/></button>
+    }
       {files.map((file) => (
         <div key={file.name}>
           <img
@@ -70,11 +73,8 @@ export default function Upload(props) {
         </div>
       ))}
       <div className={styles.upload__action_buttons}>
-      <button onClick={() => uploadFile(fileToUpload)} className={'btn btn--save'}> Save profile picture</button>
-      <button onClick={() => setFileToUpload(null)} className={'btn btn--edit'}> Choose other picture</button>
-      {(props.editMode && editState=== true) && 
-      <button onClick={() => setEditState(false)} className={'btn btn--cancel'}>Cancel</button>
-    }
+      <button onClick={() => setFileToUpload(null)} className={'btn btn--edit'}>Try agian</button>
+      <button onClick={() => uploadFile(fileToUpload)} className={'btn btn--save'}> Save</button>
       </div>
     
     </aside>
