@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 import Button from '../../PageComponents/Buttons/Button';
 import Container from '../../Wrappers/Container';
 import IntroSection from '../../PageSections/IntroSection';
-//import ReactHtmlParser from 'react-html-parser';
 import Form from '../../PageComponents/FormElements/Form';
 import { useError } from '../../../Contexts/ErrorContext';
 import useStaticContent from '../../../Hooks/useStaticContent';

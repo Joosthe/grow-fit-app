@@ -4,49 +4,52 @@
  --color-form-text: var(--color-grey-800);
 }
 
-form{
-  padding: .75rem;
-}
-.form--small{
-  max-width: 25rem;
-  margin: auto;
-  border:  solid var(--color-prim);
-  border-radius: var(--border-r-sm);
-  box-shadow: 0 .5rem 1rem rgba(var(--color-black),0.19), 0 .3rem .3rem rgba(var(--color-black),0.23);
-}
-.form-element {
-  margin-bottom: 1rem;
-}
-label{
-  color: var(--color-form-label);
-  font-size: 1.2rem;
-  margin:  .5rem 0;
-  display: block;
-}
-
-input, select,textarea{
-  display: block;
-  background: none;
-  background-color: var(--color-form-bg);
-  color: var(--color-form-text);
-  width: 100%;
-  padding: .35rem .75rem;
-  border-radius: .25rem;
-  margin-bottom: 1rem;
-  &[type="submit"]{
-    width: auto;
+body{
+  form{
+    padding: .75rem;
   }
-}
-input[type="checkbox"]{
-  display: inline-block;
-  width: auto;
-  margin-right: 5rem;
-}
+  .form--small{
+    max-width: 25rem;
+    margin: auto;
+    border:  solid var(--color-prim);
+    border-radius: var(--border-r-sm);
+    box-shadow: 0 .5rem 1rem rgba(var(--color-black),0.19), 0 .3rem .3rem rgba(var(--color-black),0.23);
+  }
+  .form-element {
+    margin-bottom: 1rem;
+  }
+  label{
+    color: var(--color-form-label);
+    font-size: 1.2rem;
+    margin:  .5rem 0;
+    display: block;
+  }
 
-.custom-select{
-  color: var(--color-grey-800);
-  caret-color: transparent;
-}
-textarea{
-  padding: .75rem;
+  input, 
+  select,textarea{
+    display: block;
+    background: none;
+    background-color: var(--color-form-bg);
+    color: var(--color-form-text);
+    width: 100%;
+    padding: .35rem .75rem;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+    &[type="submit"]{
+      width: auto;
+    }
+  }
+  input[type="checkbox"]{
+    display: inline-block;
+    width: auto;
+    margin-right: 5rem;
+  }
+
+  .custom-select{
+    color: var(--color-grey-800);
+    caret-color: transparent;
+  }
+  textarea{
+    padding: .75rem;
+  }
 }

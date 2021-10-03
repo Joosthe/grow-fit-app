@@ -8,7 +8,7 @@ export default function IntroSection(props) {
     <div className="intro">
       <GoBackButton/> 
       <PageTitle>{props.title}</PageTitle> 
-      <p className="intro-line">{props.line}</p> 
+      <p className="intro-line" dangerouslySetInnerHTML={{__html: props.line}}/>
     </div> 
   )
 }
