@@ -46,6 +46,11 @@
   text-align: center;
   border-radius: 0;
   border: 3px solid var(--color-prim);
+  &:hover{
+    color: var(--color-black);
+    background-color: var(--color-prim);
+    border: 3px solid var(--color-prim);
+  }
  
 }
 .btn--save{
@@ -56,4 +61,23 @@
   color: var(--color-black);
   background-color: var(--color-prim);
   border: 3px solid var(--color-prim);
+  &:hover{
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border: 3px solid var(--color-black);
+  }
+}
+
+.btn--cancel{
+  display: flex;
+  width: 100%;
+  text-align: center;
+  border-radius: 0;
+  color: var(--color-white);
+  background-color: var(--color-extra-3);
+  border: 3px solid var(--color-extra-3);
+  &:hover{
+    background-color: var(--color-black);
+    border: 3px solid var(--color-black);
+  }
 }

@@ -5,6 +5,7 @@ import { uploadAsset } from '../../../Connections/graphcsm';
 import { useUser } from '../../../Contexts//UserContext';
 import Button from '../../PageComponents/Buttons/Button';
 import LogoutButton from '../../PageComponents/Buttons/LogoutButton';
+import Upload from '../../PageComponents/FormElements/Upload';
 import Container from '../../Wrappers/Container';
 import './styles/ProfilePage.scss';
 
@@ -25,32 +26,14 @@ import './styles/ProfilePage.scss';
     const lastName = editUserlastName.current.value;
     const userName = editUserUserName.current.value;
     const nickName =  editUserNicknames.current.value;
-    //console.log({id, firstName, lastName, userName, nickName});
     userEdit(id,firstName, lastName, userName);
     seteditstate(false);
   }
 
 
   const handleUpload = async (e) => {
-    const fileUrl =  URL.createObjectURL(e.target.files[0]);
-    console.log(fileUrl);
-    uploadAsset(fileUrl);
+    
   };
-
-  // const convertBase64 = (file) => {
-  //   return new Promise((resolve, reject) => {
-  //     const fileReader = new FileReader();
-  //     fileReader.readAsDataURL(file);
-
-  //     fileReader.onload = () => {
-  //       resolve(fileReader.result);
-  //     };
-
-  //     fileReader.onerror = (error) => {
-  //       reject(error);
-  //     };
-  //   });
-  // };
 
   return(
     <Container>
@@ -59,14 +42,13 @@ import './styles/ProfilePage.scss';
       </section>
       <section className="profile__user__account">
         <div className="profile__user__account_img">
-        <img src={ currentUser?.userprofileimg?.url 
+      
+         <Upload editMode={true}>
+         <img src={ currentUser?.userprofileimg?.url 
           ? currentUser?.userprofileimg?.url
           : 'https://via.placeholder.com/150'
         } alt={'profile picture '+currentUser.username} />
-          <div className="form-item">
-          <input type="file" onChange={handleUpload} />
-            <p>Filename: {file.name}</p>
-          </div>
+        </Upload>
         </div>
         <div className="profile__user__account_info">
           <h2 className="section--label">
@@ -102,9 +84,8 @@ import './styles/ProfilePage.scss';
         <div className="profile__user__account_actions">
           {editstate 
           ?  <Button dataId={currentUser.id} onClick={saveUser} variant="btn--save">Save profile</Button>
-          :  <Button onClick={()=>(seteditstate(true))} variant="btn--edit">Edit profile</Button>
+          :  <Button onClick={()=>(seteditstate(true))} variant="btn--edit">Edit profile info</Button>
           }
-          
           
           <LogoutButton/>
         </div>
