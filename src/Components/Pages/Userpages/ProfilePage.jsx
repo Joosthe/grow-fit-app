@@ -1,8 +1,9 @@
 import React, {useState, useRef} from 'react';
-import { uploadAsset } from '../../../Connections/graphcsm';
+import { getData, uploadAsset } from '../../../Connections/graphcsm';
 
 
 import { useUser } from '../../../Contexts//UserContext';
+import { updateUserImgQuery } from '../../../Queries/User/updateUserQuery';
 import Button from '../../PageComponents/Buttons/Button';
 import LogoutButton from '../../PageComponents/Buttons/LogoutButton';
 import Upload from '../../PageComponents/FormElements/Upload';
@@ -11,7 +12,7 @@ import './styles/ProfilePage.scss';
 
  function ProfilePage(){
 
-  const { currentUser, userEdit } = useUser();
+  const { currentUser, userEdit, setCurrentUser } = useUser();
   const [editstate, seteditstate] = useState(false);
   const [file, setFile] = React.useState("");
 
@@ -31,9 +32,15 @@ import './styles/ProfilePage.scss';
   }
 
 
-  const handleUpload = async (e) => {
-    
-  };
+  function setUserProfile(data){
+    const userid= currentUser.id;
+    getData(updateUserImgQuery(userid, data.publishAsset.id)).then(
+      data=>{
+       setCurrentUser( data.updateApp_User);
+       localStorage.setItem('currentUser', JSON.stringify(data.updateApp_User));
+      }
+    )
+  }
 
   return(
     <Container>
@@ -43,7 +50,7 @@ import './styles/ProfilePage.scss';
       <section className="profile__user__account">
         <div className="profile__user__account_img">
       
-         <Upload editMode={true}>
+         <Upload editMode={true} uploadSumbit={setUserProfile} userId={currentUser.id}>
          <img src={ currentUser?.userprofileimg?.url 
           ? currentUser?.userprofileimg?.url
           : 'https://via.placeholder.com/150'
@@ -83,8 +90,8 @@ import './styles/ProfilePage.scss';
         </div>
         <div className="profile__user__account_actions">
           {editstate 
-          ?  <Button dataId={currentUser.id} onClick={saveUser} variant="btn--save">Save profile</Button>
-          :  <Button onClick={()=>(seteditstate(true))} variant="btn--edit">Edit profile info</Button>
+            ?  <Button dataId={currentUser.id} onClick={saveUser} variant="btn--save">Save profile</Button>
+            :  <Button onClick={()=>(seteditstate(true))} variant="btn--edit">Edit profile info</Button>
           }
           
           <LogoutButton/>

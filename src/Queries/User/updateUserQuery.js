@@ -25,3 +25,25 @@ export function updateUserQuery(id, firstname, lastname, username){
       }
   }`
 }
+export function updateUserImgQuery(id,imgId){
+  console.log('id',id)
+  console.log('imgId', imgId);
+  return `
+  mutation{
+    updateApp_User(
+      where:{ id:"${id}" }
+      data: {userprofileimg: {connect: {id: "${imgId}"}}}
+    ) {
+      id,
+        firstName,
+        lastName,
+        email,
+        userName,
+        userRoles,
+        nicknames,
+        userprofileimg{
+          url
+        }
+    }
+  }`
+}

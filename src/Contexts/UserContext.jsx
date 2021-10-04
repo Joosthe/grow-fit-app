@@ -59,7 +59,8 @@ export const UserProvider = ({children}) => {
     userRegister,
     userLogin,
     userEdit,
-    userLogout
+    userLogout,
+    setCurrentUser
   }
   return (
     <UserContext.Provider value={exportedvalues}>
