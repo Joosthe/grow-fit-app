@@ -14,7 +14,6 @@ import './styles/ProfilePage.scss';
 
   const { currentUser, userEdit, setCurrentUser } = useUser();
   const [editstate, seteditstate] = useState(false);
-  const [file, setFile] = React.useState("");
 
   const editUserFirstName = useRef();
   const editUserlastName = useRef();
@@ -30,7 +29,6 @@ import './styles/ProfilePage.scss';
     userEdit(id,firstName, lastName, userName);
     seteditstate(false);
   }
-
 
   function setUserProfile(data){
     const userid= currentUser.id;
@@ -49,7 +47,6 @@ import './styles/ProfilePage.scss';
       </section>
       <section className="profile__user__account">
         <div className="profile__user__account_img">
-      
          <Upload editMode={true} uploadSumbit={setUserProfile} userId={currentUser.id}>
          <img src={ currentUser?.userprofileimg?.url 
           ? currentUser?.userprofileimg?.url
@@ -98,10 +95,6 @@ import './styles/ProfilePage.scss';
         </div>
 
       </section>
-      
-
-     
-     
     </Container>
   )
 }
