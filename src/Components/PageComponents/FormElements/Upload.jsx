@@ -33,7 +33,6 @@ export default function Upload(props) {
   });
 
   function uploadFile(file) {
-
     uploadAsset(file)
     .then((response) => response.json())
     .then((data) => {

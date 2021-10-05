@@ -6,27 +6,40 @@ import { useUser } from '../../../Contexts//UserContext';
 import { updateUserImgQuery } from '../../../Queries/User/updateUserQuery';
 import Button from '../../PageComponents/Buttons/Button';
 import LogoutButton from '../../PageComponents/Buttons/LogoutButton';
+import BetterSelect from '../../PageComponents/FormElements/BetterSelect';
 import Upload from '../../PageComponents/FormElements/Upload';
 import Container from '../../Wrappers/Container';
+import { nicknames } from '../../../Data/nicknames';
 import './styles/ProfilePage.scss';
 
  function ProfilePage(){
-
   const { currentUser, userEdit, setCurrentUser } = useUser();
   const [editstate, seteditstate] = useState(false);
+  const [nicknameValue, setnicknameValue] = useState(currentUser.nicknames)
 
   const editUserFirstName = useRef();
   const editUserlastName = useRef();
   const editUserUserName = useRef();
-  const editUserNicknames = useRef();
+
+  const selectNicknames = nicknames.map((nickName, index)=>{
+    return {
+      name: nickName,
+      id: index
+    }
+  })
+
+
+  function chooseNickname(selection){
+    setnicknameValue(selection);
+  }
 
   function saveUser(e){
+    console.log(nicknameValue);
     const id = e.target.getAttribute('data-id')
     const firstName = editUserFirstName.current.value;
     const lastName = editUserlastName.current.value;
     const userName = editUserUserName.current.value;
-    const nickName =  editUserNicknames.current.value;
-    userEdit(id,firstName, lastName, userName);
+    userEdit(id, firstName, lastName, userName, nicknameValue);
     seteditstate(false);
   }
 
@@ -80,7 +93,8 @@ import './styles/ProfilePage.scss';
             <p className="no-edit">User role: <span>{currentUser.userRoles}</span></p>
               <div className="form-item">
               <p>Nickname: <span>{currentUser.nicknames}</span></p>
-                <input type="text" ref={editUserNicknames} className="edit__user__input" defaultValue={currentUser.nicknames}/>
+                {/* <input type="text" ref={editUserNicknames} className="edit__user__input" defaultValue={currentUser.nicknames}/> */}
+                <BetterSelect selectionData={selectNicknames} onSelect={chooseNickname}/>
               </div>
             </div>
           </div>

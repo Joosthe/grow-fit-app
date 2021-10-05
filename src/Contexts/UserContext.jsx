@@ -40,8 +40,8 @@ export const UserProvider = ({children}) => {
    }
   }
 
-  function userEdit(id, firstname, lastname, username){
-    return getData(updateUserQuery(id, firstname, lastname, username)).then(
+  function userEdit(id, firstname, lastname, username, nickname){
+    return getData(updateUserQuery(id, firstname, lastname, username, nickname)).then(
       data => {
         localStorage.setItem('currentUser', JSON.stringify(data.user));
         setCurrentUser(data.user);

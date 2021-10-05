@@ -1,4 +1,4 @@
-export function updateUserQuery(id, firstname, lastname, username){
+export function updateUserQuery(id, firstname, lastname, username, nickname){
   return `
   mutation{
     updateApp_User(
@@ -7,6 +7,7 @@ export function updateUserQuery(id, firstname, lastname, username){
         firstName: "${firstname}"
         lastName: "${lastname}"
         userName:"${username}"
+        nicknames: ${nickname}
       }
     ) {
       id

@@ -1,0 +1,26 @@
+.selectlist__wrapper{
+  input{
+    margin-bottom: 0;
+  }
+  ul{
+  max-height: 10rem;
+  overflow-y: scroll;
+  list-style-type: none;
+  padding: 0;
+  background-color: white;
+}
+li{
+  display: block;
+  padding: .4rem .5rem; 
+  margin-bottom: .3rem;
+}
+}
+.selectlist__list__wrapper{
+  position: relative;
+  ul{
+    position: absolute;
+    width: calc(100% - .75rem);
+    margin-right: .75rem;
+    border-radius:  0 0 4px 4px;
+  }
+}
