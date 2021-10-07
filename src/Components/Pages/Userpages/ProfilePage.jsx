@@ -1,7 +1,5 @@
 import React, {useState, useRef} from 'react';
-import { getData, uploadAsset } from '../../../Connections/graphcsm';
-
-
+import { getData } from '../../../Connections/graphcsm';
 import { useUser } from '../../../Contexts//UserContext';
 import { updateUserImgQuery } from '../../../Queries/User/updateUserQuery';
 import Button from '../../PageComponents/Buttons/Button';
@@ -34,12 +32,12 @@ import './styles/ProfilePage.scss';
   }
 
   function saveUser(e){
-    console.log(nicknameValue);
     const id = e.target.getAttribute('data-id')
     const firstName = editUserFirstName.current.value;
     const lastName = editUserlastName.current.value;
     const userName = editUserUserName.current.value;
-    userEdit(id, firstName, lastName, userName, nicknameValue);
+    const nickName = nicknameValue.name
+    userEdit(id, firstName, lastName, userName, nickName);
     seteditstate(false);
   }
 
@@ -93,8 +91,11 @@ import './styles/ProfilePage.scss';
             <p className="no-edit">User role: <span>{currentUser.userRoles}</span></p>
               <div className="form-item">
               <p>Nickname: <span>{currentUser.nicknames}</span></p>
-                {/* <input type="text" ref={editUserNicknames} className="edit__user__input" defaultValue={currentUser.nicknames}/> */}
-                <BetterSelect selectionData={selectNicknames} onSelect={chooseNickname}/>
+                <BetterSelect 
+                  selectionData={selectNicknames} 
+                  onSelect={chooseNickname}
+                  placeHolder="Choose a nickname"
+                />
               </div>
             </div>
           </div>

@@ -5,6 +5,7 @@ import { usersQuery } from '../../../Queries/User/usersQuery';
 import {deleteUserQuery} from '../../../Queries/User/deleteUserQuery';
 import useStaticContent from '../../../Hooks/useStaticContent';
 import { getData } from '../../../Connections/graphcsm';
+import {FaTrash } from "react-icons/fa";
 export default function AdminUsers() {
   const sc = useStaticContent('UserPages.AdminUsers');
   const [userId, setUserId] = useState(null);
@@ -30,11 +31,9 @@ export default function AdminUsers() {
 
 
 
-  async function deleteUser(e){
-    e.preventDefault();
-    setUserId(e.target.dataset.remove);
-
-  }
+    function deleteUser(id){
+      setUserId(id);
+    }
   return (
     <Container>
       <IntroSection line={sc.introLine} title={sc.title}/>
@@ -62,11 +61,8 @@ export default function AdminUsers() {
                <td>{user.email}</td>
                <td>{user.userRoles}</td>
                <td> 
-                 <button onClick={deleteUser} >
-                   <span data-remove={user.id}>
-                    x
-                   </span>
-
+                 <button onClick={()=>(deleteUser(user.id))} >
+                  <FaTrash />
                  </button> 
                </td>
              </tr>

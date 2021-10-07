@@ -6,7 +6,6 @@
   align-items: center;
   padding: .75rem;
   text-align: center;
-  border-radius: 50%;
   position: relative;
 }
 .upload__image__default, 
@@ -29,10 +28,10 @@
   color: var(--color-black);
   background-color: var(--color-prim);
   padding: .5rem;
-  border-radius: 50%;
   top: -.75rem;
   right: 0;
   transition: .4s all;
+  border-radius: 50%;
   &:hover{
     background-color: var(--color-black);
     color: var(--color-prim);

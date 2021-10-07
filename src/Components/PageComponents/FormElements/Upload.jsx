@@ -108,7 +108,7 @@ export default function Upload(props) {
               {isDragActive ? (
                 <p>Drop the files here ...</p>
               ) : (
-                <div className={styles.dropzone}>
+                <div className={styles.dropzone + " custom-dropzone"} >
                   <p>Drop or click to upload to GraphCMS</p>
                 </div>
               )}

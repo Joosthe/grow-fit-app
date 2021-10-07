@@ -3,6 +3,7 @@
   display: flex;
   align-items: flex-start;
   padding-top: 1.75rem;
+
 }
 .section--label{
   position: absolute;
@@ -83,3 +84,6 @@
 
 
 
+.profile__user__account .custom-dropzone{
+  border-radius: 50%;
+}

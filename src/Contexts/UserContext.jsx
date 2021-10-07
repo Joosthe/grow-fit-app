@@ -31,9 +31,13 @@ export const UserProvider = ({children}) => {
  async function userLogin(email, password){
    try{
     await auth.signInWithEmailAndPassword(email, password);
-    const data = await getData(getUserQuery(email))
-    localStorage.setItem('currentUser', JSON.stringify(data.app_User));
-    setCurrentUser( data.app_User);
+    getData(getUserQuery(email)).then(
+      data=>{
+        localStorage.setItem('currentUser', JSON.stringify(data.app_User))
+        setCurrentUser( data.app_User);
+      }
+     
+    );
     return true;
    }catch(err){
     return false;

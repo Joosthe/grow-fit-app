@@ -24,3 +24,19 @@ li{
     border-radius:  0 0 4px 4px;
   }
 }
+
+
+.simple__select{
+  color: var(--var-black);
+  input{
+    margin-bottom: 0;
+  }
+  &>div >div:nth-child(3){
+    padding: 0;
+    &>*{
+      color: var(--color-black);
+      margin: 0;
+    }
+  }
+}
+

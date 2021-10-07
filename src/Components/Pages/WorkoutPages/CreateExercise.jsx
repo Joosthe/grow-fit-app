@@ -4,7 +4,7 @@ import Container from '../../Wrappers/Container';
 import Form from '../../PageComponents/FormElements/Form';
 import useStaticContent from '../../../Hooks/useStaticContent';
 import { getData } from '../../../Connections/graphcsm';
-import { createExerciseQuery, publishExeciseQuery } from '../../../Queries/exercice/createExercice';
+import { createExerciseQuery, publishExeciseQuery } from '../../../Queries/Exercise/createExercice';
 
 import './styles/CreateExercise.scss';
 import { useError } from '../../../Contexts/ErrorContext';

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState,useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './styles/LoginPage.scss';
 import Container from '../../Wrappers/Container';
@@ -20,18 +20,19 @@ function LoginPage() {
 
   const emailLogin = useRef();
   const passwordLogin =  useRef();
+  
 
    async function handleSubmit(e){ 
     e.preventDefault()
-    
     const email = emailLogin.current.value;
     const password = passwordLogin.current.value
     try{
       setLoading(true);
       const success = await userLogin(email,password);
+      console.log( 'succes', success);
       if (success){
-        history.push('/profile');
         setSuccesMessage('You are succesfully loged in');
+         history.push('/profile');
       }else{
         setErrorMessage('failed to sign in')
       }
