@@ -15,7 +15,7 @@ import { getSportsQuery } from "../../../Queries/Sports/getSportsQuery";
 export default function CreateWorkout() {
   const sc = useStaticContent("WorkoutPages.CreateWorkout");
   const [activeExercises, setactiveExercises] = useState([]);
-  const [setSport, setactiveExercises] = useState([]);
+  const [sport, setSport] = useState([]);
   //const [workoutImage, setWorkoutImage]= useState();
   const nameWorkout = useRef("");
   const descrWorkout = useRef("");
