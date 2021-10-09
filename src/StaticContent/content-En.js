@@ -54,6 +54,14 @@ export default {
       title:'Create a new exercise',
       introLine: 'What are you going to make me do ?'
     }
+  },
+  GeneralPages:{
+    FourOhFour:{
+      title: "404",
+      subtitle: "Page not found",
+      subline: "We did not find the page you were looking for",
+      gobackbutton: "Go to Homepage",
+    }
   }
 }
  

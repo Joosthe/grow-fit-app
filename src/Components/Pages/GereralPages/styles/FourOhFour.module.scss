@@ -1,0 +1,56 @@
+.fourohfour__wrapper{
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+.fourohfour__title{
+  position: relative;
+  font-size: 6rem;
+  margin-top: -3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 1px #747474, 
+  -1px 3px 1px #767676, 
+  -2px 5px 1px #787878, 
+  -3px 7px 1px #7a7a7a,
+  -4px 9px 1px #7f7f7f;
+}
+.fourohfour__icon{
+ position: absolute;
+ font-size: 3rem;
+ top: .5rem;
+ right: -2.5rem;
+ color: var(--color-prim);
+}
+.fourohfour__subtitle{
+  font-size: 1.5rem;
+  padding: 0 .75rem;
+  text-align: center;
+  font-weight: 500;
+}
+.fourohfour__subline{
+  font-weight:200;
+  font-size: 1.5rem;
+  padding: 0 .75rem;
+  text-align: center;
+}
+
+.fourohfour__gobackButton{
+  font-size: 1rem;
+  padding: .5rem .75rem;
+  background-color: var(--color-prim);
+  border: 3px solid var(--color-prim-dark);
+  color: var(--color-black);
+  font-weight:300;
+  margin-top:1.5rem;
+  display: inline-block;
+  border-radius: .4rem;
+  display: flex;
+  align-items: center;
+  transition: .4s all;
+  &:hover{
+    background-color: var(--color-prim-dark);
+    color: white;
+  }
+}
