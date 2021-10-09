@@ -47,7 +47,6 @@ function App() {
         <PublicRoute exact path="/register" exact component={RegisterPage} />
         <PublicRoute exact path="/login"  component={LoginPage} />
         <PublicRoute exact path="/" component={Home} />
-        <PublicRoute path="/:slug" component={BasicPage} />
         <PublicRoute path="*" component={FourOhFour} />
       </Switch>
     </div>
