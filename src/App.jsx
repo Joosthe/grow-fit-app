@@ -20,6 +20,7 @@ import PrivateRoute from './Components/Routes/PrivateRoute';
 import AdminRoute from './Components/Routes/AdminRoute';
 import { useError } from './Contexts/ErrorContext';
 import { useUser } from './Contexts//UserContext';
+import TestPage from './Components/Pages/GereralPages/TestPage';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <PrivateRoute path="/add-content" extact component={AddContent}/>
         <PrivateRoute path="/profile" exact component={ProfilePage} />
         <PrivateRoute path="/my-goals" exact component={MyGoals} />
+        <PrivateRoute path="/test" exact component={TestPage} />
         <PublicRoute exact path="/register" exact component={RegisterPage} />
         <PublicRoute exact path="/login"  component={LoginPage} />
         <PublicRoute exact path="/" component={Home} />
