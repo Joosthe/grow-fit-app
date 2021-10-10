@@ -35,7 +35,7 @@ function LoginPage() {
         // the set timeout is a bugfix please check it after
         setTimeout(() => {
           history.push('/profile');
-      }, 115);
+      }, 500);
       }else{
         setErrorMessage('failed to sign in')
       }
