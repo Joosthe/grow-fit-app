@@ -29,10 +29,13 @@ function LoginPage() {
     try{
       setLoading(true);
       const success = await userLogin(email,password);
-      console.log( 'succes', success);
       if (success){
         setSuccesMessage('You are succesfully loged in');
-         history.push('/profile');
+        window.scrollTo(0, 0);
+        // the set timeout is a bugfix please check it after
+        setTimeout(() => {
+          history.push('/profile');
+      }, 115);
       }else{
         setErrorMessage('failed to sign in')
       }
