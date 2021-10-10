@@ -61,6 +61,12 @@ export default {
       subtitle: "Page not found",
       subline: "We did not find the page you were looking for",
       gobackbutton: "Go to Homepage",
+    },
+    NoAcces:{
+      title: "403",
+      subtitle: "No acces",
+      subline: "You don't have enough permissions for this page",
+      gobackbutton: "Go to Homepage",
     }
   }
 }

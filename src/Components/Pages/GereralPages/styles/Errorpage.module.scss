@@ -1,11 +1,11 @@
-.fourohfour__wrapper{
+.errorpage__wrapper{
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
   justify-content: center;
   align-items: center;
 }
-.fourohfour__title{
+.errorpage__title{
   position: relative;
   font-size: 6rem;
   margin-top: -3rem;
@@ -16,27 +16,27 @@
   -3px 7px 1px #7a7a7a,
   -4px 9px 1px #7f7f7f;
 }
-.fourohfour__icon{
+.errorpage__icon{
  position: absolute;
  font-size: 3rem;
  top: .5rem;
  right: -2.5rem;
  color: var(--color-prim);
 }
-.fourohfour__subtitle{
+.errorpage__subtitle{
   font-size: 1.5rem;
   padding: 0 .75rem;
   text-align: center;
   font-weight: 500;
 }
-.fourohfour__subline{
+.errorpage__subline{
   font-weight:200;
   font-size: 1.5rem;
   padding: 0 .75rem;
   text-align: center;
 }
 
-.fourohfour__gobackButton{
+.errorpage__gobackButton{
   font-size: 1rem;
   padding: .5rem .75rem;
   background-color: var(--color-prim);

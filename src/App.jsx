@@ -21,6 +21,7 @@ import AdminRoute from './Components/Routes/AdminRoute';
 import { useError } from './Contexts/ErrorContext';
 import { useUser } from './Contexts//UserContext';
 import TestPage from './Components/Pages/GereralPages/TestPage';
+import NoAcces from './Components/Pages/GereralPages/NoAcces';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
         <PublicRoute exact path="/register" exact component={RegisterPage} />
         <PublicRoute exact path="/login"  component={LoginPage} />
         <PublicRoute exact path="/" component={Home} />
+        <PublicRoute exact path="/forbidden" component={NoAcces} />
         <PublicRoute path="*" component={FourOhFour} />
       </Switch>
     </div>
