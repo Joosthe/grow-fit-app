@@ -2,7 +2,7 @@ import React, { useCallback, useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { FaPencilAlt, FaTimes } from "react-icons/fa";
 import { getData, uploadAsset } from "../../../Connections/graphcsm";
-import { publishAsset } from "../../../Queries/Assets/publishAsset";
+import { publishAsset } from "../../../Queries/Assets/publishAssetQuery";
 import styles from "./styles/Upload.module.scss";
 
 export default function Upload(props) {

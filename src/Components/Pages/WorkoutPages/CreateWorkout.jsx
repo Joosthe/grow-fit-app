@@ -11,18 +11,24 @@ import Upload from "../../PageComponents/FormElements/Upload";
 import useExercises from "../../../Hooks/useExercises";
 import { getExercisesQuery } from "../../../Queries/Exercise/getExercisesQuery";
 import { getSportsQuery } from "../../../Queries/Sports/getSportsQuery";
+import { getData } from "../../../Connections/graphcsm";
+import { createWorkoutQuery, publishWorkoutQuery } from "../../../Queries/Workout/CreateWorkoutQuery";
+import { useError } from "../../../Contexts/ErrorContext";
 
 export default function CreateWorkout() {
   const sc = useStaticContent("WorkoutPages.CreateWorkout");
+  const {setSuccesMessage, setErrorMessage} = useError();
+  const { exercises } = useExercises(getExercisesQuery);
+  const { exercises : sports } = useExercises(getSportsQuery);
   const [activeExercises, setactiveExercises] = useState([]);
   const [sport, setSport] = useState([]);
   //const [workoutImage, setWorkoutImage]= useState();
-  const nameWorkout = useRef("");
-  const descrWorkout = useRef("");
-  const durationWorkout = useRef("");
-  const { exercises } = useExercises(getExercisesQuery);
-  const { exercises : sports } = useExercises(getSportsQuery);
-  console.log(sports?.data?.sports);
+  const nameWorkout = useRef();
+  const descrWorkout = useRef();
+  const durationWorkout = useRef();
+
+
+
   function addToExercises(selection) {
     setactiveExercises([
       ...activeExercises,
@@ -33,6 +39,15 @@ export default function CreateWorkout() {
     ]);
   }
 
+  function getActiveExerIds(){
+    if(activeExercises.length > 0){
+      const sendExercise =  activeExercises.map(item => item.selection.id);
+      return JSON.stringify(sendExercise);
+    }else{
+      return [];
+    }
+  }
+
   function deleteExercise(id) {
     const removeItem = activeExercises.filter((item) => {
       return item.listId !== id;
@@ -41,11 +56,37 @@ export default function CreateWorkout() {
   }
 
   function selectsport(value) {
-    se
+     setSport(value);
   }
 
   function submitWorkout(e) {
     e.preventDefault();
+    const workoutname = nameWorkout.current.value;
+    const workoutDescr = descrWorkout.current.value;
+    const workoutSport =  sport.value;
+    const workouDur = durationWorkout.current.value;
+    const WorkoutEx = getActiveExerIds();
+    const alias = '/workout/'+workoutname.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
+    try{
+      getData(
+        createWorkoutQuery(workoutname,workoutDescr, workoutSport , workouDur, WorkoutEx, alias)).then(
+          data=>{
+            getData(publishWorkoutQuery(data.createWorkout.id)).then(
+              data =>{
+                window.scrollTo(0, 0);
+                setSuccesMessage('created a new exercise: "'+ data.publishWorkout.title+'"');
+                nameWorkout.current.value = "";
+                descrWorkout.current.value = "";
+                durationWorkout.current.value = "";
+                setSport([]);
+                setactiveExercises([]);
+              }
+            )
+          }
+        );
+    }catch(err){
+       setErrorMessage(err.message);
+    }
   }
 
   function setWorkoutImg(e){

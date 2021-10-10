@@ -27,8 +27,6 @@ export function updateUserQuery(id, firstname, lastname, username, nickname){
   }`
 }
 export function updateUserImgQuery(id,imgId){
-  console.log('id',id)
-  console.log('imgId', imgId);
   return `
   mutation{
     updateApp_User(
