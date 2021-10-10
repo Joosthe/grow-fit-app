@@ -17,12 +17,13 @@ export default function CreateWorkout() {
   const [activeExercises, setactiveExercises] = useState([]);
   const [sport, setSport] = useState([]);
   //const [workoutImage, setWorkoutImage]= useState();
-  const nameWorkout = useRef("");
-  const descrWorkout = useRef("");
-  const durationWorkout = useRef("");
+  const nameWorkout = useRef();
+  const descrWorkout = useRef();
+  const durationWorkout = useRef();
   const { exercises } = useExercises(getExercisesQuery);
   const { exercises : sports } = useExercises(getSportsQuery);
-  console.log(sports?.data?.sports);
+
+
   function addToExercises(selection) {
     setactiveExercises([
       ...activeExercises,
@@ -33,6 +34,15 @@ export default function CreateWorkout() {
     ]);
   }
 
+  function getActiveExerIds(){
+    if(activeExercises.length > 0){
+      const sendExercise =  activeExercises.map(item => item.selection.id);
+      return sendExercise;
+    }else{
+      return [];
+    }
+  }
+
   function deleteExercise(id) {
     const removeItem = activeExercises.filter((item) => {
       return item.listId !== id;
@@ -41,11 +51,18 @@ export default function CreateWorkout() {
   }
 
   function selectsport(value) {
-    se
+     setSport(value);
   }
 
   function submitWorkout(e) {
     e.preventDefault();
+    const workoutname = nameWorkout.current.value;
+    const workoutDescr = descrWorkout.current.value;
+    const workoutSport =  sport.value;
+    const workouDur = durationWorkout.current.value;
+    const WorkoutEx = getActiveExerIds();
+
+
   }
 
   function setWorkoutImg(e){
