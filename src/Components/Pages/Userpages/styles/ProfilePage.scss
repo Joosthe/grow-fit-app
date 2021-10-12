@@ -1,9 +1,18 @@
+@import '../../../../scss-mixins/screenhook';
 
 .profile__user__account{
   display: flex;
   align-items: flex-start;
   padding-top: 1.75rem;
-
+  @include lg-and-below{
+    flex-wrap: wrap;
+  }
+  @include sm-and-below{
+    display: block;
+  }
+  &>*{
+    margin-bottom:1rem;
+  }
 }
 .section--label{
   position: absolute;
@@ -28,6 +37,10 @@
   overflow: hidden;
   border: 3px solid var(--color-prim);
   max-height: 10rem;
+  margin: auto;
+  @include lg-and-below{
+    margin: 0 auto 3rem;
+  }
 }
 
 .profile__user__account_info{
@@ -43,9 +56,15 @@
 .profile__user__account_info__wrapper{
   display: flex;
   flex-wrap: wrap;
- 
+  @include lg-and-below{
+    display: block;
+  }
   .profile__user__account_info__inner{
     width: 50%;
+
+    @include lg-and-below{
+      width: 100%;
+    }
     font-weight: 500;
     span{
       font-weight: 300;
@@ -86,4 +105,8 @@
 
 .profile__user__account .custom-dropzone{
   border-radius: 50%;
+  margin: auto;
+  @include lg-and-below{
+    margin: 0 auto 3rem;
+  }
 }
