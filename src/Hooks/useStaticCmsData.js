@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { getData } from "../Connections/graphcsm";
 
-export default function useExercises(query){
-  const [exercises, setExercises ]= useState(null);
+export default function useStaticCmsData(query){
+  const [data, setData ]= useState(null);
   
   useEffect(()=>{
     const fetchData = async ()=> {
       try{
         const response = await getData(query);
-        setExercises(response);
+        setData(response);
         
       }catch(err){
         console.log(err)
@@ -17,5 +17,5 @@ export default function useExercises(query){
     fetchData() ;
   } , [])
   return {
-    exercises: exercises || {}  };
+    data: data || {}  };
 }

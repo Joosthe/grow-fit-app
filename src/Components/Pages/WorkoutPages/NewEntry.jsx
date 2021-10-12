@@ -6,16 +6,19 @@ import { Workouts } from '../../../Data/workouts';
 import Form from '../../PageComponents/FormElements/Form';
 import useStaticContent from '../../../Hooks/useStaticContent';
 import Select from 'react-select'
+import { getWorkoutsQuery } from '../../../Queries/Workout/getWorkoutsQuery';
+import useStaticCmsData from '../../../Hooks/useStaticCmsData';
+import BetterSelect from '../../PageComponents/FormElements/BetterSelect';
 //const today = new Date().toISOString(); 
 
-{/* check if the user as a workout planned for today */}
-{/* if not let him choose the */}
-const options = Workouts.map((item)=> {
-  return{'value': item.id, 'label': item.title}});
+// const options = Workouts.map((item)=> {
+//   return{'value': item.id, 'label': item.title}
+// });
 
 export default function NewEntry() {
   const sc = useStaticContent('WorkoutPages.NewEntry');
   const [selectedWorkout, setSelectedWorkout] = useState('');
+  const { data: workouts } = useStaticCmsData(getWorkoutsQuery);
 
 
   function handleSubmit(e){ 
@@ -37,10 +40,11 @@ export default function NewEntry() {
       <div className="form-left">
         <div className="form-element custom-select">
           <label htmlFor="entry-workout">Select your work-out</label>
-          <Select
-          options={options} 
-          onChange={(e)=> {setSelectedWorkout(e.value)}}
-          />
+          <BetterSelect
+                selectionData={workouts.workouts} 
+                onSelect={(e)=> {setSelectedWorkout(e.value)}}
+                placeHolder="Type to filter"
+              />
         </div>
         <div className="form-element custom-class">
           <label htmlFor="entry-extra-info">How was it ?</label>
