@@ -5,6 +5,7 @@ import { updateUserImgQuery } from '../../../Queries/User/updateUserQuery';
 import Button from '../../PageComponents/Buttons/Button';
 import LogoutButton from '../../PageComponents/Buttons/LogoutButton';
 import BetterSelect from '../../PageComponents/FormElements/BetterSelect';
+import { FaPencilAlt,FaSave } from 'react-icons/fa';
 import Upload from '../../PageComponents/FormElements/Upload';
 import Container from '../../Wrappers/Container';
 import { nicknames } from '../../../Data/nicknames';
@@ -31,8 +32,8 @@ import './styles/ProfilePage.scss';
     setnicknameValue(selection);
   }
 
-  function saveUser(e){
-    const id = e.target.getAttribute('data-id')
+  function saveUser(id){
+    console.log(id);
     const firstName = editUserFirstName.current.value;
     const lastName = editUserlastName.current.value;
     const userName = editUserUserName.current.value;
@@ -95,6 +96,7 @@ import './styles/ProfilePage.scss';
                   selectionData={selectNicknames} 
                   onSelect={chooseNickname}
                   placeHolder="Choose a nickname"
+                  defaultItem={{ name:currentUser.nicknames}}
                 />
               </div>
             </div>
@@ -102,10 +104,9 @@ import './styles/ProfilePage.scss';
         </div>
         <div className="profile__user__account_actions">
           {editstate 
-            ?  <Button dataId={currentUser.id} onClick={saveUser} variant="btn--save">Save profile</Button>
-            :  <Button onClick={()=>(seteditstate(true))} variant="btn--edit">Edit profile info</Button>
+            ?  <Button onClick={()=>saveUser(currentUser.id)} variant="btn--save"><FaSave style={{display: 'inline-block', margin: ' .2rem .5rem 0 0'}}/>Save profile</Button>
+            :  <Button onClick={()=>(seteditstate(true))} variant="btn--edit"><FaPencilAlt style={{display: 'inline-block', margin: ' .2rem .5rem 0 0'}}/> Edit profile info </Button>
           }
-          
           <LogoutButton/>
         </div>
 

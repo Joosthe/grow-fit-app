@@ -27,6 +27,7 @@ export default function BetterSelect(props) {
           <div className={styles.selectlist__wrapper}>
             <label {...getLabelProps()}>{props.placeholder}</label>
             <input
+                          defaultValue={props.defaultItem.name}
               {...getInputProps({
                 onFocus: () => {
                   if (!isOpen) {
@@ -39,6 +40,7 @@ export default function BetterSelect(props) {
                   }
                 },
                 placeholder: props.placeHolder,
+  
               })}
             />
             <div className={styles.selectlist__list__wrapper}>
