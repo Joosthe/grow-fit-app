@@ -51,3 +51,14 @@ export const nicknames = [
   'Tiger',
   'Turbo',
 ];
+export const encouragements= [
+  "nice work",
+  "good job",
+  "doing great",
+  "N.I.C.E",
+  "You are a legend",
+  "Top job",
+  "You have completed a session",
+  "epic",
+  "awesome"
+]

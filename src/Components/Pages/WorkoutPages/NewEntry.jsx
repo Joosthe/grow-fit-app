@@ -12,12 +12,14 @@ import BetterSelect from '../../PageComponents/FormElements/BetterSelect';
 import { getData } from '../../../Connections/graphcsm';
 import { createEntryQuery, publishEntryQuery } from '../../../Queries/entry/createEntryQuery';
 import { useUser } from '../../../Contexts/UserContext';
+import { useHistory } from 'react-router';
 
 // const options = Workouts.map((item)=> {
 //   return{'value': item.id, 'label': item.title}
 // });
 
 export default function NewEntry() {
+  const {history} = useHistory
   const sc = useStaticContent('WorkoutPages.NewEntry');
   const [selectedWorkout, setSelectedWorkout] = useState('');
   const { data: workouts } = useStaticCmsData(getWorkoutsQuery);
@@ -32,20 +34,18 @@ export default function NewEntry() {
     e.preventDefault();
 
     try{
-      alert('heelo wolrld')
       getData(createEntryQuery(
         currentUser.id,
         selectedWorkout.id, 
         entryScore.current.value,
         entryInfo.current.value
         )).then(
-          data =>{
-            console.log(data);
+          data =>{;
             getData(publishEntryQuery(data.createEntry.id));
             entryScore.current.value= "";
             entryInfo.current.value="";
             setSelectedWorkout('');
-            
+            history.push('/succes');
           }
         );
     }catch(err){
