@@ -12,7 +12,6 @@
   --color--succes:  #d4ff00;
   --color--warning: #FFC312;
   --color--error: #EA2027;
-
   --color-black: #101400;
   --color-grey-800:#333;
   --color-grey-600: #666;
@@ -28,6 +27,11 @@
 html{
   font-size: 20px;
 }
+
+body{
+  padding-top: 3.3rem;
+}
+
 html,body,#root{
   display: flex;
   flex-direction: column;
