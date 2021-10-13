@@ -11,7 +11,7 @@ export default function BetterSelect(props) {
             props.onSelect(currectSelection);
           }
         }}
-        itemToString={(item) => (item ? item.name : "")}
+        itemToString={(item) => (item ? item?.name : "")}
       >
         {({
           getLabelProps,
@@ -27,7 +27,6 @@ export default function BetterSelect(props) {
           <div className={styles.selectlist__wrapper}>
             <label {...getLabelProps()}>{props.placeholder}</label>
             <input
-                          defaultValue={props.defaultItem.name}
               {...getInputProps({
                 onFocus: () => {
                   if (!isOpen) {
@@ -40,7 +39,7 @@ export default function BetterSelect(props) {
                   }
                 },
                 placeholder: props.placeHolder,
-  
+                required:props.required
               })}
             />
             <div className={styles.selectlist__list__wrapper}>
@@ -50,7 +49,7 @@ export default function BetterSelect(props) {
                     .filter(
                       (item) =>
                         !inputValue ||
-                        item.name
+                        item?.name
                           .toLowerCase()
                           .includes(inputValue.toLowerCase()),
                     )
@@ -71,7 +70,7 @@ export default function BetterSelect(props) {
                           },
                         })}
                       >
-                        {item.name}
+                        {item?.name}
                       </li>
                     ))}
               </ul>

@@ -52,13 +52,13 @@ export const nicknames = [
   'Turbo',
 ];
 export const encouragements= [
-  "nice work",
-  "good job",
-  "doing great",
+  "Nice work",
+  "Good job",
+  "Doing great",
   "N.I.C.E",
   "You are a legend",
   "Top job",
   "You have completed a session",
-  "epic",
-  "awesome"
+  "Epic work",
+  "Awesome"
 ]

@@ -1,6 +1,3 @@
-
-
-
 .main-navigation-top{
   border-bottom: .5rem solid var(--color-prim);
   background-color: var(--color-black);
@@ -10,7 +7,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99999;
+  z-index: 100;
   .logo{
     font-size: 1.2rem;
     letter-spacing: .04rem;

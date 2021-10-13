@@ -81,3 +81,14 @@
     border: 3px solid var(--color-black);
   }
 }
+
+.btn--succespage{
+  font-size: 1.5rem;
+  border: 2px solid var(--color-black);
+  margin-top: 2rem;
+  padding: .5rem 2rem;
+  &:hover{
+    background-color: var(--color-black);
+    color: var(--color-prim);
+  }
+}
