@@ -53,6 +53,10 @@ export default {
     CreateExercise:{
       title:'Create a new exercise',
       introLine: 'What are you going to make me do ?'
+    },
+    Workouts:{
+      title:"Workouts",
+      introLine: "Check out here all our nice workouts"
     }
   },
   GeneralPages:{

@@ -14,6 +14,9 @@ import { getSportsQuery } from "../../../Queries/Sports/getSportsQuery";
 import { getData } from "../../../Connections/graphcsm";
 import { createWorkoutQuery, publishWorkoutQuery } from "../../../Queries/Workout/CreateWorkoutQuery";
 import { useError } from "../../../Contexts/ErrorContext";
+import UploadCload from "../../PageComponents/FormElements/UploadCload";
+import { uploadingImg } from '../../../utils/uploadcloud';
+
 
 export default function CreateWorkout() {
   const sc = useStaticContent("WorkoutPages.CreateWorkout");
@@ -22,7 +25,10 @@ export default function CreateWorkout() {
   const { data : sports } = useStaticCmsData(getSportsQuery);
   const [activeExercises, setactiveExercises] = useState([]);
   const [sport, setSport] = useState([]);
-  //const [workoutImage, setWorkoutImage]= useState();
+
+
+  const [workoutImage, setWorkoutImage]= useState();
+
   const nameWorkout = useRef();
   const descrWorkout = useRef();
   const durationWorkout = useRef();
@@ -67,30 +73,30 @@ export default function CreateWorkout() {
     const workouDur = durationWorkout.current.value;
     const WorkoutEx = getActiveExerIds();
     const alias = '/workout/'+workoutname.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
+
     try{
-      getData(
-        createWorkoutQuery(workoutname,workoutDescr, workoutSport , workouDur, WorkoutEx, alias)).then(
-          data=>{
-            getData(publishWorkoutQuery(data.createWorkout.id)).then(
-              data =>{
-                window.scrollTo(0, 0);
-                setSuccesMessage('created a new exercise: "'+ data.publishWorkout.title+'"');
-                nameWorkout.current.value = "";
-                descrWorkout.current.value = "";
-                durationWorkout.current.value = "";
-                setSport([]);
-                setactiveExercises([]);
-              }
-            )
-          }
-        );
+      console.log(workoutImage);
+      uploadingImg(workoutImage).then(
+       getData(
+         createWorkoutQuery(workoutname,  response.data.public_id , workoutDescr, workoutSport , workouDur, WorkoutEx, alias)).then(
+           data=>{
+             getData(publishWorkoutQuery(data.createWorkout.id)).then(
+               data =>{
+                 window.scrollTo(0, 0);
+                 setSuccesMessage('created a new exercise: "'+ data.publishWorkout.title+'"');
+                 nameWorkout.current.value = "";
+                 descrWorkout.current.value = "";
+                 durationWorkout.current.value = "";
+                 setSport([]);
+                 setactiveExercises([]);
+               }
+             )
+           }
+         )
+      );
     }catch(err){
        setErrorMessage(err.message);
     }
-  }
-
-  function setWorkoutImg(e){
-    alert('hello world ')
   }
 
   return (
@@ -111,16 +117,21 @@ export default function CreateWorkout() {
               <label>Choose main sport workout</label>
             <CustomSelect options={sports?.data?.sports} onChange={selectsport} />
             </div>
-            {/* <div className="form-group" id="durationWorkout">
+            <div className="form-group" id="durationWorkout">
               <label>Upload image workout</label>
-            <Upload uploadSumbit={setWorkoutImg}/>
-            </div> */}
-            <input
-              type="submit"
-              name="createWorkoutForm"
-              id="createWorkoutForm"
-              className="btn btn-prim"
-            />
+              <UploadCload  tryUpload={setWorkoutImage}>
+                 
+              </UploadCload>
+
+              <input
+                  type="submit"
+                  name="createWorkoutForm"
+                  id="createWorkoutForm"
+                  className="btn btn-prim"
+                 
+                />
+            </div>
+           
 
         </div>
         <div className="form-right">
