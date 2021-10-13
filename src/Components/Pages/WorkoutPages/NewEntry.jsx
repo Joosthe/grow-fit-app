@@ -41,21 +41,23 @@ export default function NewEntry() {
   function handleSubmit(e){ 
     e.preventDefault();
     try{
-      uploadingImg(entryImg).then(
-        console.log
-      // getData(createEntryQuery(
-      //   currentUser.id,
-      //   selectedWorkout.id, 
-      //   entryScore.current.value,
-      //   entryInfo.current.value
-      //   )).then(
-      //     data =>{;
-      //       getData(publishEntryQuery(data.createEntry.id));
-      //       entryScore.current.value= "";
-      //       entryInfo.current.value="";
-      //       setSelectedWorkout('');
-      //     }
-      //   )
+      uploadingImg(entryImg, 'entry_preset').then(
+        repsonse=>
+         getData(createEntryQuery(
+            currentUser.id,
+            selectedWorkout.id, 
+            entryScore.current.value,
+            entryInfo.current.value,
+            response.data.public_id
+         )).then(
+           data =>{;
+             getData(publishEntryQuery(data.createEntry.id));
+             entryScore.current.value= "";
+             entryInfo.current.value="";
+             setSelectedWorkout('');
+             setentryImg('');
+           }
+         )
       );
     //  history.push('/succes');
     }catch(err){
@@ -75,11 +77,7 @@ export default function NewEntry() {
 
     <Form onSubmit={handleSubmit}>
       <div className="form-left">
-      <UploadCload  tryUpload={setentryImg}>
-                 
-      </UploadCload>
-
-
+      <UploadCload  tryUpload={setentryImg} tempImage={entryImg} placeholder="Upload a Picture or didn't happen"/>
         <div className="form-element custom-select">
           <label htmlFor="entry-workout">Select your work-out</label>
           <BetterSelect

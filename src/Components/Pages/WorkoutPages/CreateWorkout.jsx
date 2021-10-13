@@ -75,8 +75,8 @@ export default function CreateWorkout() {
     const alias = '/workout/'+workoutname.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
 
     try{
-      console.log(workoutImage);
-      uploadingImg(workoutImage).then(
+      uploadingImg(workoutImage, 'workout_preset').then(
+      response =>
        getData(
          createWorkoutQuery(workoutname,  response.data.public_id , workoutDescr, workoutSport , workouDur, WorkoutEx, alias)).then(
            data=>{
@@ -89,6 +89,7 @@ export default function CreateWorkout() {
                  durationWorkout.current.value = "";
                  setSport([]);
                  setactiveExercises([]);
+                 setWorkoutImage('');
                }
              )
            }
@@ -119,7 +120,7 @@ export default function CreateWorkout() {
             </div>
             <div className="form-group" id="durationWorkout">
               <label>Upload image workout</label>
-              <UploadCload  tryUpload={setWorkoutImage}>
+              <UploadCload  tryUpload={setWorkoutImage} tempImage={workoutImage} placeholder="Upload a workout picture">
                  
               </UploadCload>
 
