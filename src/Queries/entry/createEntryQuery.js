@@ -1,4 +1,4 @@
-export function createEntryQuery(userId, workout,  score, info){
+export function createEntryQuery(userId, workout,  score, info, img){
   return `
   mutation{
     createEntry(data:{
@@ -6,6 +6,7 @@ export function createEntryQuery(userId, workout,  score, info){
       workoutId: "${workout}",
       info: "${info}",
       score: ${score}
+      entryImg: "${img}"
     }) {
       id,
       entryUserId
@@ -13,6 +14,7 @@ export function createEntryQuery(userId, workout,  score, info){
       workoutId,
       score
       info
+      entryImg
     }
   }
   `;
@@ -26,7 +28,8 @@ export function publishEntryQuery(id){
       entry_date,
       workoutId,
       score
-      info
+      info,
+      entryImg
     }
   }`
 }

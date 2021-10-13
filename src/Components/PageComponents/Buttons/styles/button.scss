@@ -92,3 +92,19 @@
     color: var(--color-prim);
   }
 }
+
+.retrybutton{
+  border: 2px solid var(--color-prim);
+  color: var(--color-prim);
+  width: 200px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: .1rem;
+  margin: auto;
+  svg{
+    display: inline-block;
+    margin-right: .5rem;
+  }
+}

@@ -21,7 +21,7 @@ function MainMenu(props) {
         </Link>
         </li>
       <li>
-        <Link to="/" onClick={props.closeMenu}>
+        <Link to="/workouts" onClick={props.closeMenu}>
           Workouts
         </Link>
       </li>

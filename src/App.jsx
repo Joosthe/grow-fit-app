@@ -23,6 +23,7 @@ import { useUser } from './Contexts//UserContext';
 import TestPage from './Components/Pages/GereralPages/TestPage';
 import NoAcces from './Components/Pages/GereralPages/NoAcces';
 import succespage from './Components/Pages/WorkoutPages/succespage';
+import Workouts from './Components/Pages/WorkoutPages/Workouts';
 
 
 function App() {
@@ -37,16 +38,17 @@ function App() {
       } 
       
       <Switch>
-        <AdminRoute path="/admin/users" exact component={AdminUsers} />
-        <PrivateRoute path="/create-exercise" extact component={CreateExercise}/>
-        <PrivateRoute path="/create-workout" extact component={CreateWorkout}/>
-        <PrivateRoute path="/new-entry" extact component={NewEntry}/>
-        <PrivateRoute path="/choose-workout" exact component={ChooseWorkout}/>
-        <PrivateRoute path="/add-content" extact component={AddContent}/>
-        <PrivateRoute path="/profile" exact component={ProfilePage} />
-        <PrivateRoute path="/my-goals" exact component={MyGoals} />
-        <PrivateRoute path="/succes"exact component={succespage}/>
-        <PublicRoute  path="/register" exact component={RegisterPage} />
+        <AdminRoute exact path="/admin/users"  component={AdminUsers} />
+        <PrivateRoute exact path="/create-exercise" component={CreateExercise}/>
+        <PrivateRoute exact path="/create-workout"  component={CreateWorkout}/>
+        <PrivateRoute exact path="/new-entry"  component={NewEntry}/>
+        <PrivateRoute exact path="/choose-workout"  component={ChooseWorkout}/>
+        <PrivateRoute exact path="/add-content"  component={AddContent}/>
+        <PrivateRoute exact path="/profile"  component={ProfilePage} />
+        <PrivateRoute exact path="/my-goals"  component={MyGoals} />
+        <PrivateRoute exact path="/succes" component={succespage}/>
+        <PublicRoute  exact path="/register"  component={RegisterPage} />
+        <PublicRoute exact path="/workouts" component={Workouts}/>
         <PublicRoute exact path="/login"  component={LoginPage} />
         <PublicRoute exact path="/" component={Home} />
         <PublicRoute exact path="/forbidden" component={NoAcces} />

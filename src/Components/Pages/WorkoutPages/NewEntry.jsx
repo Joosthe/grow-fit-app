@@ -14,6 +14,8 @@ import { createEntryQuery, publishEntryQuery } from '../../../Queries/entry/crea
 import { useUser } from '../../../Contexts/UserContext';
 import { useHistory } from 'react-router';
 import { useError } from '../../../Contexts/ErrorContext';
+import { uploadingImg } from '../../../utils/uploadcloud';
+import UploadCload from '../../PageComponents/FormElements/UploadCload';
 
 // const options = Workouts.map((item)=> {
 //   return{'value': item.id, 'label': item.title}
@@ -24,6 +26,7 @@ export default function NewEntry() {
   const sc = useStaticContent('WorkoutPages.NewEntry');
   const {setErrorMessage} = useError();
   const [selectedWorkout, setSelectedWorkout] = useState('');
+  const [entryImg, setentryImg] = useState('');
 
   const { data: workouts } = useStaticCmsData(getWorkoutsQuery);
   const {currentUser} = useUser();
@@ -38,20 +41,25 @@ export default function NewEntry() {
   function handleSubmit(e){ 
     e.preventDefault();
     try{
-      getData(createEntryQuery(
-        currentUser.id,
-        selectedWorkout.id, 
-        entryScore.current.value,
-        entryInfo.current.value
-        )).then(
-          data =>{;
-            getData(publishEntryQuery(data.createEntry.id));
-            entryScore.current.value= "";
-            entryInfo.current.value="";
-            setSelectedWorkout('');
-          }
-        );
-        history.push('/succes');
+      uploadingImg(entryImg, 'entry_preset').then(
+        repsonse=>
+         getData(createEntryQuery(
+            currentUser.id,
+            selectedWorkout.id, 
+            entryScore.current.value,
+            entryInfo.current.value,
+            response.data.public_id
+         )).then(
+           data =>{;
+             getData(publishEntryQuery(data.createEntry.id));
+             entryScore.current.value= "";
+             entryInfo.current.value="";
+             setSelectedWorkout('');
+             setentryImg('');
+           }
+         )
+      );
+    //  history.push('/succes');
     }catch(err){
       console.error(err);
       setErrorMessage(err.message);
@@ -69,6 +77,7 @@ export default function NewEntry() {
 
     <Form onSubmit={handleSubmit}>
       <div className="form-left">
+      <UploadCload  tryUpload={setentryImg} tempImage={entryImg} placeholder="Upload a Picture or didn't happen"/>
         <div className="form-element custom-select">
           <label htmlFor="entry-workout">Select your work-out</label>
           <BetterSelect
