@@ -1,0 +1,36 @@
+.workoutteasercard__wrapper{
+
+}
+.workoutteasercard{
+  background-color: var(--color-black);
+  color: var(--color-prim);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+  top: 0;
+}
+.workoutteasercard__body{
+  padding: .75rem;
+}
+.workoutteasercard__top img{
+  height: 150px;
+  object-fit: cover;
+}
+.workoutteasercard__top{
+  display: flex;
+  & > *:first-child{
+    flex: 1 0 auto;
+  }
+}
+.workoutteasercard__tag{
+  font-size: .75rem;
+  background-color: var(--color-prim);
+  color: var(--color-black);
+  display: inline-block;
+  padding: .2rem .75rem;
+  border-radius: 5px;
+}
+.workoutteasercard__title{
+  font-weight: 700;
+}

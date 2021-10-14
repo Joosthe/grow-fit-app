@@ -72,7 +72,7 @@ export default function CreateWorkout() {
     const workoutSport =  sport.value;
     const workouDur = durationWorkout.current.value;
     const WorkoutEx = getActiveExerIds();
-    const alias = '/workout/'+workoutname.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
+    const alias = '/workouts/'+workoutname.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
 
     try{
       uploadingImg(workoutImage, 'workout_preset').then(
