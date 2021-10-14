@@ -9,7 +9,7 @@ query{
 
 export const getWorkoutsTeaserQuery = `
 query{
-  workouts{
+  workouts(orderBy: createdAt_DESC){
     id
     title
     path
