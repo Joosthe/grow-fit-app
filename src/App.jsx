@@ -19,7 +19,7 @@ import AdminRoute from './Components/Routes/AdminRoute';
 import { useError } from './Contexts/ErrorContext';
 import { useUser } from './Contexts//UserContext';
 import NoAcces from './Components/Pages/GereralPages/NoAcces';
-import Succespage from './Components/Pages/WorkoutPages/Succespageio';
+import Succespage from './Components/Pages/WorkoutPages/Succespage';
 import Workouts from './Components/Pages/WorkoutPages/Workouts';
 import WorkoutDetail from './Components/Pages/WorkoutPages/WorkoutDetail';
 
