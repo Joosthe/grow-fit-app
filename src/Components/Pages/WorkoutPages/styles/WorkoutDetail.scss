@@ -1,3 +1,4 @@
+@import '../../../../scss-mixins/screenhook';
 .workout-container{
   display: flex;
   flex-direction: column;
@@ -8,9 +9,15 @@
 .workoutdetail__wrapper{
   display: flex;
   flex-wrap: wrap;
+  @include sm-and-below{
+    flex-direction: column-reverse;
+  }
   .workoutdetail__inner{
     width: 50%;
     min-height: 200px;
+    @include sm-and-below{
+      width: 100%;
+    }
     img{
       flex: 1 0 auto;
       max-width: 100%;
@@ -20,6 +27,10 @@
       border-radius: 1.5rem;
       border: 3px solid var(--color-prim);
       box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      @include sm-and-below{
+        max-height: 300px;
+        margin-bottom: 2rem;
+      }
     }
   }
 }
@@ -29,10 +40,16 @@
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
+  @include sm-and-below{
+    padding: 2rem .5rem;
+  }
 }
 .workoutdetail__header{
   display: inline-flex;
   margin-bottom: 1rem;
+  @include sm-and-below{
+    display: block;
+  }
   .workoutdetail__titel{
     flex: 1 0 auto;
     font-size: 2rem;
@@ -65,4 +82,7 @@
   align-items: center;
   font-weight: 200;
   margin-bottom: .1rem;
+  @include sm-and-below{
+    margin-bottom: 1rem;
+  }
 }
