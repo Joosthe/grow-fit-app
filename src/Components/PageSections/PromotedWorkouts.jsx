@@ -4,6 +4,7 @@ import { getWorkoutsPromotedTeaserQuery } from '../../Queries/Workout/getWorkout
 import WorkoutTeaserCard from '../PageComponents/Cards/WorkoutTeaserCard';
 import './styles/PromotedWorkout.scss';
 import Button from '../PageComponents/Buttons/Button';
+import {BsChevronRight} from 'react-icons/bs';
 
 export default function PromotedWorkouts() {
   const { data : workoutsdata } = useStaticCmsData(getWorkoutsPromotedTeaserQuery);
@@ -16,7 +17,7 @@ export default function PromotedWorkouts() {
           ))}
       </div>
       <div className="text-center">
-      <Button variant="btn-cta-section" to="/workouts">Check out all our workouts</Button>
+      <Button variant="btn-cta-section" to="/workouts">Check out all our workouts <BsChevronRight/> </Button>
       </div>
 
     </section>
