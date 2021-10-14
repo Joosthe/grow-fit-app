@@ -5,14 +5,12 @@ import MainNav from './Components/Navigation/MainNav';
 import FooterNav from './Components/Navigation/FooterNav';
 import Home from './Components/Pages/GereralPages/Home';
 import FourOhFour from './Components/Pages/GereralPages/FourOhFour';
-import BasicPage from './Components/Pages/GereralPages/BasicPage';
 import LoginPage from './Components/Pages/Userpages/LoginPage';
 import RegisterPage from './Components/Pages/Userpages/Registerpage';
 import ProfilePage from './Components/Pages/Userpages/ProfilePage';
 import MyGoals from './Components/Pages/Userpages/MyGoals';
 import AddContent from './Components/Pages/WorkoutPages/AddContent';
 import NewEntry from './Components/Pages/WorkoutPages/NewEntry';
-import ChooseWorkout from './Components/Pages/WorkoutPages/ChooseWorkout';
 import CreateWorkout from './Components/Pages/WorkoutPages/CreateWorkout';
 import CreateExercise from './Components/Pages/WorkoutPages/CreateExercise';
 import AdminUsers from './Components/Pages/Userpages/AdminUsers';
@@ -20,10 +18,10 @@ import PrivateRoute from './Components/Routes/PrivateRoute';
 import AdminRoute from './Components/Routes/AdminRoute';
 import { useError } from './Contexts/ErrorContext';
 import { useUser } from './Contexts//UserContext';
-import TestPage from './Components/Pages/GereralPages/TestPage';
 import NoAcces from './Components/Pages/GereralPages/NoAcces';
 import succespage from './Components/Pages/WorkoutPages/succespage';
 import Workouts from './Components/Pages/WorkoutPages/Workouts';
+import WorkoutDetail from './Components/Pages/WorkoutPages/WorkoutDetail';
 
 
 function App() {
@@ -42,16 +40,16 @@ function App() {
         <PrivateRoute exact path="/create-exercise" component={CreateExercise}/>
         <PrivateRoute exact path="/create-workout"  component={CreateWorkout}/>
         <PrivateRoute exact path="/new-entry"  component={NewEntry}/>
-        <PrivateRoute exact path="/choose-workout"  component={ChooseWorkout}/>
         <PrivateRoute exact path="/add-content"  component={AddContent}/>
         <PrivateRoute exact path="/profile"  component={ProfilePage} />
         <PrivateRoute exact path="/my-goals"  component={MyGoals} />
         <PrivateRoute exact path="/succes" component={succespage}/>
-        <PublicRoute  exact path="/register"  component={RegisterPage} />
+        <PublicRoute exact path="/register"  component={RegisterPage} />
         <PublicRoute exact path="/workouts" component={Workouts}/>
         <PublicRoute exact path="/login"  component={LoginPage} />
         <PublicRoute exact path="/" component={Home} />
         <PublicRoute exact path="/forbidden" component={NoAcces} />
+        <PublicRoute path="/workouts/:id" component={WorkoutDetail}/>
         <PublicRoute path="*" component={FourOhFour} />
       </Switch>
     </div>

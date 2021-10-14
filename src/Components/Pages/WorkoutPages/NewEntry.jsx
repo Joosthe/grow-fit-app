@@ -6,7 +6,7 @@ import { Workouts } from '../../../Data/workouts';
 import Form from '../../PageComponents/FormElements/Form';
 import useStaticContent from '../../../Hooks/useStaticContent';
 import Select from 'react-select'
-import { getWorkoutsQuery } from '../../../Queries/Workout/getWorkoutsQuery';
+import { getWorkoutsSelectQuery } from '../../../Queries/Workout/getWorkoutsQuery';
 import useStaticCmsData from '../../../Hooks/useStaticCmsData';
 import BetterSelect from '../../PageComponents/FormElements/BetterSelect';
 import { getData } from '../../../Connections/graphcsm';
@@ -17,10 +17,6 @@ import { useError } from '../../../Contexts/ErrorContext';
 import { uploadingImg } from '../../../utils/uploadcloud';
 import UploadCload from '../../PageComponents/FormElements/UploadCload';
 
-// const options = Workouts.map((item)=> {
-//   return{'value': item.id, 'label': item.title}
-// });
-
 export default function NewEntry() {
   const history = useHistory();
   const sc = useStaticContent('WorkoutPages.NewEntry');
@@ -28,7 +24,7 @@ export default function NewEntry() {
   const [selectedWorkout, setSelectedWorkout] = useState('');
   const [entryImg, setentryImg] = useState('');
 
-  const { data: workouts } = useStaticCmsData(getWorkoutsQuery);
+  const { data: workouts } = useStaticCmsData(getWorkoutsSelectQuery);
   const {currentUser} = useUser();
   const entryInfo = useRef(); 
   const entryScore = useRef();

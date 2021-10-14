@@ -13,7 +13,7 @@ export default function AddContent() {
     <Container>
     <IntroSection line={sc.introLine} title={sc.title}/>
       <div className="flex flex-wrap -mx-2 overflow-hidden grid-add-content pb-4">
-        <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">
+        <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/3 flex-auto">
           <AddContentCard
             to="/new-entry"
             icon={<FaThumbsUp/>}
@@ -21,15 +21,7 @@ export default function AddContent() {
             descr={sc.cards[0].descr}
           />
         </div>
-        <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">   
-        <AddContentCard
-            to="/choose-workout"
-            icon={<FaCalendarAlt/>}
-            title={sc.cards[1].title}
-            descr={sc.cards[1].descr}
-          />
-        </div>
-        <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">
+        <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/3 flex-auto">
           <AddContentCard
             to="/create-workout"
             icon={<FaPencilAlt/>}
@@ -37,7 +29,7 @@ export default function AddContent() {
             descr={sc.cards[2].descr}
           />
         </div>
-        <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 flex-auto">
+        <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/3 flex-auto">
           <AddContentCard
             to="/create-exercise"
             icon={<FaTasks/>}
