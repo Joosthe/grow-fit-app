@@ -4,39 +4,50 @@ import { useParams } from 'react-router-dom';
 import { getWorkoutDetailQuery, getWorkoutExercisesQuery } from '../../../Queries/Workout/getWorkoutsQuery';
 import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 import { getData } from '../../../Connections/graphcsm';
+import useWorkoutDetail from '../../../Hooks/useWorkoutDetail';
 
-export default function WorkoutDetail() {
-    const { id } = useParams();
-    const { data } = useStaticCmsData(getWorkoutDetailQuery(id));
+ export default function WorkoutDetail() {
+     const { id } = useParams();
+     const { data, ex } = useWorkoutDetail(getWorkoutDetailQuery(id));
+    //  const { data, ex } = useStaticCmsData();
 
-    const [workout, setworkout] = useState(data.workout);
-    
-    
-    console.log("workout",workout)
-    useEffect(() => {
-        setworkout(data.workout)
-        const exercises = [];
-        data?.workout?.exercises.forEach(async id=>{
-            
-         const  result = await getData(getWorkoutExercisesQuery(id));
-         exercises.push(result.exercise);
-        }) 
-        console.log("workout",workout)
-        console.log('newworkout', newworkout)
-        setworkout({ ...workout, exercises});
-    }, [data.workout])
+    //  const [exercisesino, setExercises] = useState([]);  
+
+    // function getExercises(array){
+    //   let newExercises = [];
+    //   array.forEach(async id=>{
+    //     const  result = await getData(getWorkoutExercisesQuery(id));
+    //     newExercises.push(result.exercise);
+    //   });
+    //   return newExercises;
+    // }
+
+
+    // if(data.workout){
+    //   const test = getExercises(data.workout.exercises);
+    // }
       
-
-    return (
-        <div>
-     
-            {data &&(
+     return (
+         <div>
+           {/* {console.log('test', data)} */}
+            {/* {data &&(
                 <div>
                     <h1>{data.workout?.title}</h1>
+                    <Image publicId={data.workout?.workoutImg}/> 
                 </div>
             )
             }
+            {      console.log(exercisesino)}
            
-        </div>
-    )
-}
+            {/* {exercises.length > 0 && (
+                <div>
+                    {console.log('exercises',exercises)}
+                    { exercises.map(item=>(
+                   <div> {item.title}</div>
+                ))}
+                </div>
+               
+             )}  */}         
+         </div>
+     )
+ }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import useStaticCmsData from '../../../Hooks/useStaticCmsData';
 import useStaticContent from '../../../Hooks/useStaticContent';
 import { getWorkoutsTeaserQuery } from '../../../Queries/Workout/getWorkoutsQuery';
@@ -14,10 +13,10 @@ export default function Workouts() {
     return (
         <Container>
             <IntroSection line={sc.introLine} title={sc.title}/>
-            <div className="flex flex-wrap -mx-2 overflow-hidden grid-add-content pb-4">
-                {workoutsdata?.workouts?.map(item=>(
-                    <WorkoutTeaserCard info={item}/>
-                ))}
+            <div className="flex flex-wrap -mx-2 overflow-hidden grid-add-content pb-4">    
+            {workoutsdata?.workouts?.map(item=>(
+             <WorkoutTeaserCard info={item} key={item?.id}/>
+            ))}
             </div>         
                
         </Container>
