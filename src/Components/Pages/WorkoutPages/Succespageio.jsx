@@ -5,7 +5,7 @@ import { encouragements } from '../../../Data/nicknames';
 import Button from '../../PageComponents/Buttons/Button';
 import styles from './styles/Succes.module.scss'
 
-export default function succespage() {
+export default function Succespage() {
   const {currentUser} = useUser();
   return (
     <div className={styles.succesbox}>

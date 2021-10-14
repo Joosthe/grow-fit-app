@@ -19,7 +19,7 @@ import AdminRoute from './Components/Routes/AdminRoute';
 import { useError } from './Contexts/ErrorContext';
 import { useUser } from './Contexts//UserContext';
 import NoAcces from './Components/Pages/GereralPages/NoAcces';
-import succespage from './Components/Pages/WorkoutPages/succespage';
+import Succespage from './Components/Pages/WorkoutPages/Succespageio';
 import Workouts from './Components/Pages/WorkoutPages/Workouts';
 import WorkoutDetail from './Components/Pages/WorkoutPages/WorkoutDetail';
 
@@ -43,7 +43,7 @@ function App() {
         <PrivateRoute exact path="/add-content"  component={AddContent}/>
         <PrivateRoute exact path="/profile"  component={ProfilePage} />
         <PrivateRoute exact path="/my-goals"  component={MyGoals} />
-        <PrivateRoute exact path="/succes" component={succespage}/>
+        <PrivateRoute exact path="/succes" component={Succespage}/>
         <PublicRoute exact path="/register"  component={RegisterPage} />
         <PublicRoute exact path="/workouts" component={Workouts}/>
         <PublicRoute exact path="/login"  component={LoginPage} />
