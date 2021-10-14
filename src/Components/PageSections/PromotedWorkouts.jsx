@@ -1,10 +1,24 @@
-import React from 'react'
+import React from 'react';
+import useStaticCmsData from '../../Hooks/useStaticCmsData';
+import { getWorkoutsPromotedTeaserQuery } from '../../Queries/Workout/getWorkoutsQuery';
+import WorkoutTeaserCard from '../PageComponents/Cards/WorkoutTeaserCard';
+import './styles/PromotedWorkout.scss';
+import Button from '../PageComponents/Buttons/Button';
 
 export default function PromotedWorkouts() {
-
+  const { data : workoutsdata } = useStaticCmsData(getWorkoutsPromotedTeaserQuery);
   return (
-    <div>
-      <h1> hello word</h1>
-    </div>
+    <section className="promoted_workouts__wrapper">
+      <h1 className="promoted_workouts__title">Our workouts</h1>
+      <div className="flex flex-wrap -mx-2 overflow-hidden grid-add-content pb-4">
+          {workoutsdata?.workouts?.map(item=>(
+            <WorkoutTeaserCard info={item} key={item?.id}/>
+          ))}
+      </div>
+      <div className="text-center">
+      <Button variant="btn-cta-section" to="/workouts">Check out all our workouts</Button>
+      </div>
+
+    </section>
   )
 }

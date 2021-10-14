@@ -45,3 +45,18 @@ export function getWorkoutExercisesQuery(id){
   }
   `
 }
+
+export const getWorkoutsPromotedTeaserQuery = `
+query{
+  workouts(
+    orderBy: createdAt_DESC, 
+    where: { promotedWorkout: true}
+  ){
+  id
+  title
+  path
+  workoutImg
+  sport
+}
+}
+`;
