@@ -1,6 +1,10 @@
+@import '../../../scss-mixins/screenhook';
 .testimonals--section{
   background-color:var(--color-grey-800);
   color: var(--color-white);
+  @include sm-and-below{
+    margin-top: 3rem;
+  }
   h2{
     font-size: 1.4rem;
     letter-spacing: .3rem;
@@ -15,6 +19,9 @@
   max-width: 100%;
   position: relative;
   padding: 5rem 0 1rem;
+  @include sm-and-below{
+    margin-top: -5rem;
+  }
   .slick-arrow{
     position: absolute;
     top: 0;
