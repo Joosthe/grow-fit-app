@@ -11,11 +11,12 @@ function useWorkoutDetail(query) {
     setLoading(true);
     getData(query)
       .then((response) => {
-        console.log('response', response.workout.exercises)
         setData(response.workout)
-          response.workout.exercises.foreach( element => {
-            console.log(element);
-          });
+        console.log('test',response.workout.exercises)
+        response.workout.exercises.forEach(element => {
+          console(element)
+        });
+       
       })
       .catch((err) => {
         setError(err);

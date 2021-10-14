@@ -28,6 +28,8 @@ export function getWorkoutDetailQuery(path){
       path
       workoutImg
       sport
+    	descr
+    	duration
       exercises
     }
   }
