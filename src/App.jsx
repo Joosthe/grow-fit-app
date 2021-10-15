@@ -23,6 +23,7 @@ import Succespage from './Components/Pages/WorkoutPages/Succespage';
 import Workouts from './Components/Pages/WorkoutPages/Workouts';
 import WorkoutDetail from './Components/Pages/WorkoutPages/WorkoutDetail';
 import AllEntries from './Components/Pages/Userpages/AllEntries';
+import Presentation from './Components/Pages/GereralPages/Presentation';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         <PrivateRoute exact path="/my-goals"  component={MyGoals} />
         <PrivateRoute exact path="/succes" component={Succespage}/>
         <PrivateRoute exact path="/all-entries" component={AllEntries}/>
+        <PublicRoute exact path="/presentation" component={Presentation} />
         <PublicRoute exact path="/register"  component={RegisterPage} />
         <PublicRoute exact path="/workouts" component={Workouts}/>
         <PublicRoute exact path="/login"  component={LoginPage} />
