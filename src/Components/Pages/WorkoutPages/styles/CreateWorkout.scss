@@ -1,6 +1,10 @@
+@import '../../../../scss-mixins/screenhook';
 .form--create-workout{
   display: flex;
   margin-bottom: 1rem;
+  @include sm-and-below{
+    flex-direction: column-reverse;
+  }
   &>*{
     flex: 1 0 auto;
     padding: 0 1rem;
