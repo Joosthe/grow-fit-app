@@ -18,7 +18,15 @@ export default function LatestEntries() {
 
       )}
       </div>
-      <Button variant="btn-cta-section" to="/all-entries">Check out all your entrys <BsChevronRight/> </Button>
+      { entries?.entries &&(
+        <div>
+        {  ( entries?.entries.length ===0 ) &&
+          <p className="text-center">Er zijn nog geen workouts</p>}
+        {( entries?.entries.length > 3 ) &&
+          <Button variant="btn-cta-section" to="/all-entries">Check out all your entrys <BsChevronRight/> </Button>}
+        </div>
+      )}
+      
     </div>
   )
 }

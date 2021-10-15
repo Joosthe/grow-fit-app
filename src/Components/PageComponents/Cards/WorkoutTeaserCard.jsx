@@ -13,11 +13,12 @@ export default function WorkoutTeaserCard(props) {
                 <div className="workoutteasercard__body">
                     <div className="workoutteasercard__top">
                         <h1 className="workoutteasercard__title">{props.info.title}</h1>
-                        <p className="workoutteasercard__tag">{props.info.sport}</p>
+                        <div className="wrappr">
+                             <p className="workoutteasercard__tag">{props.info.sport}</p>
+                        </div>
                     </div>
                     <p>Read more</p>
                 </div>
-            
             </article>
             </Link>
         </div>
