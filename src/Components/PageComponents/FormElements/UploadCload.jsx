@@ -9,7 +9,7 @@ export default function UploadCload(props) {
     props.tryUpload(acceptedFile[0])
   }, [])
   
-  const {acceptedFiles,getRootProps, getInputProps, isDragActive} = useDropzone({onDrop, maxFiles: 1})
+  const {acceptedFiles,getRootProps, getInputProps, isDragActive} = useDropzone({onDrop, maxFiles: 1, multiple: false})
 
 
   return (
