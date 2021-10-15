@@ -6,7 +6,8 @@ import { Transformation, Image } from 'cloudinary-react';
 import {BsClock, BsChevronLeft} from 'react-icons/bs';
 import useWorkoutDetail from '../../../Hooks/useWorkoutDetail';
 import Container from '../../Wrappers/Container';
-import './styles/WorkoutDetail.scss'
+import Slide from 'react-reveal/Slide';
+import './styles/WorkoutDetail.scss';
 
  export default function WorkoutDetail() {
      const { id } = useParams();
@@ -17,11 +18,14 @@ import './styles/WorkoutDetail.scss'
             <div className="workoutdetail__wrapper">
                 {console.log(data)}
                 <div className="workoutdetail__inner">
+                <Slide left>
                 <Image publicId={data?.workoutImg}>
                 <Transformation height="500" width="auto" crop="fill"/>
                 </Image>
+                </Slide>
                 </div>
                 <div className="workoutdetail__inner workoutdetail__info ">
+                    <Slide right>
                     <Link to="/workouts" className="workoutdetail__backlink"> <BsChevronLeft/> Go back to workouts</Link>
                     <div className="workoutdetail__header">
                         <h1 className="workoutdetail__titel">{data?.title}</h1>
@@ -31,7 +35,7 @@ import './styles/WorkoutDetail.scss'
                        <BsClock/> {data?.duration}
                     </p>
                     <p>{data?.descr}</p>
-
+                    </Slide>
                 </div>
             </div> 
          </Container>

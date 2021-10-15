@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "./styles/testimonials.scss";
 import NextArrow from '../Navigation/NextArrow.jsx';
 import PrevArrow from '../Navigation/Prevarrow.jsx';
+import Fade from 'react-reveal/Fade';
 
 function Testimonals() {
   const settings = {
@@ -45,25 +46,26 @@ function Testimonals() {
   return (
     <section className="testimonals--section">
       <h2>Testimonials</h2>
-      <div className="slider-wrapper">
-        <Slider {...settings}>
-          { testimonals.map((testimonial, index)=> {
-            return(
-              <div className="testi-item-wrapper" key={index}>
-                <div className="testi-item">
-                <blockquote>
-                  {testimonial.quote}
-                </blockquote>
-                <cite>{testimonial.src}</cite>
+      <Fade up>
+        <div className="slider-wrapper">
+          <Slider {...settings}>
+            { testimonals.map((testimonial, index)=> {
+              return(
+                <div className="testi-item-wrapper" key={index}>
+                  <div className="testi-item">
+                  <blockquote>
+                    {testimonial.quote}
+                  </blockquote>
+                  <cite>{testimonial.src}</cite>
+                  </div>
                 </div>
-              </div>
-            )
-            
-          })}
-          </Slider>
-      </div>
-        
+              )
+            })}
+            </Slider>
+        </div>
+      </Fade>
     </section>
+
   )
 }
 

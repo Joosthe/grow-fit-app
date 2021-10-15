@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './styles/WorkoutTeaser.scss';
 import {Image} from 'cloudinary-react';
-
+import Fade from 'react-reveal/Fade';
 export default function WorkoutTeaserCard(props) {
     return (
+        <Fade up>
         <div className="workoutteasercard__wrapper my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/3">
             <Link to={props.info.path}>
             <article className="workoutteasercard">
@@ -22,5 +23,6 @@ export default function WorkoutTeaserCard(props) {
             </article>
             </Link>
         </div>
+        </Fade>
     )
 }
