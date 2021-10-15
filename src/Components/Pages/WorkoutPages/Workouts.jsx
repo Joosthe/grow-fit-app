@@ -15,7 +15,7 @@ export default function Workouts() {
             <IntroSection line={sc.introLine} title={sc.title}/>
             <div className="flex flex-wrap -mx-2 overflow-hidden grid-add-content pb-4">    
             {workoutsdata?.workouts?.map(item=>(
-             <WorkoutTeaserCard info={item} key={item?.id}/>
+                <WorkoutTeaserCard info={item} key={item.id}/>
             ))}
             </div>         
                

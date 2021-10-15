@@ -60,3 +60,14 @@ query{
 }
 }
 `;
+
+export function getWorkoutTitleQuery(id){
+  return `
+  query{
+    workout( where: {id:"${id}"}){
+      id
+      title
+    }
+  }
+  `
+}

@@ -6,9 +6,10 @@ export function getLatestEntryQuery(id){
       first: 4,
       orderBy: createdAt_DESC
     ) {
+      id
       entryUserId
       info
-      createdAt
+      date : createdAt
       score
       workoutId
     }
