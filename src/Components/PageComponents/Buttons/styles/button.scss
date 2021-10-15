@@ -113,10 +113,11 @@
 .btn-cta-section{
   display: flex;
   border: 1px solid var(--color-black);
-  background-color: white;
+  background-color:  var(--color-prim);
   color: var(--color-black);
   margin: auto;
   align-items: center;
+  font-weight: 500;
   svg{
     margin-left: .5rem;
   }
