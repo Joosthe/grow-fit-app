@@ -10,6 +10,7 @@ import Upload from '../../PageComponents/FormElements/Upload';
 import Container from '../../Wrappers/Container';
 import { nicknames } from '../../../Data/nicknames';
 import './styles/ProfilePage.scss';
+import LatestEntries from '../../PageSections/LatestEntries';
 
  function ProfilePage(){
   const { currentUser, userEdit, setCurrentUser } = useUser();
@@ -109,8 +110,8 @@ import './styles/ProfilePage.scss';
           }
           <LogoutButton/>
         </div>
-
       </section>
+      <LatestEntries/>
     </Container>
   )
 }
