@@ -8,11 +8,11 @@ export const testimonals = [
     quote: 'intuitive scale-abel app with a nice ui' 
   },
   {
-    src: 'Davy',
-    quote: "To be honest it's an I need"
+    src: 'stanger',
+    quote: "looks good"
   },
   {
-    src: 'sm=lkfmsldd',
+    src: 'random person',
     quote: "nice work"
   },
   {
