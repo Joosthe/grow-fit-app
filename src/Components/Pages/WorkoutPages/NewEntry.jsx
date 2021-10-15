@@ -37,29 +37,30 @@ export default function NewEntry() {
   function handleSubmit(e){ 
     e.preventDefault();
     try{
-      uploadingImg(entryImg, 'entry_preset').then(
-        repsonse=>
-         getData(createEntryQuery(
-            currentUser.id,
-            selectedWorkout.id, 
-            entryScore.current.value,
-            entryInfo.current.value,
-            response.data.public_id
-         )).then(
-           data =>{;
-             getData(publishEntryQuery(data.createEntry.id));
-             entryScore.current.value= "";
-             entryInfo.current.value="";
-             setSelectedWorkout('');
-             setentryImg('');
-           }
-         )
-      );
-    //  history.push('/succes');
+       uploadingImg(entryImg, 'entry_preset').then(
+         response =>
+           getData(createEntryQuery(
+              currentUser.id,
+              selectedWorkout.id, 
+              entryScore.current.value,
+              entryInfo.current.value,
+              response.data.public_id
+           )).then(
+             data =>{
+               getData(publishEntryQuery(data.createEntry.id));
+               entryScore.current.value= "";
+               entryInfo.current.value="";
+               setSelectedWorkout('');
+               setentryImg('');
+               history.push('/succes')
+             }
+           )
+       );
     }catch(err){
       console.error(err);
       setErrorMessage(err.message);
     }
+
   }
 
   return (
