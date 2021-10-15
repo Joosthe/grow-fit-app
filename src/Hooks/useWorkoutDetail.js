@@ -12,7 +12,6 @@ function useWorkoutDetail(query) {
     getData(query)
       .then((response) => {
         setData(response.workout)
-        console.log('test',response.workout.exercises)
         response.workout.exercises.forEach(element => {
           console(element)
         });
@@ -39,7 +38,6 @@ function useWorkoutDetail(query) {
         setLoading(false);
       });
   };
-  // console.log('ex',ex);
   return { data, loading, error, refetch, ex };
 }
 

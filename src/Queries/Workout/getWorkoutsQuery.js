@@ -41,6 +41,7 @@ export function getWorkoutExercisesQuery(id){
     exercise( where: {id:"${id}"}){
       id
       title
+      description
     }
   }
   `

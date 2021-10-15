@@ -1,5 +1,5 @@
 import React from 'react'
-import Fade from 'react-reveal/Fade';
+
 import useStaticCmsData from '../../../Hooks/useStaticCmsData';
 import { getWorkoutTitleQuery } from '../../../Queries/Workout/getWorkoutsQuery';
 import './styles/EntryCard.scss'
@@ -8,7 +8,6 @@ export default function EntryCard(props) {
   const workoutdate = new Date(props.entry.date);
   const { data : workout } = useStaticCmsData(getWorkoutTitleQuery(props.entry.workoutId));
   return (
-      <Fade up>
         <div className="entrycard__wrapper my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4">
           <article>
             <div className="entrycard__header">
@@ -21,6 +20,5 @@ export default function EntryCard(props) {
            </div>
            </article>
         </div>
-      </Fade>
   )
 }

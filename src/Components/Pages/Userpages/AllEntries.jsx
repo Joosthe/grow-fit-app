@@ -12,7 +12,7 @@ export default function AllEntries() {
   const { data : entries } = useStaticCmsData(getAllEntriesQuery(currentUser.id));
   return (
     <Container>
-      <IntroSection line={''} title={'Your entries'}/>
+      <IntroSection line={''} title={'Your enties'}/>
       <div className="flex flex-wrap -mx-2 overflow-hidden grid-add-content pb-4">  
       {entries?.entries?.map(item => 
        < EntryCard entry={item} key={item?.id}/>
