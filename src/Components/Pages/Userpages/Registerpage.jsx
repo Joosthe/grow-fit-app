@@ -74,11 +74,11 @@ function RegisterPage() {
           </div>
           <div className="form-group" id="registerpassword">
             <label>Password</label>
-            <input type="text" ref={registerPasswordRef} required/>
+            <input type="password" ref={registerPasswordRef} required/>
           </div>
           <div className="form-group" id="registerconfpassword">
             <label>Confirm password</label>
-            <input type="text" ref={registerConfPasswordRef} required/>
+            <input type="password" ref={registerConfPasswordRef} required/>
           </div>
           <input type="submit" disabled={loading} name="registerform" id="submitregister" className="btn btn-prim" />
         </Form>

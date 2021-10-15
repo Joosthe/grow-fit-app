@@ -59,7 +59,7 @@ function LoginPage() {
           </div>
           <div className="form-element ">
             <label htmlFor="password">Password</label>
-            <input type="pasword" name="logintext" id="passwordlogin" ref={passwordLogin} />
+            <input type="password" name="logintext" id="passwordlogin" ref={passwordLogin} />
           </div>
           <div className="form-element ">
             <input type="submit" name="loginsubmit" id="submitlogin" disabled={loading} className="btn btn-prim" />
