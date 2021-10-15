@@ -9,7 +9,7 @@ import { UserProvider } from './Contexts/UserContext';
 import {CloudinaryContext} from 'cloudinary-react';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <Router>
       <CloudinaryContext cloudName="paujoost">
       <ErrorProvider>
@@ -19,6 +19,6 @@ ReactDOM.render(
       </ErrorProvider>
       </CloudinaryContext>
     </Router>
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById('root')
 )

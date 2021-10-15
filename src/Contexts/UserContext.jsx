@@ -15,6 +15,7 @@ export const UserProvider = ({children}) => {
   const [currentUser, setCurrentUser] = useState( 
     JSON.parse(localStorage.getItem('currentUser'))
   );
+
   function userRegister(email, password, username){
     return auth.createUserWithEmailAndPassword(email,password).then(
      getData(createUserQuery(email, username)).then(

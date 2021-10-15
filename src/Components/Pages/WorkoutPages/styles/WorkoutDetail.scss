@@ -40,13 +40,16 @@
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
+  width: 100%;
   @include sm-and-below{
     padding: 2rem .5rem;
   }
 }
 .workoutdetail__header{
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
+  width: 100%;
   @include sm-and-below{
     display: block;
   }
