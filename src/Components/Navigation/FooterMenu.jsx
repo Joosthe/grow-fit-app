@@ -17,8 +17,8 @@ function FooterMenu() {
           </Link>
         </li>
         <li>
-        <Link to="/goals">
-          My goals
+        <Link to="/all-entries">
+          Your entries
         </Link>
         </li>
         <li className="new-entree-footer-wrapper">

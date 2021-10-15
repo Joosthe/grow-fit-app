@@ -16,3 +16,22 @@ export function getLatestEntryQuery(id){
   }
   `
 }
+
+
+export function getAllEntriesQuery(id){
+  return `
+  {
+    entries(
+      where: { entryUserId_contains: "${id}" }
+      orderBy: createdAt_DESC
+    ) {
+      id
+      entryUserId
+      info
+      date : createdAt
+      score
+      workoutId
+    }
+  }
+  `
+}

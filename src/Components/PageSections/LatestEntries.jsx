@@ -18,7 +18,7 @@ export default function LatestEntries() {
 
       )}
       </div>
-      <Button variant="btn-cta-section" to="/workouts">Check out all your entrys <BsChevronRight/> </Button>
+      <Button variant="btn-cta-section" to="/all-entries">Check out all your entrys <BsChevronRight/> </Button>
     </div>
   )
 }

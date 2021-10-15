@@ -11,16 +11,6 @@ function MainMenu(props) {
         </Link>
       </li>
       <li>
-        <Link to="/" onClick={props.closeMenu}>
-          Reasons
-        </Link>
-      </li>
-      <li>
-        <Link to="/" onClick={props.closeMenu}>
-          Achievements test
-        </Link>
-        </li>
-      <li>
         <Link to="/workouts" onClick={props.closeMenu}>
           Workouts
         </Link>
