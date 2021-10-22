@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "./styles/testimonials.scss";
 import NextArrow from '../Navigation/NextArrow.jsx';
 import PrevArrow from '../Navigation/Prevarrow.jsx';
-
+import { Fade } from "react-awesome-reveal";
 function Testimonals() {
   const settings = {
     dots: false,
@@ -43,6 +43,7 @@ function Testimonals() {
     ]
   }
   return (
+    <Fade>
     <section className="testimonals--section">
       <h2>Testimonials</h2>
         <div className="slider-wrapper">
@@ -61,8 +62,9 @@ function Testimonals() {
             })}
             </Slider>
         </div>
-    </section>
 
+    </section>
+    </Fade>
   )
 }
 

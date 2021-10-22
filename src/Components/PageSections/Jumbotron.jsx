@@ -1,15 +1,20 @@
 import React from 'react'
+import { Fade } from 'react-awesome-reveal'
 import { Link } from 'react-router-dom'
-import './styles/jumbotron.scss'
+import './styles/jumbotron.scss';
 function Jumbotron(props) {
   return (
     <section className="jumbotron">
+
       <div className="content-wrapper">
+
         <div className="content-jumbotron">
+        <Fade>
           <h1 className="text-4xl font-semibold">
             {props.title}
           </h1>
-          <Link to="/login">Log in now &rarr;</Link>
+          <Link to="/login">Log in now hehllo &rarr;</Link>
+          </Fade>
         </div>
       </div>
       <div className="background-image">
@@ -17,6 +22,7 @@ function Jumbotron(props) {
           <img src={props.bgimage} alt="" />
         </picture>
       </div>
+
     </section>
   )
 }
