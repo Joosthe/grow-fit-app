@@ -24,42 +24,46 @@ import Workouts from './Components/Pages/WorkoutPages/Workouts';
 import WorkoutDetail from './Components/Pages/WorkoutPages/WorkoutDetail';
 import AllEntries from './Components/Pages/Userpages/AllEntries';
 import Presentation from './Components/Pages/GereralPages/Presentation';
+import SceduleWorkout from './Components/Pages/WorkoutPages/SceduleWorkout';
+import PlannedWorkouts from './Components/Pages/Userpages/PlannedWorkouts';
 
 
 function App() {
-  const {currentUser} = useUser();
+  const { currentUser } = useUser();
   const { error } = useError();
   return (
     <>
-    <MainNav/>
-    <div id="main-content" className={currentUser ? "loged-in" : ""}>
-      { error.message !== '' &&  
-        <Error/>
-      } 
-      
-      <Switch>
-        <AdminRoute exact path="/admin/users"  component={AdminUsers} />
-        <PrivateRoute exact path="/create-exercise" component={CreateExercise}/>
-        <PrivateRoute exact path="/create-workout"  component={CreateWorkout}/>
-        <PrivateRoute exact path="/new-entry"  component={NewEntry}/>
-        <PrivateRoute exact path="/add-content"  component={AddContent}/>
-        <PrivateRoute exact path="/profile"  component={ProfilePage} />
-        <PrivateRoute exact path="/my-goals"  component={MyGoals} />
-        <PrivateRoute exact path="/succes" component={Succespage}/>
-        <PrivateRoute exact path="/all-entries" component={AllEntries}/>
-        <PublicRoute exact path="/presentation" component={Presentation} />
-        <PublicRoute exact path="/register"  component={RegisterPage} />
-        <PublicRoute exact path="/workouts" component={Workouts}/>
-        <PublicRoute exact path="/login"  component={LoginPage} />
-        <PublicRoute exact path="/" component={Home} />
-        <PublicRoute exact path="/forbidden" component={NoAcces} />
-        <PublicRoute path="/workouts/:id" component={WorkoutDetail}/>
-        <PublicRoute path="*" component={FourOhFour} />
-      </Switch>
-    </div>
-    { currentUser && 
-      <FooterNav/>
-    }
+      <MainNav />
+      <div id="main-content" className={currentUser ? "loged-in" : ""}>
+        {error.message !== '' &&
+          <Error />
+        }
+
+        <Switch>
+          <AdminRoute exact path="/admin/users" component={AdminUsers} />
+          <PrivateRoute exact path="/your-scedule" component={PlannedWorkouts} />
+          <PrivateRoute exact path="/scedule-workout" component={SceduleWorkout} />
+          <PrivateRoute exact path="/create-exercise" component={CreateExercise} />
+          <PrivateRoute exact path="/create-workout" component={CreateWorkout} />
+          <PrivateRoute exact path="/new-entry" component={NewEntry} />
+          <PrivateRoute exact path="/add-content" component={AddContent} />
+          <PrivateRoute exact path="/profile" component={ProfilePage} />
+          <PrivateRoute exact path="/my-goals" component={MyGoals} />
+          <PrivateRoute exact path="/succes" component={Succespage} />
+          <PrivateRoute exact path="/all-entries" component={AllEntries} />
+          <PublicRoute exact path="/presentation" component={Presentation} />
+          <PublicRoute exact path="/register" component={RegisterPage} />
+          <PublicRoute exact path="/workouts" component={Workouts} />
+          <PublicRoute exact path="/login" component={LoginPage} />
+          <PublicRoute exact path="/" component={Home} />
+          <PublicRoute exact path="/forbidden" component={NoAcces} />
+          <PublicRoute path="/workouts/:id" component={WorkoutDetail} />
+          <PublicRoute path="*" component={FourOhFour} />
+        </Switch>
+      </div>
+      {currentUser &&
+        <FooterNav />
+      }
     </>
   )
 }

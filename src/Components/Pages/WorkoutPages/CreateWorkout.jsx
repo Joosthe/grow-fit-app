@@ -20,14 +20,14 @@ import { uploadingImg } from '../../../utils/uploadcloud';
 
 export default function CreateWorkout() {
   const sc = useStaticContent("WorkoutPages.CreateWorkout");
-  const {setSuccesMessage, setErrorMessage} = useError();
-  const { data : exercises } = useStaticCmsData(getExercisesQuery);
-  const { data : sports } = useStaticCmsData(getSportsQuery);
+  const { setSuccesMessage, setErrorMessage } = useError();
+  const { data: exercises } = useStaticCmsData(getExercisesQuery);
+  const { data: sports } = useStaticCmsData(getSportsQuery);
   const [activeExercises, setactiveExercises] = useState([]);
   const [sport, setSport] = useState([]);
 
 
-  const [workoutImage, setWorkoutImage]= useState();
+  const [workoutImage, setWorkoutImage] = useState();
 
   const nameWorkout = useRef();
   const descrWorkout = useRef();
@@ -45,11 +45,11 @@ export default function CreateWorkout() {
     ]);
   }
 
-  function getActiveExerIds(){
-    if(activeExercises.length > 0){
-      const sendExercise =  activeExercises.map(item => item.selection.id);
+  function getActiveExerIds() {
+    if (activeExercises.length > 0) {
+      const sendExercise = activeExercises.map(item => item.selection.id);
       return JSON.stringify(sendExercise);
-    }else{
+    } else {
       return [];
     }
   }
@@ -62,41 +62,41 @@ export default function CreateWorkout() {
   }
 
   function selectsport(value) {
-     setSport(value);
+    setSport(value);
   }
 
   function submitWorkout(e) {
     e.preventDefault();
     const workoutname = nameWorkout.current.value;
     const workoutDescr = descrWorkout.current.value;
-    const workoutSport =  sport.value;
+    const workoutSport = sport.value;
     const workouDur = durationWorkout.current.value;
     const WorkoutEx = getActiveExerIds();
-    const alias = '/workouts/'+workoutname.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
+    const alias = '/workouts/' + workoutname.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
 
-    try{
+    try {
       uploadingImg(workoutImage, 'workout_preset').then(
-      response =>
-       getData(
-         createWorkoutQuery(workoutname,  response.data.public_id , workoutDescr, workoutSport , workouDur, WorkoutEx, alias)).then(
-           data=>{
-             getData(publishWorkoutQuery(data.createWorkout.id)).then(
-               data =>{
-                 window.scrollTo(0, 0);
-                 setSuccesMessage('created a new exercise: "'+ data.publishWorkout.title+'"');
-                 nameWorkout.current.value = "";
-                 descrWorkout.current.value = "";
-                 durationWorkout.current.value = "";
-                 setSport([]);
-                 setactiveExercises([]);
-                 setWorkoutImage('');
-               }
-             )
-           }
-         )
+        response =>
+          getData(
+            createWorkoutQuery(workoutname, response.data.public_id, workoutDescr, workoutSport, workouDur, WorkoutEx, alias)).then(
+              data => {
+                getData(publishWorkoutQuery(data.createWorkout.id)).then(
+                  data => {
+                    window.scrollTo(0, 0);
+                    setSuccesMessage('created a new exercise: "' + data.publishWorkout.title + '"');
+                    nameWorkout.current.value = "";
+                    descrWorkout.current.value = "";
+                    durationWorkout.current.value = "";
+                    setSport([]);
+                    setactiveExercises([]);
+                    setWorkoutImage('');
+                  }
+                )
+              }
+            )
       );
-    }catch(err){
-       setErrorMessage(err.message);
+    } catch (err) {
+      setErrorMessage(err.message);
     }
   }
 
@@ -104,8 +104,8 @@ export default function CreateWorkout() {
     <Container>
       <IntroSection line={sc.introLine} title={sc.title} />
       <Form onSubmit={submitWorkout}>
-      <div className="form-5050 form--create-workout">
-        <div className="form-left ">
+        <div className="form-5050 form--create-workout">
+          <div className="form-left ">
             <div className="form-group" id="nameWorkout">
               <label>Workout name</label>
               <input type="text" ref={nameWorkout} required />
@@ -116,27 +116,27 @@ export default function CreateWorkout() {
             </div>
             <div className="form-group" id="durationWorkout">
               <label>Choose main sport workout</label>
-            <CustomSelect options={sports?.data?.sports} onChange={selectsport} />
+              <CustomSelect options={sports?.data?.sports} onChange={selectsport} />
             </div>
             <div className="form-group" id="durationWorkout">
               <label>Upload image workout</label>
-              <UploadCload  tryUpload={setWorkoutImage} tempImage={workoutImage} placeholder="Upload a workout picture">
-                 
+              <UploadCload tryUpload={setWorkoutImage} tempImage={workoutImage} placeholder="Upload a workout picture">
+
               </UploadCload>
 
               <input
-                  type="submit"
-                  name="createWorkoutForm"
-                  id="createWorkoutForm"
-                  className="btn btn-prim"
-                 
-                />
-            </div>
-           
+                type="submit"
+                name="createWorkoutForm"
+                id="createWorkoutForm"
+                className="btn btn-prim"
 
-        </div>
-        <div className="form-right">
-        <div className="form-group" id="durationWorkout">
+              />
+            </div>
+
+
+          </div>
+          <div className="form-right">
+            <div className="form-group" id="durationWorkout">
               <label>Duration workout</label>
               <input
                 type="text"
@@ -145,7 +145,7 @@ export default function CreateWorkout() {
                 required
               />
             </div>
-        
+
             <div className="form-group" id="descrWorkout">
               <label>Choose your exercises</label>
               <BetterSelect
@@ -165,8 +165,8 @@ export default function CreateWorkout() {
               ))}
             </ul>
 
+          </div>
         </div>
-      </div>
       </Form>
     </Container>
   );

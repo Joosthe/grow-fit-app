@@ -2,10 +2,8 @@ import React, { useRef, useState } from 'react'
 import IntroSection from '../../PageSections/IntroSection';
 import Container from '../../Wrappers/Container';
 import './styles/NewEntry.scss'
-import { Workouts } from '../../../Data/workouts';
 import Form from '../../PageComponents/FormElements/Form';
 import useStaticContent from '../../../Hooks/useStaticContent';
-import Select from 'react-select'
 import { getWorkoutsSelectQuery } from '../../../Queries/Workout/getWorkoutsQuery';
 import useStaticCmsData from '../../../Hooks/useStaticCmsData';
 import BetterSelect from '../../PageComponents/FormElements/BetterSelect';
@@ -64,7 +62,6 @@ export default function NewEntry() {
   }
 
   return (
-    <>
     <Container>
     <div className="page--new-entry">
       <header>
@@ -106,6 +103,5 @@ export default function NewEntry() {
     </Form>
     </div>
     </Container>
-    </>
   )
 }

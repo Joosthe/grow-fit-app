@@ -1,0 +1,26 @@
+.rbc-toolbar button{
+  background-color: var(--color-prim);
+}
+.rbc-calendar{
+  color: var(--color-prim);
+  min-height: 500px;
+  flex: 1 0 auto;
+  margin: 30px 0;
+}
+.rbc-current{
+  background-color:  transparent;
+}
+.rbc-today{
+  background-color:  var( --color-grey-800);
+}
+.rbc-calendar{
+  background-color:var( --color-grey-800);
+}
+.rbc-event{
+  background-color:  var(--color-prim);
+  color: var(--color-black);
+  border:2px solid var(--color-prim);
+}
+// .rbc-toolbar >*:last-child{
+//   display: none;
+// }

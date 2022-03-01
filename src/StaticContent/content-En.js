@@ -35,6 +35,10 @@ export default {
         {
           title:"create a new excersise",
           descr: "Did you think of a new exercsise"
+        },
+                {
+          title:"schedule a new workout",
+          descr: "Let's plan your schedule"
         }
       ]
     },
@@ -57,6 +61,10 @@ export default {
     Workouts:{
       title:"Workouts",
       introLine: "Check out here all our nice workouts"
+    },
+    SceduleWorkout:{
+      title:"Scedule your workout",
+      introLine: "a great plan makes up a great mind"
     }
   },
   GeneralPages:{

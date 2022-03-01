@@ -9,21 +9,26 @@ function FooterMenu() {
           <Link to="/profile">
             My profile
           </Link>
-          </li>
-       
+        </li>
+
         <li>
           <Link to="/workouts">
             Workouts
           </Link>
         </li>
         <li>
-        <Link to="/all-entries">
-          Your entries
-        </Link>
+          <Link to="/all-entries">
+            Your entries
+          </Link>
+        </li>
+        <li>
+          <Link to="/your-scedule">
+            Your scedule
+          </Link>
         </li>
         <li className="new-entree-footer-wrapper">
           <Link to="/add-content" className="new-entree-footer">
-          <span className="new-entree-footer-icon"><i  >+</i> </span>
+            <span className="new-entree-footer-icon"><i  >+</i> </span>
           </Link>
         </li>
       </ul>
