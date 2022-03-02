@@ -19,6 +19,8 @@ export default function useCmsData(query, reload){
     }
     fetchData() ;
   } , [query, reload])
+
+  
   return {
     cmsData, 
     loadingCsmData,

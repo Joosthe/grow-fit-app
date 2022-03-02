@@ -21,8 +21,8 @@ import { uploadingImg } from '../../../utils/uploadcloud';
 export default function CreateWorkout() {
   const sc = useStaticContent("WorkoutPages.CreateWorkout");
   const { setSuccesMessage, setErrorMessage } = useError();
-  const { data: exercises } = useStaticCmsData(getExercisesQuery);
-  const { data: sports } = useStaticCmsData(getSportsQuery);
+  const { data: exercises } = useStaticCmsData({ exercises: [] }, getExercisesQuery);
+  const { data: sports } = useStaticCmsData({}, getSportsQuery);
   const [activeExercises, setactiveExercises] = useState([]);
   const [sport, setSport] = useState([]);
 

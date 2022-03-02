@@ -11,15 +11,20 @@ import { useUser } from '../../../Contexts/UserContext';
 import { getWorkoutsSelectQuery } from '../../../Queries/Workout/getWorkoutsQuery';
 import { useError } from '../../../Contexts/ErrorContext';
 import { createBookingQuery, publishBookingQuery } from '../../../Queries/Booking/createBookingQuery';
-
+import { getYourBookingDatesQuery } from '../../../Queries/Booking/getBookingQuery';
 
 export default function SceduleWorkout() {
   const sc = useStaticContent('WorkoutPages.SceduleWorkout');
   const { setErrorMessage, setSuccesMessage } = useError();
-  const { data: workouts } = useStaticCmsData(getWorkoutsSelectQuery);
+  const { data: workouts } = useStaticCmsData({}, getWorkoutsSelectQuery);
   const [selectedWorkout, setSelectedWorkout] = useState('');
   const [bookingDate, setbookingDate] = useState(new Date());
+
   const { currentUser } = useUser();
+  const { data: bookings } = useStaticCmsData({ bookings: [] }, getYourBookingDatesQuery(currentUser.id));
+  const bookedDates = bookings.bookings.map(element => {
+    return new Date(element.dateBooking);
+  })
 
   async function sceduleBooking(e) {
     e.preventDefault();
@@ -61,10 +66,11 @@ export default function SceduleWorkout() {
       </header>
 
       <Form onSubmit={sceduleBooking}>
+        {console.log(bookedDates)}
         <BetterDatePicker
           startDate={bookingDate}
           onSelect={setbookingDate}
-
+          excludeDates={bookedDates}
         />
         <div className="form-element custom-select">
           <label htmlFor="entry-workout">Select your work-out</label>

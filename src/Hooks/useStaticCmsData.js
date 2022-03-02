@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getData } from "../Connections/graphcsm";
 
-export default function useStaticCmsData(query){
-  const [data, setData ]= useState(null);
+export default function useStaticCmsData(startValue,query){
+  const [data, setData ]= useState(startValue);
   
   useEffect(()=>{
     const fetchData = async ()=> {

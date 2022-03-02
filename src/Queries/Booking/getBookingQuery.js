@@ -13,3 +13,16 @@ export function getAllBookingsQuery(id){
   }
   `
 }
+
+export function getYourBookingDatesQuery(id){
+  return `
+  {
+    bookings(
+      where: { userId_contains: "${id}" }
+      orderBy: createdAt_DESC
+    ) {
+      dateBooking
+    }
+  }
+  `
+}

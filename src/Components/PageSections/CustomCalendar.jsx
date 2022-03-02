@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Calendar, dateFnsLocalizer } from "react-big-calendar";
+import { Calendar, dateFnsLocalizer, Views } from "react-big-calendar";
 import format from "date-fns/format";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
@@ -27,10 +27,12 @@ export default function CustomCalendar({ events }) {
       <Calendar
         culture={"nl"}
         localizer={localizer}
-        events={events === undefined ? [] : events}
+        events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500 }}
+        timeslots={1}
+        defaultView={Views.WEEK}
+        popup
         messages={{
           agenda: 'Agenda',
           allDay: 'Hele dag',
