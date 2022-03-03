@@ -11,25 +11,25 @@ import Error from './Components/PageComponents/Error/Error';
 import MainNav from './Components/Navigation/MainNav';
 import FooterNav from './Components/Navigation/FooterNav';
 
-import Home from './Components/Pages/GereralPages/Home';
-import FourOhFour from './Components/Pages/GereralPages/FourOhFour';
-import LoginPage from './Components/Pages/Userpages/LoginPage';
-import RegisterPage from './Components/Pages/Userpages/Registerpage';
-import ProfilePage from './Components/Pages/Userpages/ProfilePage';
-import MyGoals from './Components/Pages/Userpages/MyGoals';
-import AddContent from './Components/Pages/WorkoutPages/AddContent';
-import NewEntry from './Components/Pages/WorkoutPages/NewEntry';
-import CreateWorkout from './Components/Pages/WorkoutPages/CreateWorkout';
-import CreateExercise from './Components/Pages/WorkoutPages/CreateExercise';
-import AdminUsers from './Components/Pages/Userpages/AdminUsers';
-import NoAcces from './Components/Pages/GereralPages/NoAcces';
-import Succespage from './Components/Pages/WorkoutPages/Succespage';
-import Workouts from './Components/Pages/WorkoutPages/Workouts';
-import WorkoutDetail from './Components/Pages/WorkoutPages/[workoutdetail]';
-import AllEntries from './Components/Pages/Userpages/AllEntries';
-import Presentation from './Components/Pages/GereralPages/Presentation';
-import SceduleWorkout from './Components/Pages/WorkoutPages/SceduleWorkout';
-import PlannedWorkouts from './Components/Pages/Userpages/PlannedWorkouts';
+import Home from '@/Components/Pages/GereralPages/Home';
+import FourOhFour from '@/Components/Pages/GereralPages/FourOhFour';
+import LoginPage from '@/Components/Pages/Userpages/LoginPage';
+import RegisterPage from '@/Components/Pages/Userpages/Registerpage';
+import ProfilePage from '@/Components/Pages/Userpages/ProfilePage';
+import MyGoals from '@/Components/Pages/Userpages/MyGoals';
+import AddContent from '@/Components/Pages/WorkoutPages/AddContent';
+import NewEntry from '@/Components/Pages/WorkoutPages/NewEntry';
+import CreateWorkout from '@/Components/Pages/WorkoutPages/CreateWorkout';
+import CreateExercise from '@/Components/Pages/WorkoutPages/CreateExercise';
+import AdminUsers from '@/Components/Pages/Userpages/AdminUsers';
+import NoAcces from '@/Components/Pages/GereralPages/NoAcces';
+import Succespage from '@/Components/Pages/WorkoutPages/Succespage';
+import Workouts from '@/Components/Pages/WorkoutPages/Workouts';
+import WorkoutDetail from '@/Components/Pages/WorkoutPages/[workoutdetail]';
+import AllEntries from '@/Components/Pages/Userpages/AllEntries';
+import Presentation from '@/Components/Pages/GereralPages/Presentation';
+import SceduleWorkout from '@/Components/Pages/WorkoutPages/SceduleWorkout';
+import PlannedWorkouts from '@/Components/Pages/Userpages/PlannedWorkouts';
 
 
 function App() {
