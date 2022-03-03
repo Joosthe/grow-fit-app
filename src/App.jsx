@@ -1,5 +1,12 @@
 import React from 'react'
 import { Switch, Route as PublicRoute } from "react-router-dom";
+
+import { useError } from './Contexts/ErrorContext';
+import { useUser } from './Contexts/UserContext';
+
+import PrivateRoute from './Components/Routes/PrivateRoute';
+import AdminRoute from './Components/Routes/AdminRoute';
+
 import Error from './Components/PageComponents/Error/Error';
 import MainNav from './Components/Navigation/MainNav';
 import FooterNav from './Components/Navigation/FooterNav';
@@ -14,10 +21,6 @@ import NewEntry from './Components/Pages/WorkoutPages/NewEntry';
 import CreateWorkout from './Components/Pages/WorkoutPages/CreateWorkout';
 import CreateExercise from './Components/Pages/WorkoutPages/CreateExercise';
 import AdminUsers from './Components/Pages/Userpages/AdminUsers';
-import PrivateRoute from './Components/Routes/PrivateRoute';
-import AdminRoute from './Components/Routes/AdminRoute';
-import { useError } from './Contexts/ErrorContext';
-import { useUser } from './Contexts/UserContext';
 import NoAcces from './Components/Pages/GereralPages/NoAcces';
 import Succespage from './Components/Pages/WorkoutPages/Succespage';
 import Workouts from './Components/Pages/WorkoutPages/Workouts';

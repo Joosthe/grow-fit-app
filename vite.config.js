@@ -7,5 +7,5 @@ export default defineConfig({
   plugins: [reactRefresh()],
   base: './',
   publicDir: 'public',
-   resolve: { alias: { '@': '/src' } },
+  resolve: { alias: { '@': '/src' } },
 })
