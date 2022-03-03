@@ -17,7 +17,7 @@ import AdminUsers from './Components/Pages/Userpages/AdminUsers';
 import PrivateRoute from './Components/Routes/PrivateRoute';
 import AdminRoute from './Components/Routes/AdminRoute';
 import { useError } from './Contexts/ErrorContext';
-import { useUser } from './Contexts//UserContext';
+import { useUser } from './Contexts/UserContext';
 import NoAcces from './Components/Pages/GereralPages/NoAcces';
 import Succespage from './Components/Pages/WorkoutPages/Succespage';
 import Workouts from './Components/Pages/WorkoutPages/Workouts';

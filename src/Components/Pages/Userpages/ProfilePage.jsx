@@ -1,18 +1,18 @@
-import React, {useState, useRef} from 'react';
-import { getData } from '../../../Connections/graphcsm';
-import { useUser } from '../../../Contexts//UserContext';
-import { updateUserImgQuery } from '../../../Queries/User/updateUserQuery';
-import Button from '../../PageComponents/Buttons/Button';
-import LogoutButton from '../../PageComponents/Buttons/LogoutButton';
-import BetterSelect from '../../PageComponents/FormElements/BetterSelect';
-import { FaPencilAlt,FaSave } from 'react-icons/fa';
-import Upload from '../../PageComponents/FormElements/Upload';
-import Container from '../../Wrappers/Container';
-import { nicknames } from '../../../Data/nicknames';
+import React, { useState, useRef } from 'react';
+import { getData } from '@/Connections/graphcsm';
+import { useUser } from '@/Contexts/UserContext';
+import { updateUserImgQuery } from '@/Queries/User/updateUserQuery';
+import Button from '@/Components/PageComponents/Buttons/Button';
+import LogoutButton from '@/Components/PageComponents/Buttons/LogoutButton';
+import BetterSelect from '@/Components/PageComponents/FormElements/BetterSelect';
+import { FaPencilAlt, FaSave } from 'react-icons/fa';
+import Upload from '@/Components/PageComponents/FormElements/Upload';
+import Container from '@/Components/Wrappers/Container';
+import { nicknames } from '@/Data/nicknames';
 import './styles/ProfilePage.scss';
-import LatestEntries from '../../PageSections/LatestEntries';
+import LatestEntries from '@/Components/PageSections/LatestEntries';
 
- function ProfilePage(){
+function ProfilePage() {
   const { currentUser, userEdit, setCurrentUser } = useUser();
   const [editstate, seteditstate] = useState(false);
   const [nicknameValue, setnicknameValue] = useState(currentUser.nicknames)
@@ -21,7 +21,7 @@ import LatestEntries from '../../PageSections/LatestEntries';
   const editUserlastName = useRef();
   const editUserUserName = useRef();
 
-  const selectNicknames = nicknames.map((nickName, index)=>{
+  const selectNicknames = nicknames.map((nickName, index) => {
     return {
       name: nickName,
       id: index
@@ -29,11 +29,11 @@ import LatestEntries from '../../PageSections/LatestEntries';
   })
 
 
-  function chooseNickname(selection){
+  function chooseNickname(selection) {
     setnicknameValue(selection);
   }
 
-  function saveUser(id){
+  function saveUser(id) {
     console.log(id);
     const firstName = editUserFirstName.current.value;
     const lastName = editUserlastName.current.value;
@@ -43,29 +43,29 @@ import LatestEntries from '../../PageSections/LatestEntries';
     seteditstate(false);
   }
 
-  function setUserProfile(data){
-    const userid= currentUser.id;
+  function setUserProfile(data) {
+    const userid = currentUser.id;
     getData(updateUserImgQuery(userid, data.publishAsset.id)).then(
-      data=>{
-       setCurrentUser( data.updateApp_User);
-       localStorage.setItem('currentUser', JSON.stringify(data.updateApp_User));
+      data => {
+        setCurrentUser(data.updateApp_User);
+        localStorage.setItem('currentUser', JSON.stringify(data.updateApp_User));
       }
     )
   }
 
-  return(
+  return (
     <Container>
       <section className="text-center py-4">
-           <h1 className="text-4xl font-semibold">Hello {currentUser.userName}</h1>
+        <h1 className="text-4xl font-semibold">Hello {currentUser.userName}</h1>
       </section>
       <section className="profile__user__account">
         <div className="profile__user__account_img">
-         <Upload editMode={true} uploadSumbit={setUserProfile} userId={currentUser.id}>
-         <img src={ currentUser?.userprofileimg?.url 
-          ? currentUser?.userprofileimg?.url
-          : 'https://via.placeholder.com/150'
-        } alt={'profile picture '+currentUser.username} />
-        </Upload>
+          <Upload editMode={true} uploadSumbit={setUserProfile} userId={currentUser.id}>
+            <img src={currentUser?.userprofileimg?.url
+              ? currentUser?.userprofileimg?.url
+              : 'https://via.placeholder.com/150'
+            } alt={'profile picture ' + currentUser.username} />
+          </Upload>
         </div>
         <div className="profile__user__account_info">
           <h2 className="section--label">
@@ -73,45 +73,45 @@ import LatestEntries from '../../PageSections/LatestEntries';
               Profile info
             </span>
           </h2>
-          <div className={`profile__user__account_info__wrapper ${editstate ? "active-edit":""}`}>
+          <div className={`profile__user__account_info__wrapper ${editstate ? "active-edit" : ""}`}>
             <div className="profile__user__account_info__inner">
               <div className="form-item">
                 <p>First name: <span>{currentUser.firstName}</span> </p>
-                <input type="text" ref={editUserFirstName} className="edit__user__input" defaultValue={currentUser.firstName}/>
+                <input type="text" ref={editUserFirstName} className="edit__user__input" defaultValue={currentUser.firstName} />
               </div>
               <div className="form-item">
                 <p>Last name: <span>{currentUser.lastName}</span></p>
-                <input type="text" ref={editUserlastName} className="edit__user__input" defaultValue={currentUser.lastName}/>
+                <input type="text" ref={editUserlastName} className="edit__user__input" defaultValue={currentUser.lastName} />
               </div>
               <div className="form-item">
                 <p>Username: <span>{currentUser.userName}</span></p>
-                <input type="text" ref={editUserUserName} className="edit__user__input" defaultValue={currentUser.userName}/>
+                <input type="text" ref={editUserUserName} className="edit__user__input" defaultValue={currentUser.userName} />
               </div>
             </div>
             <div className="profile__user__account_info__inner">
-            <p className="no-edit">E-mail: <span>{currentUser.email}</span></p>
-            <p className="no-edit">User role: <span>{currentUser.userRoles}</span></p>
+              <p className="no-edit">E-mail: <span>{currentUser.email}</span></p>
+              <p className="no-edit">User role: <span>{currentUser.userRoles}</span></p>
               <div className="form-item">
-              <p>Nickname: <span>{currentUser.nicknames}</span></p>
-                <BetterSelect 
-                  selectionData={selectNicknames} 
+                <p>Nickname: <span>{currentUser.nicknames}</span></p>
+                <BetterSelect
+                  selectionData={selectNicknames}
                   onSelect={chooseNickname}
                   placeHolder="Choose a nickname"
-                  defaultItem={{ name:currentUser.nicknames}}
+                  defaultItem={{ name: currentUser.nicknames }}
                 />
               </div>
             </div>
           </div>
         </div>
         <div className="profile__user__account_actions">
-          {editstate 
-            ?  <Button onClick={()=>saveUser(currentUser.id)} variant="btn--save"><FaSave style={{display: 'inline-block', margin: ' .2rem .5rem 0 0'}}/>Save profile</Button>
-            :  <Button onClick={()=>(seteditstate(true))} variant="btn--edit"><FaPencilAlt style={{display: 'inline-block', margin: ' .2rem .5rem 0 0'}}/> Edit profile info </Button>
+          {editstate
+            ? <Button onClick={() => saveUser(currentUser.id)} variant="btn--save"><FaSave style={{ display: 'inline-block', margin: ' .2rem .5rem 0 0' }} />Save profile</Button>
+            : <Button onClick={() => (seteditstate(true))} variant="btn--edit"><FaPencilAlt style={{ display: 'inline-block', margin: ' .2rem .5rem 0 0' }} /> Edit profile info </Button>
           }
-          <LogoutButton/>
+          <LogoutButton />
         </div>
       </section>
-      <LatestEntries/>
+      <LatestEntries />
     </Container>
   )
 }

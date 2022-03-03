@@ -1,51 +1,51 @@
-import React,{ useContext, useState } from 'react';
-import { auth } from '../Connections/firebase';
-import { createUserQuery, publishCreatedUserQuery } from '../Queries/User/createUserQuery';
-import { getData } from '../Connections/graphcsm';
-import { getUserQuery } from '../Queries/User/getUserQuery';
-import { updateUserQuery } from '../Queries/User/updateUserQuery';
+import React, { useContext, useState } from 'react';
+import { auth } from '@/Connections/firebase';
+import { createUserQuery, publishCreatedUserQuery } from '@/Queries/User/createUserQuery';
+import { getData } from '@/Connections/graphcsm';
+import { getUserQuery } from '@/Queries/User/getUserQuery';
+import { updateUserQuery } from '@/Queries/User/updateUserQuery';
 
 export const UserContext = React.createContext();
 
-export function useUser(){
+export function useUser() {
   return useContext(UserContext);
 }
 
-export const UserProvider = ({children}) => {
-  const [currentUser, setCurrentUser] = useState( 
+export const UserProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem('currentUser'))
   );
 
-  function userRegister(email, password, username){
-    return auth.createUserWithEmailAndPassword(email,password).then(
-     getData(createUserQuery(email, username)).then(
-      data => {
-        getData(publishCreatedUserQuery(data.createApp_User.id)).then(
-        data =>{
-          setCurrentUser( data.publishApp_User);
-          localStorage.setItem('currentUser', JSON.stringify(data.publishApp_User));
-        })
-      }
-    ))
+  function userRegister(email, password, username) {
+    return auth.createUserWithEmailAndPassword(email, password).then(
+      getData(createUserQuery(email, username)).then(
+        data => {
+          getData(publishCreatedUserQuery(data.createApp_User.id)).then(
+            data => {
+              setCurrentUser(data.publishApp_User);
+              localStorage.setItem('currentUser', JSON.stringify(data.publishApp_User));
+            })
+        }
+      ))
   }
 
- async function userLogin(email, password){
-   try{
-    await auth.signInWithEmailAndPassword(email, password);
-    getData(getUserQuery(email)).then(
-      data=>{
-        localStorage.setItem('currentUser', JSON.stringify(data.app_User))
-        setCurrentUser( data.app_User);
-      }
-     
-    );
-    return true;
-   }catch(err){
-    return false;
-   }
+  async function userLogin(email, password) {
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      getData(getUserQuery(email)).then(
+        data => {
+          localStorage.setItem('currentUser', JSON.stringify(data.app_User))
+          setCurrentUser(data.app_User);
+        }
+
+      );
+      return true;
+    } catch (err) {
+      return false;
+    }
   }
 
-  function userEdit(id, firstname, lastname, username, nickname){
+  function userEdit(id, firstname, lastname, username, nickname) {
     return getData(updateUserQuery(id, firstname, lastname, username, nickname)).then(
       data => {
         localStorage.setItem('currentUser', JSON.stringify(data.user));
@@ -53,13 +53,13 @@ export const UserProvider = ({children}) => {
       }
     );
   }
-  
-  function userLogout(){
+
+  function userLogout() {
     localStorage.removeItem('currentUser');
     setCurrentUser(null);
   }
 
-  const exportedvalues =  {
+  const exportedvalues = {
     currentUser,
     userRegister,
     userLogin,

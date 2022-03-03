@@ -1,10 +1,10 @@
 import React from 'react'
-import {testimonals} from '../../Data/testimonals.js' ;
+import { testimonals } from '@/Data/testimonals.js';
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "./styles/testimonials.scss";
-import NextArrow from '../Navigation/NextArrow.jsx';
-import PrevArrow from '../Navigation/Prevarrow.jsx';
+import NextArrow from '@/Components/Navigation/NextArrow.jsx';
+import PrevArrow from '@/Components/Navigation/Prevarrow.jsx';
 import { Fade } from "react-awesome-reveal";
 function Testimonals() {
   const settings = {
@@ -44,26 +44,26 @@ function Testimonals() {
   }
   return (
     <Fade>
-    <section className="testimonals--section">
-      <h2>Testimonials</h2>
+      <section className="testimonals--section">
+        <h2>Testimonials</h2>
         <div className="slider-wrapper">
           <Slider {...settings}>
-            { testimonals.map((testimonial, index)=> {
-              return(
+            {testimonals.map((testimonial, index) => {
+              return (
                 <div className="testi-item-wrapper" key={index}>
                   <div className="testi-item">
-                  <blockquote>
-                    {testimonial.quote}
-                  </blockquote>
-                  <cite>{testimonial.src}</cite>
+                    <blockquote>
+                      {testimonial.quote}
+                    </blockquote>
+                    <cite>{testimonial.src}</cite>
                   </div>
                 </div>
               )
             })}
-            </Slider>
+          </Slider>
         </div>
 
-    </section>
+      </section>
     </Fade>
   )
 }

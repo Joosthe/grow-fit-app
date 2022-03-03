@@ -1,17 +1,17 @@
 import React, { useRef, useState } from 'react'
-import useStaticContent from '../../../Hooks/useStaticContent';
-import BetterDatePicker from '../../PageComponents/FormElements/BetterDatePicker';
-import BetterSelect from '../../PageComponents/FormElements/BetterSelect';
-import Form from '../../PageComponents/FormElements/Form';
-import IntroSection from '../../PageSections/IntroSection';
-import Container from '../../Wrappers/Container';
-import { getData } from '../../../Connections/graphcsm';
-import useStaticCmsData from '../../../Hooks/useStaticCmsData';
-import { useUser } from '../../../Contexts/UserContext';
-import { getWorkoutsSelectQuery } from '../../../Queries/Workout/getWorkoutsQuery';
-import { useError } from '../../../Contexts/ErrorContext';
-import { createBookingQuery, publishBookingQuery } from '../../../Queries/Booking/createBookingQuery';
-import { getYourBookingDatesQuery } from '../../../Queries/Booking/getBookingQuery';
+import useStaticContent from '@/Hooks/useStaticContent';
+import BetterDatePicker from '@/Components/PageComponents/FormElements/BetterDatePicker';
+import BetterSelect from '@/Components/PageComponents/FormElements/BetterSelect';
+import Form from '@/Components/PageComponents/FormElements/Form';
+import IntroSection from '@/Components/PageSections/IntroSection';
+import Container from '@/Components/Wrappers/Container';
+import { getData } from '@/Connections/graphcsm';
+import useStaticCmsData from '@/Hooks/useStaticCmsData';
+import { useUser } from '@/Contexts/UserContext';
+import { getWorkoutsSelectQuery } from '@/Queries/Workout/getWorkoutsQuery';
+import { useError } from '@/Contexts/ErrorContext';
+import { createBookingQuery, publishBookingQuery } from '@/Queries/Booking/createBookingQuery';
+import { getYourBookingDatesQuery } from '@/Queries/Booking/getBookingQuery';
 
 export default function SceduleWorkout() {
   const sc = useStaticContent('WorkoutPages.SceduleWorkout');

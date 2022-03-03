@@ -1,10 +1,10 @@
 import React from 'react'
-import useStaticCmsData from '../../../Hooks/useStaticCmsData';
-import { getAllEntriesQuery } from '../../../Queries/entry/getEntriesQuery';
-import { useUser } from '../../../Contexts//UserContext';
-import EntryCard from '../../PageComponents/Cards/EntryCard';
-import Container from '../../Wrappers/Container';
-import IntroSection from '../../PageSections/IntroSection';
+import useStaticCmsData from '@/Hooks/useStaticCmsData';
+import { getAllEntriesQuery } from '@/Queries/entry/getEntriesQuery';
+import { useUser } from '@/Contexts/UserContext';
+import EntryCard from '@/Components/PageComponents/Cards/EntryCard';
+import Container from '@/Components/Wrappers/Container';
+import IntroSection from '@/Components/PageSections/IntroSection';
 
 
 export default function AllEntries() {

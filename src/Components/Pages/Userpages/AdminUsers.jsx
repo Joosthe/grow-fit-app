@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Container from '../../Wrappers/Container'
-import IntroSection from '../../PageSections/IntroSection';
-import { usersQuery } from '../../../Queries/User/usersQuery';
-import { deleteUserQuery } from '../../../Queries/User/deleteUserQuery';
-import useStaticContent from '../../../Hooks/useStaticContent';
-import { getData } from '../../../Connections/graphcsm';
+import Container from '@/Components/Wrappers/Container'
+import IntroSection from '@/Components/PageSections/IntroSection';
+import { usersQuery } from '@/Queries/User/usersQuery';
+import { deleteUserQuery } from '@/Queries/User/deleteUserQuery';
+import useStaticContent from '@/Hooks/useStaticContent';
+import { getData } from '@/Connections/graphcsm';
 import { FaTrash } from "react-icons/fa";
 export default function AdminUsers() {
 

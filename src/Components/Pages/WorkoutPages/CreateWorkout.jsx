@@ -1,21 +1,21 @@
 import React, { useRef, useState } from "react";
-import IntroSection from "../../PageSections/IntroSection";
-import Container from "../../Wrappers/Container";
-import Form from "../../PageComponents/FormElements/Form";
-import useStaticContent from "../../../Hooks/useStaticContent";
+import IntroSection from "@/Components/PageSections/IntroSection";
+import Container from "@/Components/Wrappers/Container";
+import Form from "@/Components/PageComponents/FormElements/Form";
+import useStaticContent from "@/Hooks/useStaticContent";
 import "./styles/CreateWorkout.scss";
 import { FaTimes } from "react-icons/fa";
-import BetterSelect from "../../PageComponents/FormElements/BetterSelect";
-import CustomSelect from "../../PageComponents/FormElements/Select";
-import Upload from "../../PageComponents/FormElements/Upload";
-import useStaticCmsData from "../../../Hooks/useStaticCmsData";
-import { getExercisesQuery } from "../../../Queries/Exercise/getExercisesQuery";
-import { getSportsQuery } from "../../../Queries/Sports/getSportsQuery";
-import { getData } from "../../../Connections/graphcsm";
-import { createWorkoutQuery, publishWorkoutQuery } from "../../../Queries/Workout/CreateWorkoutQuery";
-import { useError } from "../../../Contexts/ErrorContext";
-import UploadCload from "../../PageComponents/FormElements/UploadCload";
-import { uploadingImg } from '../../../utils/uploadcloud';
+import BetterSelect from "@/Components/PageComponents/FormElements/BetterSelect";
+import CustomSelect from "@/Components/PageComponents/FormElements/Select";
+import Upload from "@/Components/PageComponents/FormElements/Upload";
+import useStaticCmsData from "@/Hooks/useStaticCmsData";
+import { getExercisesQuery } from "@/Queries/Exercise/getExercisesQuery";
+import { getSportsQuery } from "@/Queries/Sports/getSportsQuery";
+import { getData } from "@/Connections/graphcsm";
+import { createWorkoutQuery, publishWorkoutQuery } from "@/Queries/Workout/CreateWorkoutQuery";
+import { useError } from "@/Contexts/ErrorContext";
+import UploadCload from "@/Components/PageComponents/FormElements/UploadCload";
+import { uploadingImg } from '@/utils/uploadcloud';
 
 
 export default function CreateWorkout() {

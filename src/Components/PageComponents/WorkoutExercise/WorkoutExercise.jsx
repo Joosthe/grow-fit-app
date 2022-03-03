@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import useStaticCmsData from '../../../Hooks/useStaticCmsData';
-import { getWorkoutExercisesQuery } from '../../../Queries/Workout/getWorkoutsQuery';
+import useStaticCmsData from '@/Hooks/useStaticCmsData';
+import { getWorkoutExercisesQuery } from '@/Queries/Workout/getWorkoutsQuery';
 import { BsChevronDown } from 'react-icons/bs'
 import './styles/WorkoutExercise.scss'
 

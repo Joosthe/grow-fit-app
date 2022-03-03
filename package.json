@@ -3,7 +3,7 @@
   "scripts": {
     "start": "vite --host",
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "rm -rf dist && vite build --outDir dist && serve -s dist",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -23,6 +23,7 @@
     "material-ui-dropzone": "^3.5.0",
     "moment": "^2.29.1",
     "node-sass": "^6.0.1",
+    "path": "^0.12.7",
     "postcss": "^7",
     "prop-types": "^15.7.2",
     "react": "^17.0.0\n",
@@ -38,6 +39,7 @@
     "safe-buffer": "^5.2.1",
     "sass": "^1.36.0",
     "sass-resources-loader": "^2.2.4",
+    "serve": "^13.0.2",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "tar": "^6.1.9"

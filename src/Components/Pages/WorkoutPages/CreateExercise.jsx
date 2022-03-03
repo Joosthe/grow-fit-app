@@ -1,13 +1,13 @@
 import React, { useRef } from 'react'
-import IntroSection from '../../PageSections/IntroSection'
-import Container from '../../Wrappers/Container';
-import Form from '../../PageComponents/FormElements/Form';
-import useStaticContent from '../../../Hooks/useStaticContent';
-import { getData } from '../../../Connections/graphcsm';
-import { createExerciseQuery, publishExeciseQuery } from '../../../Queries/Exercise/createExerciceQuery';
+import IntroSection from '@/Components/PageSections/IntroSection'
+import Container from '@/Components/Wrappers/Container';
+import Form from '@/Components/PageComponents/FormElements/Form';
+import useStaticContent from '@/Hooks/useStaticContent';
+import { getData } from '@/Connections/graphcsm';
+import { createExerciseQuery, publishExeciseQuery } from '@/Queries/Exercise/createExerciceQuery';
 
 import './styles/CreateExercise.scss';
-import { useError } from '../../../Contexts/ErrorContext';
+import { useError } from '@/Contexts/ErrorContext';
 
 export default function CreateExercise() {
   const sc = useStaticContent('WorkoutPages.CreateExercise');

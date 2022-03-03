@@ -1,9 +1,9 @@
 import React from 'react';
-import useStaticCmsData from '../../Hooks/useStaticCmsData';
-import { getWorkoutsPromotedTeaserQuery } from '../../Queries/Workout/getWorkoutsQuery';
-import WorkoutTeaserCard from '../PageComponents/Cards/WorkoutTeaserCard';
+import useStaticCmsData from '@/Hooks/useStaticCmsData';
+import { getWorkoutsPromotedTeaserQuery } from '@/Queries/Workout/getWorkoutsQuery';
+import WorkoutTeaserCard from '@/Components/PageComponents/Cards/WorkoutTeaserCard';
 import './styles/PromotedWorkout.scss';
-import Button from '../PageComponents/Buttons/Button';
+import Button from '@/Components/PageComponents/Buttons/Button';
 import { BsChevronRight } from 'react-icons/bs';
 
 export default function PromotedWorkouts() {

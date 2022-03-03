@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { FaPencilAlt, FaTimes } from "react-icons/fa";
-import { getData, uploadAsset } from "../../../Connections/graphcsm";
-import { publishAsset } from "../../../Queries/Assets/publishAssetQuery";
+import { getData, uploadAsset } from "@/Connections/graphcsm";
+import { publishAsset } from "@/Queries/Assets/publishAssetQuery";
 import styles from "./styles/Upload.module.scss";
 
 export default function Upload(props) {
@@ -34,14 +34,14 @@ export default function Upload(props) {
 
   function uploadFile(file) {
     uploadAsset(file)
-    .then((response) => response.json())
-    .then((data) => {
-       getData(publishAsset(data.id)).then(
-         data =>{
-          props.uploadSumbit( data);
-         } 
-       )
-    });
+      .then((response) => response.json())
+      .then((data) => {
+        getData(publishAsset(data.id)).then(
+          data => {
+            props.uploadSumbit(data);
+          }
+        )
+      });
     setEditState(false);
   }
 

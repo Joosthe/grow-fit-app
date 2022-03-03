@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import useStaticCmsData from '../../../Hooks/useStaticCmsData';
+import useStaticCmsData from '@/Hooks/useStaticCmsData';
 import { Link, useParams } from 'react-router-dom';
-import { getWorkoutDetailQuery, getWorkoutExercisesQuery } from '../../../Queries/Workout/getWorkoutsQuery';
+import { getWorkoutDetailQuery, getWorkoutExercisesQuery } from '@/Queries/Workout/getWorkoutsQuery';
 import { Transformation, Image } from 'cloudinary-react';
 import { BsClock, BsChevronLeft } from 'react-icons/bs';
-import useWorkoutDetail from '../../../Hooks/useWorkoutDetail';
-import Container from '../../Wrappers/Container';
+import useWorkoutDetail from '@/Hooks/useWorkoutDetail';
+import Container from '@/Components/Wrappers/Container';
 import './styles/WorkoutDetail.scss';
-import WorkoutExercise from '../../PageComponents/WorkoutExercise/WorkoutExercise';
+import WorkoutExercise from '@/Components/PageComponents/WorkoutExercise/WorkoutExercise';
 
 export default function WorkoutDetail() {
     const { id } = useParams();

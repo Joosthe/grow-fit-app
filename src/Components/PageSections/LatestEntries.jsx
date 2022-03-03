@@ -1,10 +1,10 @@
 import React from 'react'
-import useStaticCmsData from '../../Hooks/useStaticCmsData';
-import { getWorkoutsPromotedTeaserQuery } from '../../Queries/Workout/getWorkoutsQuery';
-import { useUser } from '../../Contexts//UserContext';
-import { getLatestEntryQuery } from '../../Queries/entry/getEntriesQuery';
-import EntryCard from '../PageComponents/Cards/EntryCard';
-import Button from '../PageComponents/Buttons/Button';
+import useStaticCmsData from '@/Hooks/useStaticCmsData';
+import { getWorkoutsPromotedTeaserQuery } from '@/Queries/Workout/getWorkoutsQuery';
+import { useUser } from '@/Contexts/UserContext';
+import { getLatestEntryQuery } from '@/Queries/entry/getEntriesQuery';
+import EntryCard from '@/Components/PageComponents/Cards/EntryCard';
+import Button from '@/Components/PageComponents/Buttons/Button';
 import { BsChevronRight } from 'react-icons/bs'
 export default function LatestEntries() {
   const { currentUser } = useUser();

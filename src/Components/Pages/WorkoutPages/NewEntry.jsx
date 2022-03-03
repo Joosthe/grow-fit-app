@@ -1,19 +1,19 @@
 import React, { useRef, useState } from 'react'
-import IntroSection from '../../PageSections/IntroSection';
-import Container from '../../Wrappers/Container';
+import IntroSection from '@/Components/PageSections/IntroSection';
+import Container from '@/Components/Wrappers/Container';
 import './styles/NewEntry.scss'
-import Form from '../../PageComponents/FormElements/Form';
-import useStaticContent from '../../../Hooks/useStaticContent';
-import { getWorkoutsSelectQuery } from '../../../Queries/Workout/getWorkoutsQuery';
-import useStaticCmsData from '../../../Hooks/useStaticCmsData';
-import BetterSelect from '../../PageComponents/FormElements/BetterSelect';
-import { getData } from '../../../Connections/graphcsm';
-import { createEntryQuery, publishEntryQuery } from '../../../Queries/entry/createEntryQuery';
-import { useUser } from '../../../Contexts/UserContext';
+import Form from '@/Components/PageComponents/FormElements/Form';
+import useStaticContent from '@/Hooks/useStaticContent';
+import { getWorkoutsSelectQuery } from '@/Queries/Workout/getWorkoutsQuery';
+import useStaticCmsData from '@/Hooks/useStaticCmsData';
+import BetterSelect from '@/Components/PageComponents/FormElements/BetterSelect';
+import { getData } from '@/Connections/graphcsm';
+import { createEntryQuery, publishEntryQuery } from '@/Queries/entry/createEntryQuery';
+import { useUser } from '@/Contexts/UserContext';
 import { useHistory } from 'react-router';
-import { useError } from '../../../Contexts/ErrorContext';
-import { uploadingImg } from '../../../utils/uploadcloud';
-import UploadCload from '../../PageComponents/FormElements/UploadCload';
+import { useError } from '@/Contexts/ErrorContext';
+import { uploadingImg } from '@/utils/uploadcloud';
+import UploadCload from '@/Components/PageComponents/FormElements/UploadCload';
 
 export default function NewEntry() {
   const history = useHistory();

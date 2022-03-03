@@ -1,7 +1,7 @@
 import React from 'react'
 
-import useStaticCmsData from '../../../Hooks/useStaticCmsData';
-import { getWorkoutTitleQuery } from '../../../Queries/Workout/getWorkoutsQuery';
+import useStaticCmsData from '@/Hooks/useStaticCmsData';
+import { getWorkoutTitleQuery } from '@/Queries/Workout/getWorkoutsQuery';
 import './styles/EntryCard.scss'
 
 export default function EntryCard(props) {
