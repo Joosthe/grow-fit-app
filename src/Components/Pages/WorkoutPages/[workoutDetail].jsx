@@ -9,8 +9,8 @@ import WorkoutExercise from '@/Components/PageComponents/WorkoutExercise/Workout
 import './styles/WorkoutDetail.scss';
 
 export default function WorkoutDetail() {
-    const { id } = useParams();
-    const { data } = useStaticCmsData({}, getWorkoutDetailQuery(id));
+    const { workoutDetail } = useParams();
+    const { data } = useStaticCmsData({}, getWorkoutDetailQuery(workoutDetail));
 
     return (
         <Container className={'workout-container'}>
