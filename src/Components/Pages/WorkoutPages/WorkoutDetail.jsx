@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import useStaticCmsData from '@/Hooks/useStaticCmsData';
+import React from 'react'
 import { Link, useParams } from 'react-router-dom';
-import { getWorkoutDetailQuery, getWorkoutExercisesQuery } from '@/Queries/Workout/getWorkoutsQuery';
+import useStaticCmsData from '@/Hooks/useStaticCmsData';
+import { getWorkoutDetailQuery } from '@/Queries/Workout/getWorkoutsQuery';
 import { Transformation, Image } from 'cloudinary-react';
 import { BsClock, BsChevronLeft } from 'react-icons/bs';
-import useWorkoutDetail from '@/Hooks/useWorkoutDetail';
 import Container from '@/Components/Wrappers/Container';
-import './styles/WorkoutDetail.scss';
 import WorkoutExercise from '@/Components/PageComponents/WorkoutExercise/WorkoutExercise';
+import './styles/WorkoutDetail.scss';
 
 export default function WorkoutDetail() {
     const { id } = useParams();
@@ -21,7 +20,6 @@ export default function WorkoutDetail() {
                         <Transformation height="500" width="auto" crop="fill" />
                     </Image>
                 </div>
-                {console.log(data)}
                 <div className="workoutdetail__inner workoutdetail__info ">
                     <Link to="/workouts" className="workoutdetail__backlink"> <BsChevronLeft /> Go back to workouts</Link>
                     <div className="workoutdetail__header">
