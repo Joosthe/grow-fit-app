@@ -25,7 +25,7 @@ import AdminUsers from '@/Components/Pages/Userpages/AdminUsers';
 import NoAcces from '@/Components/Pages/GereralPages/NoAcces';
 import Succespage from '@/Components/Pages/WorkoutPages/Succespage';
 import Workouts from '@/Components/Pages/WorkoutPages/Workouts';
-import WorkoutDetail from '@detail/[WorkoutDetail]';
+import WorkoutDetail from '@detail/:workoutdetail';
 import AllEntries from '@/Components/Pages/Userpages/AllEntries';
 import Presentation from '@/Components/Pages/GereralPages/Presentation';
 import SceduleWorkout from '@/Components/Pages/WorkoutPages/SceduleWorkout';
