@@ -6,7 +6,7 @@ import IntroSection from '@/Components/PageSections/IntroSection'
 import Container from '@/Components/Wrappers/Container';
 import WorkoutTeaserCard from '@/Components/PageComponents/Cards/WorkoutTeaserCard';
 
-
+import { Link, useParams } from 'react-router-dom';
 export default function Workouts() {
     const { data: workoutsdata } = useStaticCmsData({}, getWorkoutsTeaserQuery);
     const sc = useStaticContent('WorkoutPages.Workouts');
