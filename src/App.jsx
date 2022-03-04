@@ -42,7 +42,6 @@ function App() {
         {error.message !== '' &&
           <Error />
         }
-
         <Switch>
           <AdminRoute exact path="/admin/users" component={AdminUsers} />
           <PrivateRoute exact path="/your-scedule" component={PlannedWorkouts} />
