@@ -11,22 +11,22 @@ import { useUser } from '@/Contexts/UserContext';
 import { getWorkoutsSelectQuery } from '@/Queries/Workout/getWorkoutsQuery';
 import { useError } from '@/Contexts/ErrorContext';
 import { createBookingQuery, publishBookingQuery } from '@/Queries/Booking/createBookingQuery';
-import { getYourBookingDatesQuery } from '@/Queries/Booking/getBookingQuery';
+import { getYourBookedDatesQuery } from '@/Queries/Booking/getBookingQuery';
 
-export default function SceduleWorkout() {
-  const sc = useStaticContent('WorkoutPages.SceduleWorkout');
+export default function CreateBooking() {
+  const sc = useStaticContent('WorkoutPages.CreateBooking');
   const { setErrorMessage, setSuccesMessage } = useError();
   const { data: workouts } = useStaticCmsData({}, getWorkoutsSelectQuery);
   const [selectedWorkout, setSelectedWorkout] = useState('');
   const [bookingDate, setbookingDate] = useState(new Date());
 
   const { currentUser } = useUser();
-  const { data: bookings } = useStaticCmsData({ bookings: [] }, getYourBookingDatesQuery(currentUser.id));
+  const { data: bookings } = useStaticCmsData({ bookings: [] }, getYourBookedDatesQuery(currentUser.id));
   const bookedDates = bookings.bookings.map(element => {
     return new Date(element.dateBooking);
   })
 
-  async function sceduleBooking(e) {
+  async function scheduleBooking(e) {
     e.preventDefault();
     console.log(currentUser.id);
     console.log(selectedWorkout);
@@ -65,7 +65,7 @@ export default function SceduleWorkout() {
         <IntroSection line={sc.introLine} title={sc.title} />
       </header>
 
-      <Form onSubmit={sceduleBooking}>
+      <Form onSubmit={scheduleBooking}>
         {console.log(bookedDates)}
         <BetterDatePicker
           startDate={bookingDate}

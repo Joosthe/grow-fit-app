@@ -1,4 +1,4 @@
-export function createWorkoutQuery(title, workoutImg, descr,  sport, duration, exs, alias){
+export function createWorkoutQuery(title, workoutImg, descr,  sport, durationTime, exs, alias){
   return `
     mutation{
       createWorkout(data:
@@ -7,14 +7,14 @@ export function createWorkoutQuery(title, workoutImg, descr,  sport, duration, e
           workoutImg: "${workoutImg}"
           descr: "${descr}"
           sport: ${sport}
-          duration: "${duration}"
           exercises: ${exs}
           path: "${alias}"
+          durationWorkoutTime: ${durationTime}
         }){
         id,
         title
         descr,
-        duration,
+        durationWorkoutTime
         exercises,
         path,
         workoutImg
@@ -29,10 +29,10 @@ export function publishWorkoutQuery(id){
       id,
       title
       descr,
-      duration,
       exercises,
       path,
-      workoutImg
+      workoutImg,
+      durationWorkoutTime
     }
   }`
 }

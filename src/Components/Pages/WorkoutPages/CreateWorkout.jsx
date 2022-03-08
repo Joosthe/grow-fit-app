@@ -32,7 +32,7 @@ export default function CreateWorkout() {
   const nameWorkout = useRef();
   const descrWorkout = useRef();
   const durationWorkout = useRef();
-
+  const durationWorkoutTime = useRef()
 
 
   function addToExercises(selection) {
@@ -70,7 +70,7 @@ export default function CreateWorkout() {
     const workoutname = nameWorkout.current.value;
     const workoutDescr = descrWorkout.current.value;
     const workoutSport = sport.value;
-    const workouDur = durationWorkout.current.value;
+    const workoutDurTime = durationWorkoutTime.current.value;
     const WorkoutEx = getActiveExerIds();
     const alias = '/workouts/' + workoutname.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
 
@@ -78,7 +78,7 @@ export default function CreateWorkout() {
       uploadingImg(workoutImage, 'workout_preset').then(
         response =>
           getData(
-            createWorkoutQuery(workoutname, response.data.public_id, workoutDescr, workoutSport, workouDur, WorkoutEx, alias)).then(
+            createWorkoutQuery(workoutname, response.data.public_id, workoutDescr, workoutSport, workouDur, workoutDurTime, WorkoutEx, alias)).then(
               data => {
                 getData(publishWorkoutQuery(data.createWorkout.id)).then(
                   data => {
@@ -87,6 +87,7 @@ export default function CreateWorkout() {
                     nameWorkout.current.value = "";
                     descrWorkout.current.value = "";
                     durationWorkout.current.value = "";
+                    workoutDurTime.current.value = "";
                     setSport([]);
                     setactiveExercises([]);
                     setWorkoutImage('');
@@ -136,12 +137,22 @@ export default function CreateWorkout() {
 
           </div>
           <div className="form-right">
-            <div className="form-group" id="durationWorkout">
+            {/* <div className="form-group" id="durationWorkout">
               <label>Duration workout</label>
               <input
                 type="text"
                 ref={durationWorkout}
                 placeholder="30 minuten"
+                required
+              />
+            </div> */}
+            <div className="form-group" id="durationWorkout">
+              <label>Duration workout in minutes</label>
+              <input
+                type="number"
+                step={0.1}
+                ref={durationWorkoutTime}
+                placeholder={30}
                 required
               />
             </div>

@@ -6,15 +6,18 @@ export function getAllBookingsQuery(id){
       orderBy: createdAt_DESC
     ) {
       id
-      start : dateBooking
-      end : dateBooking
-      title : bookingName
+      date: dateBooking
+      workout: workoutRef{
+        id
+        title
+        time: durationWorkoutTime
+      }
     }
   }
   `
 }
 
-export function getYourBookingDatesQuery(id){
+export function getYourBookedDatesQuery(id){
   return `
   {
     bookings(

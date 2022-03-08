@@ -42,7 +42,7 @@ export default {
         }
       ]
     },
-    NewEntry:{
+    CreateEntry:{
       title:"Log a new entry", 
       introLine: "So how did it go today"
     },
@@ -62,7 +62,7 @@ export default {
       title:"Workouts",
       introLine: "Check out here all our nice workouts"
     },
-    SceduleWorkout:{
+    CreateBooking:{
       title:"Scedule your workout",
       introLine: "a great plan makes up a great mind"
     }

@@ -23,7 +23,7 @@ export default function AddContent() {
           </div>
           <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/4 xl:w-1/4 flex-auto">
             <AddContentCard
-              to="/scedule-workout"
+              to="/schedule-workout"
               icon={<FaCalendarAlt />}
               title={sc.cards[4].title}
               descr={sc.cards[4].descr}

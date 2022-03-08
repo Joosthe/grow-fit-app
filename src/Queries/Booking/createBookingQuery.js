@@ -1,11 +1,10 @@
-export function createBookingQuery(userid, date, workout, bookingname){
+export function createBookingQuery(userid, date, workout){
   return `
   mutation{
     createBooking(data:{
       userId: "${userid}"
       dateBooking: "${date}"
-      workoutBooking: "${workout}"
-      bookingName: "${bookingname}"
+      workoutRef: {connect : {id: "${workout}" }}
     }){
       id,
     }

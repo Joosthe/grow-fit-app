@@ -27,7 +27,7 @@ export default function WorkoutDetail() {
                         <span className='workoutdetail__sport'>{data?.workout?.sport}</span>
                     </div>
                     <p className='workoutdetail__duration'>
-                        <BsClock /> {data.workout?.duration}
+                        <BsClock /> {data.workout?.durationWorkoutTime}
                     </p>
 
                     <p>{data?.workout?.descr}</p>

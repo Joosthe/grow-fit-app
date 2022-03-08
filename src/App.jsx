@@ -18,7 +18,7 @@ import RegisterPage from '@/Components/Pages/Userpages/Registerpage';
 import ProfilePage from '@/Components/Pages/Userpages/ProfilePage';
 import MyGoals from '@/Components/Pages/Userpages/MyGoals';
 import AddContent from '@/Components/Pages/WorkoutPages/AddContent';
-import NewEntry from '@/Components/Pages/WorkoutPages/NewEntry';
+import CreateEntry from '@/Components/Pages/WorkoutPages/CreateEntry';
 import CreateWorkout from '@/Components/Pages/WorkoutPages/CreateWorkout';
 import CreateExercise from '@/Components/Pages/WorkoutPages/CreateExercise';
 import AdminUsers from '@/Components/Pages/Userpages/AdminUsers';
@@ -28,7 +28,7 @@ import Workouts from '@/Components/Pages/WorkoutPages/Workouts';
 import WorkoutDetail from '@detail/WorkoutDetail';
 import AllEntries from '@/Components/Pages/Userpages/AllEntries';
 import Presentation from '@/Components/Pages/GereralPages/Presentation';
-import SceduleWorkout from '@/Components/Pages/WorkoutPages/SceduleWorkout';
+import CreateBooking from '@/Components/Pages/WorkoutPages/CreateBooking';
 import PlannedWorkouts from '@/Components/Pages/Userpages/PlannedWorkouts';
 
 
@@ -44,11 +44,11 @@ function App() {
         }
         <Switch>
           <AdminRoute exact path="/admin/users" component={AdminUsers} />
-          <PrivateRoute exact path="/your-scedule" component={PlannedWorkouts} />
-          <PrivateRoute exact path="/scedule-workout" component={SceduleWorkout} />
+          <PrivateRoute exact path="/your-schedule" component={PlannedWorkouts} />
+          <PrivateRoute exact path="/scedule-workout" component={CreateBooking} />
           <PrivateRoute exact path="/create-exercise" component={CreateExercise} />
           <PrivateRoute exact path="/create-workout" component={CreateWorkout} />
-          <PrivateRoute exact path="/new-entry" component={NewEntry} />
+          <PrivateRoute exact path="/new-entry" component={CreateEntry} />
           <PrivateRoute exact path="/add-content" component={AddContent} />
           <PrivateRoute exact path="/profile" component={ProfilePage} />
           <PrivateRoute exact path="/my-goals" component={MyGoals} />

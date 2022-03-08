@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import IntroSection from '@/Components/PageSections/IntroSection';
 import Container from '@/Components/Wrappers/Container';
-import './styles/NewEntry.scss'
+import './styles/CreateEntry.scss'
 import Form from '@/Components/PageComponents/FormElements/Form';
 import useStaticContent from '@/Hooks/useStaticContent';
 import { getWorkoutsSelectQuery } from '@/Queries/Workout/getWorkoutsQuery';
@@ -15,9 +15,9 @@ import { useError } from '@/Contexts/ErrorContext';
 import { uploadingImg } from '@/utils/uploadcloud';
 import UploadCload from '@/Components/PageComponents/FormElements/UploadCload';
 
-export default function NewEntry() {
+export default function CreateEntry() {
   const history = useHistory();
-  const sc = useStaticContent('WorkoutPages.NewEntry');
+  const sc = useStaticContent('WorkoutPages.CreateEntry');
   const { setErrorMessage } = useError();
   const [selectedWorkout, setSelectedWorkout] = useState('');
   const [entryImg, setentryImg] = useState('');

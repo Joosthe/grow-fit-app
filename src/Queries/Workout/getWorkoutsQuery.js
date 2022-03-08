@@ -29,7 +29,7 @@ export function getWorkoutDetailQuery(path){
       workoutImg
       sport
     	descr
-    	duration
+    	durationWorkoutTime
       exercises
     }
   }
