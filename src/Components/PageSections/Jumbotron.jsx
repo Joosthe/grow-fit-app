@@ -9,11 +9,11 @@ function Jumbotron(props) {
       <div className="content-wrapper">
 
         <div className="content-jumbotron">
-        <Fade>
-          <h1 className="text-4xl font-semibold">
-            {props.title}
-          </h1>
-          <Link to="/login">Log in now hehllo &rarr;</Link>
+          <Fade>
+            <h1 className="text-4xl font-semibold">
+              {props.title}
+            </h1>
+            <Link to="/login">Log in now &rarr;</Link>
           </Fade>
         </div>
       </div>
