@@ -36,17 +36,13 @@ export default defineConfig({
   }]}},
   plugins: [reactRefresh()],
     resolve: { alias: { 
-      '@': '/src',
-      // hooks
-      //pages
-      '@generalPage' : '/src/Pages/GeneralPages',
-      '@userPage': '/src/Pages/UserPages',
-      '@workoutPage': '/src/Pages/WorkoutPages',
-      //components
-      '@PageComponent':'/src/Components/PageComponents/', 
-      '@PageSection': '/src/Components/PageSections',
-      '@Wrapper': '/src/Components/Wrappers',
-      '@Navigation':'/src/Components/Navigation'
-      //queries
+      '@':              '/src',
+      '@generalPage':   '/src/Pages/GeneralPages',
+      '@userPage':      '/src/Pages/UserPages',
+      '@workoutPage':   '/src/Pages/WorkoutPages',
+      '@PageComponent': '/src/Components/PageComponents/', 
+      '@PageSection':   '/src/Components/PageSections',
+      '@Wrapper':       '/src/Components/Wrappers',
+      '@Navigation':    '/src/Components/Navigation'
    }},
 })
