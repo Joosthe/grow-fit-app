@@ -1,0 +1,53 @@
+@import '../../../scss/screenhook';
+.custom-class{
+  display: flex;
+  flex-direction: column;
+  p{
+    display: flex;
+    font-size: 1.5rem;
+  }
+}
+
+input[type=number]{
+  width: auto;
+  margin-right: .3rem;
+  font-size: 1rem;
+}
+.page--new-entry form{
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 100%;
+  &>*{
+    width: 50%;
+    padding: .75rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: flex-start;
+    flex: 1 0 auto;
+    @include sm-and-below{
+      display: block;
+      width: 100%;
+    }
+    &.form-right .form-element,
+    textarea{
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 auto;
+      margin-bottom: 0;
+    }
+    &:last-child{
+      text-align: center;
+      @include sm-and-below{
+        text-align: left;
+        padding: .75rem 0;
+      }
+    }
+  }
+  @include sm-and-below{
+    .form-left, .form-right{
+      padding: 0;
+    }
+  }
+}

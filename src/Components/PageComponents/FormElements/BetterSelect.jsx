@@ -1,6 +1,7 @@
 import React from "react";
 import Downshift from "downshift";
 import styles from "./styles/Select.module.scss";
+
 export default function BetterSelect(props) {
   return (
     <div>
@@ -39,7 +40,7 @@ export default function BetterSelect(props) {
                   }
                 },
                 placeholder: props.placeHolder,
-                required:props.required
+                required: props.required
               })}
             />
             <div className={styles.selectlist__list__wrapper}>

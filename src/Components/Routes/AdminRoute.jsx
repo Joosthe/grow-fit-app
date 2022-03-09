@@ -13,6 +13,6 @@ export default function AdminRoute({ component: Component, ...rest }) {
           ? <Component {...props} />
           : <Redirect to="/forbiddden" />
       }}
-    ></Route>
+    />
   )
 }

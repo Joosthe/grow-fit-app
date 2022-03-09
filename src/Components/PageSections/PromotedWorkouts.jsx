@@ -1,10 +1,10 @@
 import React from 'react';
+import { BsChevronRight } from 'react-icons/bs';
+import Button from '@PageComponent/Buttons/Button';
+import WorkoutTeaserCard from '@PageComponent/Cards/WorkoutTeaserCard';
 import useStaticCmsData from '@/Hooks/useStaticCmsData';
 import { getWorkoutsPromotedTeaserQuery } from '@/Queries/Workout/getWorkoutsQuery';
-import WorkoutTeaserCard from '@/Components/PageComponents/Cards/WorkoutTeaserCard';
 import './styles/PromotedWorkout.scss';
-import Button from '@/Components/PageComponents/Buttons/Button';
-import { BsChevronRight } from 'react-icons/bs';
 
 export default function PromotedWorkouts() {
   const { data: workoutsdata } = useStaticCmsData({}, getWorkoutsPromotedTeaserQuery);

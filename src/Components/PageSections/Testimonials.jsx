@@ -1,11 +1,12 @@
 import React from 'react'
-import { testimonals } from '@/Data/testimonals.js';
+import { Fade } from "react-awesome-reveal";
 import Slider from "react-slick";
+import { testimonals } from '@/StaticContent/testimonials-En.js';
+import NextArrow from '@Navigation/NextArrow.jsx';
+import PrevArrow from '@Navigation/Prevarrow.jsx';
 import "slick-carousel/slick/slick.css";
 import "./styles/testimonials.scss";
-import NextArrow from '@/Components/Navigation/NextArrow.jsx';
-import PrevArrow from '@/Components/Navigation/Prevarrow.jsx';
-import { Fade } from "react-awesome-reveal";
+
 function Testimonals() {
   const settings = {
     dots: false,

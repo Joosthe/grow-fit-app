@@ -1,22 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
-function MainMenu(props) {
+function MainMenu({ closeMenu }) {
   return (
     <ul className="menu--main ">
       <li>
-        <Link to="/" onClick={props.closeMenu}>
+        <Link to="/" onClick={closeMenu}>
           Home
         </Link>
       </li>
       <li>
-        <Link to="/workouts" onClick={props.closeMenu}>
+        <Link to="/workouts" onClick={closeMenu}>
           Workouts
         </Link>
       </li>
       <li>
-        <Link to="/presentation" onClick={props.closeMenu}>
+        <Link to="/presentation" onClick={closeMenu}>
           Presentation
         </Link>
       </li>

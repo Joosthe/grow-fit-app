@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useUser } from '@/Contexts/UserContext';
-function UserMenu(props) {
-  const { currentUser } = useUser();
 
+function UserMenu({ closeMenu }) {
+  const { currentUser } = useUser();
   return (
     <div className="menu--user">
       <div className="menu-profile-picture">
@@ -19,7 +19,7 @@ function UserMenu(props) {
       </p>
       <ul>
         <li>
-          <Link to="/profile" onClick={props.closeMenu}>Profile</Link>
+          <Link to="/profile" onClick={closeMenu}>Profile</Link>
         </li>
       </ul>
     </div>

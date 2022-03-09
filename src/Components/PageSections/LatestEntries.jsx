@@ -1,11 +1,11 @@
 import React from 'react'
-import useStaticCmsData from '@/Hooks/useStaticCmsData';
-import { getWorkoutsPromotedTeaserQuery } from '@/Queries/Workout/getWorkoutsQuery';
-import { useUser } from '@/Contexts/UserContext';
-import { getLatestEntryQuery } from '@/Queries/entry/getEntriesQuery';
-import EntryCard from '@/Components/PageComponents/Cards/EntryCard';
-import Button from '@/Components/PageComponents/Buttons/Button';
 import { BsChevronRight } from 'react-icons/bs'
+import Button from '@PageComponent/Buttons/Button';
+import EntryCard from '@PageComponent/Cards/EntryCard';
+import { useUser } from '@/Contexts/UserContext';
+import useStaticCmsData from '@/Hooks/useStaticCmsData';
+import { getLatestEntryQuery } from '@/Queries/entry/getEntriesQuery';
+
 export default function LatestEntries() {
   const { currentUser } = useUser();
   const { data: entries } = useStaticCmsData({}, getLatestEntryQuery(currentUser.id));
@@ -15,7 +15,6 @@ export default function LatestEntries() {
       <div className="flex flex-wrap -mx-2 overflow-hidden grid-add-content pb-4">
         {entries?.entries?.map(item =>
           < EntryCard entry={item} key={item?.id} />
-
         )}
       </div>
       {entries?.entries && (

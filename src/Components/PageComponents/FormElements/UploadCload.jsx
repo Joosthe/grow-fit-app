@@ -1,8 +1,9 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import styles from './styles/Upload.module.scss';
-import Button from '@/Components/PageComponents/Buttons/Button';
 import { BiRefresh } from 'react-icons/bi'
+import Button from '@PageComponent/Buttons/Button';
+
+import styles from './styles/Upload.module.scss';
 
 export default function UploadCload(props) {
   const onDrop = useCallback(acceptedFile => {

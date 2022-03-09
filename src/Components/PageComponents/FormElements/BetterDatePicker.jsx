@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
+import nl from 'date-fns/locale/nl';
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import nl from 'date-fns/locale/nl';
-registerLocale('nl', nl)
+
+registerLocale('nl', nl);
+
 export default function BetterDatePicker(props) {
 
   const CalenderWrapper = ({ className, children }) => {

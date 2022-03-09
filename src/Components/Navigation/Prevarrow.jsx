@@ -1,8 +1,8 @@
 import React from 'react'
-function PrevArrow(props) {
-  const { className, style, onClick } = props;
+
+function PrevArrow({ className, onClick }) {
   return (
-      <button type="button" data-role="none"  className={className}
+    <button type="button" data-role="none" className={className}
       onClick={onClick} aria-label="previous">&larr;</button>
   );
 }

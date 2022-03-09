@@ -1,9 +1,10 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom';
-import { useUser } from '@/Contexts/UserContext';
 import { BiExit } from 'react-icons/bi';
+import { useUser } from '@/Contexts/UserContext';
 import './styles/LogoutButton.scss';
+
 export default function LogoutButton() {
   const { userLogout } = useUser();
   const history = useHistory();

@@ -8,7 +8,7 @@
 //   publicDir: 'public',
 //   resolve: { alias: { 
 //     '@': '/src',
-//     '@detail': '/src/Components/Pages/WorkoutPages'
+//     '@detail': '/src/Pages/WorkoutPages'
 //   }},
 //   build: {
 //     rollupOptions: {
@@ -25,8 +25,18 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [reactRefresh()],
-   resolve: { alias: { 
-     '@': '/src',
-     '@detail': '/src/Components/Pages/WorkoutPages'
+    resolve: { alias: { 
+      '@': '/src',
+      // hooks
+      //pages
+      '@generalPage' : '/src/Pages/GeneralPages',
+      '@userPage': '/src/Pages/UserPages',
+      '@workoutPage': '/src/Pages/WorkoutPages',
+      //components
+      '@PageComponent':'/src/Components/PageComponents/', 
+      '@PageSection': '/src/Components/PageSections',
+      '@Wrapper': '/src/Components/Wrappers',
+      '@Navigation':'/src/Components/Navigation'
+      //queries
    }},
 })

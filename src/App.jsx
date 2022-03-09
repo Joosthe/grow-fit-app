@@ -11,26 +11,27 @@ import Error from './Components/PageComponents/Error/Error';
 import MainNav from './Components/Navigation/MainNav';
 import FooterNav from './Components/Navigation/FooterNav';
 
-import Home from '@/Components/Pages/GereralPages/Home';
-import FourOhFour from '@/Components/Pages/GereralPages/FourOhFour';
-import LoginPage from '@/Components/Pages/Userpages/LoginPage';
-import RegisterPage from '@/Components/Pages/Userpages/Registerpage';
-import ProfilePage from '@/Components/Pages/Userpages/ProfilePage';
-import MyGoals from '@/Components/Pages/Userpages/MyGoals';
-import AddContent from '@/Components/Pages/WorkoutPages/AddContent';
-import CreateEntry from '@/Components/Pages/WorkoutPages/CreateEntry';
-import CreateWorkout from '@/Components/Pages/WorkoutPages/CreateWorkout';
-import CreateExercise from '@/Components/Pages/WorkoutPages/CreateExercise';
-import AdminUsers from '@/Components/Pages/Userpages/AdminUsers';
-import NoAcces from '@/Components/Pages/GereralPages/NoAcces';
-import Succespage from '@/Components/Pages/WorkoutPages/Succespage';
-import Workouts from '@/Components/Pages/WorkoutPages/Workouts';
-import WorkoutDetail from '@detail/WorkoutDetail';
-import AllEntries from '@/Components/Pages/Userpages/AllEntries';
-import Presentation from '@/Components/Pages/GereralPages/Presentation';
-import CreateBooking from '@/Components/Pages/WorkoutPages/CreateBooking';
-import PlannedWorkouts from '@/Components/Pages/Userpages/PlannedWorkouts';
+import FourOhFour from '@generalPage/FourOhFour';
+import Home from '@generalPage/Home';
+import NoAcces from '@generalPage/NoAcces';
+import Presentation from '@generalPage/Presentation';
 
+import AdminUsers from '@userPage/AdminUsers';
+import AllEntries from '@userPage/AllEntries';
+import CreateUser from '@userPage/CreateUser';
+import LoginPage from '@userPage/LoginPage';
+import MyGoals from '@userPage/MyGoals';
+import ProfilePage from '@userPage/ProfilePage';
+
+import AddContent from '@workoutPage/AddContent';
+import CreateBooking from '@workoutPage/CreateBooking';
+import CreateEntry from '@workoutPage/CreateEntry';
+import CreateExercise from '@workoutPage/CreateExercise';
+import CreateWorkout from '@workoutPage/CreateWorkout';
+import UserWorkouts from '@workoutPage/UserWorkouts';
+import Succespage from '@workoutPage/Succespage';
+import Workouts from '@workoutPage/Workouts';
+import WorkoutDetail from '@workoutPage/WorkoutDetail';
 
 function App() {
   const { currentUser } = useUser();
@@ -43,24 +44,33 @@ function App() {
           <Error />
         }
         <Switch>
+
+          {/* admin routes  */}
           <AdminRoute exact path="/admin/users" component={AdminUsers} />
-          <PrivateRoute exact path="/your-schedule" component={PlannedWorkouts} />
-          <PrivateRoute exact path="/scedule-workout" component={CreateBooking} />
+
+          {/* privite routes  */}
+          <PrivateRoute exact path="/add-content" component={AddContent} />
+          <PrivateRoute exact path="/all-entries" component={AllEntries} />
           <PrivateRoute exact path="/create-exercise" component={CreateExercise} />
           <PrivateRoute exact path="/create-workout" component={CreateWorkout} />
-          <PrivateRoute exact path="/new-entry" component={CreateEntry} />
-          <PrivateRoute exact path="/add-content" component={AddContent} />
-          <PrivateRoute exact path="/profile" component={ProfilePage} />
           <PrivateRoute exact path="/my-goals" component={MyGoals} />
+          <PrivateRoute exact path="/new-entry" component={CreateEntry} />
+          <PrivateRoute exact path="/profile" component={ProfilePage} />
+          <PrivateRoute exact path="/profile" component={ProfilePage} />
+          <PrivateRoute exact path="/schedule-workout" component={CreateBooking} />
           <PrivateRoute exact path="/succes" component={Succespage} />
-          <PrivateRoute exact path="/all-entries" component={AllEntries} />
-          <PublicRoute path="/workouts/:id" component={WorkoutDetail} />
-          <PublicRoute exact path="/presentation" component={Presentation} />
-          <PublicRoute exact path="/register" component={RegisterPage} />
-          <PublicRoute exact path="/workouts" component={Workouts} />
+          <PrivateRoute exact path="/your-schedule" component={UserWorkouts} />
+
+          {/* public routes  */}
           <PublicRoute exact path="/login" component={LoginPage} />
-          <PublicRoute exact path="/" component={Home} />
+          <PublicRoute exact path="/presentation" component={Presentation} />
+          <PublicRoute exact path="/register" component={CreateUser} />
+          <PublicRoute exact path="/workouts" component={Workouts} />
+          <PublicRoute path="/workouts/:id" component={WorkoutDetail} />
+
+          {/* standard routes  */}
           <PublicRoute exact path="/forbidden" component={NoAcces} />
+          <PublicRoute exact path="/" component={Home} />
           <PublicRoute path="*" component={FourOhFour} />
         </Switch>
       </div>

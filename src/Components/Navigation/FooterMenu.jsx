@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-function FooterMenu() {
 
+function FooterMenu() {
   return (
     <div className="menu--footer">
       <ul>
@@ -22,8 +22,8 @@ function FooterMenu() {
           </Link>
         </li>
         <li>
-          <Link to="/your-scedule">
-            Your scedule
+          <Link to="/your-schedule">
+            Your schedule
           </Link>
         </li>
         <li className="new-entree-footer-wrapper">

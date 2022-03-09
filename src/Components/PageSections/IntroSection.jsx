@@ -1,14 +1,14 @@
 import React from 'react'
-import GoBackButton from '@/Components/PageComponents/Buttons/GoBackButton'
 import PageTitle from './PageTitle'
+import GoBackButton from '@PageComponent/Buttons/GoBackButton'
 import './styles/intro.scss'
 
-export default function IntroSection(props) {
+export default function IntroSection({ title, line }) {
   return (
     <div className="intro">
       <GoBackButton />
-      <PageTitle>{props.title}</PageTitle>
-      <p className="intro-line" dangerouslySetInnerHTML={{ __html: props.line }} />
+      <PageTitle>{title}</PageTitle>
+      <p className="intro-line" dangerouslySetInnerHTML={{ __html: line }} />
     </div>
   )
 }

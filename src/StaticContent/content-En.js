@@ -63,7 +63,7 @@ export default {
       introLine: "Check out here all our nice workouts"
     },
     CreateBooking:{
-      title:"Scedule your workout",
+      title:"schedule your workout",
       introLine: "a great plan makes up a great mind"
     }
   },
