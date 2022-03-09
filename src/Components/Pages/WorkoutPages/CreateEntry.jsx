@@ -12,7 +12,7 @@ import { createEntryQuery, publishEntryQuery } from '@/Queries/entry/createEntry
 import { useUser } from '@/Contexts/UserContext';
 import { useHistory } from 'react-router';
 import { useError } from '@/Contexts/ErrorContext';
-import { uploadingImg } from '@/utils/uploadcloud';
+import { uploadingImg } from '@/Connections/uploadcloud';
 import UploadCload from '@/Components/PageComponents/FormElements/UploadCload';
 
 export default function CreateEntry() {

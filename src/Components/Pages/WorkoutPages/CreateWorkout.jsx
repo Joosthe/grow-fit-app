@@ -15,7 +15,7 @@ import { getData } from "@/Connections/graphcsm";
 import { createWorkoutQuery, publishWorkoutQuery } from "@/Queries/Workout/CreateWorkoutQuery";
 import { useError } from "@/Contexts/ErrorContext";
 import UploadCload from "@/Components/PageComponents/FormElements/UploadCload";
-import { uploadingImg } from '@/utils/uploadcloud';
+import { uploadingImg } from '@/Connections/uploadcloud';
 
 
 export default function CreateWorkout() {
