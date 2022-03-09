@@ -24,8 +24,6 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-   base: './',
-  publicDir: 'public',
   // css: { postcss: { plugins: [ {
   //   postcssPlugin: 'internal:charset-removal',
   //   AtRule: {
