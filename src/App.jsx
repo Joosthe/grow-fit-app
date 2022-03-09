@@ -16,7 +16,7 @@ import Home from '@generalPage/Home';
 import NoAcces from '@generalPage/NoAcces';
 import Presentation from '@generalPage/Presentation';
 
-//import AdminUsers from '@userPage/AdminUsers';
+import AdminUsers from '@userPage/AdminUsers';
 import AllEntries from '@userPage/AllEntries';
 import CreateUser from '@userPage/CreateUser';
 import LoginPage from '@userPage/LoginPage';
@@ -46,7 +46,7 @@ function App() {
         <Switch>
 
           {/* admin routes  */}
-          {/* <AdminRoute exact path="/admin/users" component={AdminUsers} /> */}
+          <AdminRoute exact path="/admin/users" component={AdminUsers} />
 
           {/* privite routes  */}
           <PrivateRoute exact path="/add-content" component={AddContent} />
