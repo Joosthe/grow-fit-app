@@ -24,16 +24,6 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // css: { postcss: { plugins: [ {
-  //   postcssPlugin: 'internal:charset-removal',
-  //   AtRule: {
-  //     charset: (atRule) => {
-  //       if (atRule.name === 'charset') {
-  //         atRule.remove();
-  //       }
-  //     }
-  //   }
-  // }]}},
   plugins: [reactRefresh()],
     resolve: { alias: { 
       '@':              '/src',
@@ -45,4 +35,14 @@ export default defineConfig({
       '@Wrapper':       '/src/Components/Wrappers',
       '@Navigation':    '/src/Components/Navigation'
    }},
+  css: { postcss: { plugins: [ {
+    postcssPlugin: 'internal:charset-removal',
+    AtRule: {
+      charset: (atRule) => {
+        if (atRule.name === 'charset') {
+          atRule.remove();
+        }
+      }
+    }
+  }]}},
 })
