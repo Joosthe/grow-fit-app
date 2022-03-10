@@ -2,15 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './styles/addContentCard.scss'
 
-export default function AddContentCard(props) {
+export default function AddContentCard({ to, icon, title, descr }) {
   return (
-    <Link to={props.to} className="card--add--content">
+    <Link to={to} className="card--add--content">
       <div className="card--header">
-        {props.icon}
+        {icon}
       </div>
       <div className="card-body">
-        <h2>{props.title}</h2>
-        <p>{props.descr}</p>
+        <h2>{title}</h2>
+        <p>{descr}</p>
       </div>
     </Link>
   )

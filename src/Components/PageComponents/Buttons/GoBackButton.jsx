@@ -2,6 +2,7 @@ import React from 'react'
 import { FaChevronLeft } from "react-icons/fa";
 import { useHistory } from 'react-router-dom';
 import './styles/gobackbutton.scss'
+
 export default function GoBackButton() {
   const history = useHistory();
   return (
@@ -13,5 +14,3 @@ export default function GoBackButton() {
     </a>
   )
 }
-
-

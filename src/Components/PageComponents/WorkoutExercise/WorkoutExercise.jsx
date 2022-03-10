@@ -4,9 +4,9 @@ import useStaticCmsData from '@/Hooks/useStaticCmsData';
 import { getWorkoutExercisesQuery } from '@/Queries/Workout/getWorkoutsQuery';
 import './styles/WorkoutExercise.scss'
 
-export default function WorkoutExercise(props) {
-  const { data: ex } = useStaticCmsData({}, getWorkoutExercisesQuery(props.itemId));
+export default function WorkoutExercise({ itemId }) {
   const [open, setopen] = useState(false)
+  const { data: ex } = useStaticCmsData({}, getWorkoutExercisesQuery(itemId));
 
   return (
     <div className="workoutexercise__wrapper">

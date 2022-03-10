@@ -33,16 +33,14 @@ import Succespage from '@workoutPage/Succespage';
 import Workouts from '@workoutPage/Workouts';
 import WorkoutDetail from '@workoutPage/WorkoutDetail';
 
-function App() {
+export default function App() {
   const { currentUser } = useUser();
   const { error } = useError();
   return (
     <>
       <MainNav />
       <div id="main-content" className={currentUser ? "loged-in" : ""}>
-        {error.message !== '' &&
-          <Error />
-        }
+        {error.message !== '' && <Error />}
         <Switch>
 
           {/* admin routes  */}
@@ -80,5 +78,3 @@ function App() {
     </>
   )
 }
-
-export default App

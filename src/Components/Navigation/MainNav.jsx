@@ -19,7 +19,7 @@ function closeMenu() {
 }
 
 
-function MainNav() {
+export default function MainNav() {
   const { currentUser } = useUser();
   return (
     <div className="main-navigation-wrappers">
@@ -51,4 +51,3 @@ function MainNav() {
   )
 }
 
-export default MainNav

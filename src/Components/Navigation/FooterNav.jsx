@@ -2,12 +2,11 @@ import React from 'react'
 import FooterMenu from './FooterMenu'
 import './styles/Footernav.scss';
 
-function FooterNav() {
+export default function FooterNav() {
   return (
     <div className="footer--navigation">
-    <FooterMenu/>
+      <FooterMenu />
     </div>
   )
 }
 
-export default FooterNav

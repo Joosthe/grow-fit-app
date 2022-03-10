@@ -10,7 +10,6 @@ export default function Upload(props) {
   const [fileToUpload, setFileToUpload] = useState(null);
   const [editState, setEditState] = useState(false);
 
-
   const onDrop = useCallback(
     (acceptedFiles) => {
       setFiles(
@@ -44,7 +43,6 @@ export default function Upload(props) {
       });
     setEditState(false);
   }
-
 
   useEffect(
     () => () => {

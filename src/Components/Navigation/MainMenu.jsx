@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function MainMenu({ closeMenu }) {
+export default function MainMenu({ closeMenu }) {
   return (
     <ul className="menu--main ">
       <li>
@@ -22,5 +22,3 @@ function MainMenu({ closeMenu }) {
     </ul>
   )
 }
-
-export default MainMenu

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useUser } from '@/Contexts/UserContext';
 
-function UserMenu({ closeMenu }) {
+export default function UserMenu({ closeMenu }) {
   const { currentUser } = useUser();
   return (
     <div className="menu--user">
@@ -26,4 +26,3 @@ function UserMenu({ closeMenu }) {
   )
 }
 
-export default UserMenu

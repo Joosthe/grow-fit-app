@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import LogoutButton from '@PageComponent/Buttons/LogoutButton';
 import { useUser } from '@/Contexts/UserContext';
 
-function LogMenu({ closeMenu }) {
+export default function LogMenu({ closeMenu }) {
   const { currentUser } = useUser();
   return (
     <ul className="menu--log flex">
@@ -17,5 +17,3 @@ function LogMenu({ closeMenu }) {
     </ul>
   )
 }
-
-export default LogMenu
