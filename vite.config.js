@@ -25,24 +25,14 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [reactRefresh()],
-    resolve: { alias: { 
-      '@':              '/src',
-      '@generalPage':   '/src/Pages/GeneralPages',
-      '@userPage':      '/src/Pages/UserPages',
-      '@workoutPage':   '/src/Pages/WorkoutPages',
-      '@PageComponent': '/src/Components/PageComponents/', 
-      '@PageSection':   '/src/Components/PageSections',
-      '@Wrapper':       '/src/Components/Wrappers',
-      '@Navigation':    '/src/Components/Navigation'
-   }},
-  css: { postcss: { plugins: [ {
-    postcssPlugin: 'internal:charset-removal',
-    AtRule: {
-      charset: (atRule) => {
-        if (atRule.name === 'charset') {
-          atRule.remove();
-        }
-      }
-    }
-  }]}},
+  resolve: { alias: { 
+    '@':              '/src',
+    '@generalPage':   '/src/Pages/GeneralPages',
+    '@userPage':      '/src/Pages/UserPages',
+    '@workoutPage':   '/src/Pages/WorkoutPages',
+    '@PageComponent': '/src/Components/PageComponents/', 
+    '@PageSection':   '/src/Components/PageSections',
+    '@Wrapper':       '/src/Components/Wrappers',
+    '@Navigation':    '/src/Components/Navigation'
+  }},
 })
