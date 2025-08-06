@@ -66,12 +66,11 @@ export default function CreateBooking() {
       </header>
 
       <Form onSubmit={scheduleBooking}>
-        {console.log(bookedDates)}
-        <BetterDatePicker
+        {/* <BetterDatePicker
           startDate={bookingDate}
           onSelect={setbookingDate}
           excludeDates={bookedDates}
-        />
+        /> */}
         <div className="form-element custom-select">
           <label htmlFor="entry-workout">Select your work-out</label>
           <BetterSelect

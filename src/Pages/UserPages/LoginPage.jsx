@@ -66,8 +66,8 @@ function LoginPage() {
             </div>
           </Form>
           <div className="description text-center">
-            <p>{sc.formFooterText}  <Button variant={'btn-sm btn-prim'} to="/register">Register here</Button><br />
-            </p>
+            {/* <p>{sc.formFooterText}  <Button variant={'btn-sm btn-prim'} to="/register">Register here</Button><br />
+            </p> */}
           </div>
           <div>
           </div>
