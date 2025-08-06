@@ -1,4 +1,4 @@
-@import '../../../scss/screenhook';
+@use '../../../scss/screenhook' as *;
 .custom-class{
   display: flex;
   flex-direction: column;

@@ -1,4 +1,4 @@
-@import '../../../scss/screenhook';
+@use '../../../scss/screenhook' as *;
 
 .profile__user__account{
   display: flex;
@@ -27,7 +27,7 @@
     transform: skew(30deg);
     display: inline-block;
     letter-spacing: .1rem;
-    text-transform: uppercase;
+    text-transform: uppercase; 
     font-weight: bold;
   }
 }
@@ -61,17 +61,16 @@
   }
   .profile__user__account_info__inner{
     width: 50%;
-
+    font-weight: 500;
     @include lg-and-below{
       width: 100%;
     }
-    font-weight: 500;
     span{
       font-weight: 300;
     }
     & > *{
       margin: .75rem 0;
-    }
+    } 
   }
   input{
     display: none;

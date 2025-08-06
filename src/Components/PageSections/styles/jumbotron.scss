@@ -1,4 +1,4 @@
-@import '../../../scss/screenhook';
+@use '../../../scss/screenhook' as *;
 .jumbotron{
   position: relative;
   max-height: 22.5rem;

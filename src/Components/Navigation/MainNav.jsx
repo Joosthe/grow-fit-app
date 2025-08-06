@@ -22,7 +22,7 @@ function closeMenu() {
 export default function MainNav() {
   const { currentUser } = useUser();
   return (
-    <div className="main-navigation-wrappers">
+    <div className="main-navigation-wrappers ">
       <div className="main-navigation-top flex flex-wrap">
         <div className="logo-wrapper">
           <Link to="/" onClick={closeMenu}>

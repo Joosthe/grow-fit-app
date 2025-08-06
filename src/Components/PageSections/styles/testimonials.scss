@@ -1,4 +1,4 @@
-@import '../../../scss/screenhook';
+@use '../../../scss/screenhook' as *;
 .testimonals--section{
   background-color:var(--color-grey-800);
   color: var(--color-white);

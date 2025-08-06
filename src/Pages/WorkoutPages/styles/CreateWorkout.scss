@@ -1,4 +1,4 @@
-@import '../../../scss/screenhook';
+@use '../../../scss/screenhook' as *;
 .form--create-workout{
   display: flex;
   margin-bottom: 1rem;

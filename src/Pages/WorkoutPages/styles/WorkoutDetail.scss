@@ -1,4 +1,5 @@
-@import '../../../scss/screenhook';
+@use '../../../scss/screenhook' as *;
+
 .workout-container{
   display: flex;
   flex-direction: column;
